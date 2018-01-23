@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sedona</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#603cba">
+  <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+  <style>body {
+    opacity: 0;
+    overflow-x: hidden;
+  }
+
+  html {
+    background-color: #81b3d2;
+  }</style>
+</head>
+<body class="ishome">
+<div class="preloader">
+  <div class="pulse"></div>
+</div>
+<div class="page-wrapper">
+  <header class="page-header">
+    <div class="page-header__inner">
+      <nav class="main-nav  main-nav--closed  main-nav--nojs">
+        <div class="main-nav__inner">
+          <ul class="row main-nav__list">
+            <div class="main-nav__hamb--up"></div>
+            <div class="main-nav__hamb--down"></div>
+            <li class="col-12 col-md main-nav__item  main-nav__item--active"><a>Главная</a></li>
+            <li class="col-12 col-md main-nav__item"><a href="works.html">Фото и видео</a></li>
+            <li class="col-12 col-md main-nav__item main-nav__item--logo">
+              <picture>
+                <source media="(min-width: 1080px)" srcset="img/logotype-desktop.svg">
+                <source media="(min-width: 768px)" srcset="img/logotype-tablet.svg">
+                <img src="img/logotype-mobile.svg" alt="городок Седона">
+              </picture>
+            </li>
+            <li class="col-12 col-md main-nav__item"><a href="form.html">Форма отзыва</a></li>
+            <li class="col-12 col-md main-nav__item"><a href="#">Контакты</a></li>
+          </ul>
+
+        </div>
+        <a class="main-nav__toggle"></a>
+      </nav>
+      <div class="greating">
+        <div class="greating__logo  animated  hinge">
+          <img srcset="img/text-index.svg 460w" sizes="(max-width: 767px) 272px, (min-width: 768px) 460px"
+               alt="welcome to Sedona">
+        </div>
+      </div>
+    </div>
+  </header>
+  <main class="page-main">
+    <section class="intro">
+      <div class="intro_inner">
+        <div class="intro__slogan">
+          <h1>СЕДОНА — небольшой городок в АРИЗОНЕ, заслуживающий большего!</h1>
+          <p> Рассмотрим 5 причин, по которым Седона круче чем гранд каньон!</p>
+        </div>
+      </div>
+    </section>
+    <section class="adv">
+      <ul class="adv__list">
+        <li class="adv__item  adv__includes">
+          <div class="adv__header">
+            <h2 class="adv__title">Настоящий городок</h2>
+            <span class="adv__number">№1</span>
+            <p>Седона не атракцион для туристов, там течет своя жизнь</p>
+          </div>
+          <div class="adv__bg  adv__includes-bg"></div>
+          <ul class="adv__list  adv__list-includes">
+            <li class="adv__includes-item">
+              <h3 class="adv__title">Жилье</h3>
+              <p>Рекомендуем пожить в настоящем мотеле, все как в кино!</p>
+            </li>
+            <li class="adv__includes-item">
+              <h3 class="adv__title">Сувениры</h3>
+              <p>Не только китайского, но и местного производства!</p>
+            </li>
+            <li class="adv__includes-item">
+              <h3 class="adv__title">Еда</h3>
+              <p>Всегда заказывайте фирменный бургер, Вы не разочаруетесь!</p>
+            </li>
+          </ul>
+        </li>
+        <li class="adv__item  adv__bridge">
+          <div class="adv__header">
+            <h2 class="adv__title">Там есть Мост Дьявола</h2>
+            <span class="adv__number">№2</span>
+            <p>Да, по нему можно пройти! Если Вы конечно осмелитесь</p>
+          </div>
+          <div class="adv__bg  adv__bridge-bg"></div>
+        </li>
+        <li class="adv__item  adv__area">
+          <h2 class="adv__title">Небольшая площадь</h2>
+          <span class="adv__number">№3</span>
+          <p>Все достопримечательности находятся очень близко</p>
+        </li>
+        <li class="adv__item  adv__road">
+          <h2 class="adv__title">Красивая дорога</h2>
+          <span class="adv__number">№4</span>
+          <p>Ехать в седону из лас-вегаса совсем не скучно!</p>
+        </li>
+        <li class="adv__item  adv__a-bit-tourists">
+          <h2 class="adv__title">Мало туристов</h2>
+          <span class="adv__number">№5</span>
+          <p>Большинство едет в гранд каньон и толпится там</p>
+        </li>
+      </ul>
+    </section>
+    <section class="hotels">
+      <b class="hotels__title">Заинтересовались?</b>
+      <p>Укажите предполагаемые даты поездки и мы покажем вам лучшие предложения гостинниц в Седоне</p>
+      <button type="button" class="btn hotels__btn">Найти гостиницу</button>
+      <div class="hotels__map"></div>
+    </section>
+  </main>
+  <footer class="page-footer">
+    <div class="page-footer__inner">
+      <p class="page-footer__hashtag">
+        <a href="#">#VISITSEDONA</a>
+      </p>
+      <p class="page-footer__social">
+          <span class="social-links">
+            <a class="social-link  social-link--fb  page-footer__btn" href="">Мы в Фейсбуке</a>
+            <a class="social-link  social-link--in  page-footer__btn" href="">Мы в Твиттере</a>
+            <a class="social-link  social-link--vk  page-footer__btn" href="">Мы в Ютубе</a>
+          </span>
+      </p>
+      <p class="page-footer__copyright">
+        Desygn by:
+        <a class="page-footer__btn  page-footer__copyright-link" href="https://htmlacademy.ru/"><img src=""
+                                                                                                     alt="Html Academy"
+                                                                                                     title="Html Academy"></a>
+      </p>
+    </div>
+  </footer>
+  <div class="modal-content">
+    <h2 class="modal-content__title">Личный кабинет</h2>
+    <p>Введите свой логин и пароль, что бы войти</p>
+    <form class="modal-content__login-form" action="" method="post">
+      <input class="modal-content__field modal-content__field--icon-login" type="text" name="login" placeholder="Логин">
+      <input class="modal-content__field modal-content__field--icon-password" type="password" name="password"
+             placeholder="Пароль">
+      <label class="modal-content__checkbox-label"><input class="modal-content__checkbox-input" type="checkbox"
+                                                          name="remember"><span
+        class="modal-content__checkbox-indicator"></span>Запомните меня</label>
+      <a href="" class="modal-content__restore">Я забыл пароль!</a>
+      <button class="modal-content__login btn" type="submit">Войти</button>
+      <button class="modal-content__close btn" type="button" title="Закрыть">Закрыть</button>
+    </form>
+  </div>
+</div>
+<div class="top" title="Наверх"><i class="fa fa-plane"></i></div>
+<!-- <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css"> -->
+<link rel="stylesheet" href="css/libs.min.css">
+<link rel="stylesheet" href="css/style.css"> <!-- в разработке использовать неминимизированный -->
+<script src="js/libs.min.js"></script>
+<script src="js/main.js"></script>  <!-- в разработке использовать неминимизированный -->
+</body>
+
+</html>

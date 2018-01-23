@@ -1,0 +1,26 @@
+{
+  "name": "Sedona-responsive",
+  "description": "My 2-th gulp project",
+  "main": "gulpfile.js",
+  "authors": [
+    "playua18"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/libs/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "v4.0.0-alpha.6",
+    "css-hamburgers": "^0.9.1",
+    "jquery": "^3.2.1",
+    "normalize-css": "^7.0.0",
+    "popper.js": "^1.12.9"
+  }
+}

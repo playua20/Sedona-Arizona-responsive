@@ -1,0 +1,12 @@
+$mob-only: "(max-width: 767px)";
+$tab-only: "(min-width: 768px) and (max-width: 1099px)";
+$tab: "(min-width: 768px)";
+$desk: "(min-width: 1200px)";
+$accent: #81b3d2; //вместо остальных оттенков использовать elem: darken($blue, 10%); elem: darken($blue, 20%),
+$accent-hvr: #669ec0;
+$accent-act: #5496bd;
+$inp: #f2f2f2; //вместо остальных оттенков использовать elem: lightenen($bg-input, 10%); elem: darken($bg-input, 20%),
+$inp-hvr: #e5e5e5;
+$inp-act: #d5d5d5;
+$retina: "(min-resolution: 144dpi), (min-resolution: 1.5dppx)";
+$font: "font-family: 'Myraiad Pro Regular', Arial, sans-serif;";

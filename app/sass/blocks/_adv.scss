@@ -1,0 +1,83 @@
+  @media #{$tab}
+   {.adv__item {
+  display: block;
+  width: 300px;
+  height: 300px;
+  background: pink;
+  text-align: center;
+  }
+}
+
+.adv__item .adv__number {
+
+  position: relative;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      height: 1px;
+      width: 10px;
+      background: #000;
+      top: 50%;
+    }
+
+    &::before {
+      left: -15px;
+    }
+
+    &::after {
+      right: -15px;
+    }
+
+  }
+
+.adv__item:hover .adv__number {
+
+  &::before,
+  &::after {
+    animation: rotating 0.1s ease-out 8,
+     rotating-mid-1 0.2s ease-out 4 0.8s,
+      rotating-mid-2 0.4s ease-out 2 1.6s,
+       rotating-end 0.8s cubic-bezier(.0, .0, .0, .1) 2.4s;
+  }
+
+  &::before {
+      animation: rotating 0.1s ease-out 8,
+       rotating-mid-1 0.2s ease-out 4 0.8s,
+        rotating-mid-2 0.4s ease-out 2 1.6s,
+         rotating-end 0.8s cubic-bezier(.0, .0, .1, .0) 2.4s;
+           animation-direction: reverse;
+  }
+
+}
+
+@keyframes rotating {
+  0% {transform: rotate(360deg);}
+  100% {transform: rotate(0deg);}
+}
+
+@keyframes rotating-mid-1 {
+  0% {transform: rotate(360deg);}
+  100% {transform: rotate(0deg);}
+}
+
+@keyframes rotating-mid-2 {
+  0% {transform: rotate(360deg);}
+  100% {transform: rotate(0deg);}
+}
+
+@keyframes rotating-end {
+  0% {transform: rotate(360deg);}
+  100% {transform: rotate(0deg);}
+}
+
+
+  @media #{$tab} {
+
+  }
+
+
+    @media #{$desk} {
+
+    }

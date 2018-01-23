@@ -1,0 +1,8 @@
+.page-wrapper {
+  min-height: 100%;
+
+  &::after {
+     height: 0; // написать высоту, равную footer height: ;
+  }
+
+}

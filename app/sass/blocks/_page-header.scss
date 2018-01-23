@@ -1,0 +1,21 @@
+.page-header {
+  background: $accent;
+}
+
+.greating {
+  min-height: 117px;
+  padding: 90px 0 85px;
+  background: #81b3d2 url("/img/bg-desktop.jpg") center no-repeat;
+}
+
+.greating__logo img {
+  margin: 0 auto;
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .greating {
+    min-height: 350px;
+    padding: 68px 0 100px;
+  }
+}
