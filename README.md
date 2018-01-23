@@ -10,4 +10,4 @@
  * Mobile first
  * BEM
 
- Design project by https://htmlacademy.ru/
+ Layout design by https://htmlacademy.ru/
