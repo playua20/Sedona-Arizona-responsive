@@ -44,7 +44,7 @@
               </picture>
             </li>
             <li class="col-12 col-md main-nav__item"><a href="form.html">Форма отзыва</a></li>
-            <li class="col-12 col-md main-nav__item"><a href="#">Контакты</a></li>
+            <li class="co l-12 col-md main-nav__item"><a href="#">Контакты</a></li>
           </ul>
 
         </div>
@@ -62,105 +62,109 @@
     <section class="intro">
       <div class="intro_inner">
         <div class="intro__slogan">
-          <h1>СЕДОНА — небольшой городок в АРИЗОНЕ, заслуживающий большего!</h1>
+          <h1>СЕДОНА — небольшой городок в АРИЗОНЕ,<span id="h1-br"></span> заслуживающий большего!</h1>
           <p> Рассмотрим 5 причин, по которым Седона круче чем гранд каньон!</p>
         </div>
       </div>
     </section>
-    <section class="adv">
+    <section class="advantage">
       <ul class="adv__list">
-        <li class="adv__item  adv__includes">
-          <div class="adv__header">
+        <li class="row  adv__item  adv__city">
+          <div class="col-12 col-md-4  adv__header">
             <h2 class="adv__title">Настоящий городок</h2>
             <span class="adv__number">№1</span>
             <p>Седона не атракцион для туристов, там течет своя жизнь</p>
           </div>
-          <div class="adv__bg  adv__includes-bg"></div>
-          <ul class="adv__list  adv__list-includes">
-            <li class="adv__includes-item">
+          <div class="col-12  col-md-8  adv__bg  adv__city-bg"></div>
+          <ul class="row  col-12  adv__city-list">
+            <li class="col-12  col-md-4  adv__city-item  adv__city-item--motel">
               <h3 class="adv__title">Жилье</h3>
               <p>Рекомендуем пожить в настоящем мотеле, все как в кино!</p>
             </li>
-            <li class="adv__includes-item">
-              <h3 class="adv__title">Сувениры</h3>
-              <p>Не только китайского, но и местного производства!</p>
-            </li>
-            <li class="adv__includes-item">
+            <li class="col-12  col-md-4  adv__city-item  adv__city-item--burger">
               <h3 class="adv__title">Еда</h3>
               <p>Всегда заказывайте фирменный бургер, Вы не разочаруетесь!</p>
             </li>
+            <li class="col-12  col-md-4  adv__city-item  adv__city-item--gift">
+              <h3 class="adv__title">Сувениры</h3>
+              <p>Не только китайского, но и местного производства!</p>
+            </li>
           </ul>
         </li>
-        <li class="adv__item  adv__bridge">
-          <div class="adv__header">
+        <li class="row  adv__item  adv__bridge">
+          <div class="col col-md-4  adv__header">
             <h2 class="adv__title">Там есть Мост Дьявола</h2>
             <span class="adv__number">№2</span>
             <p>Да, по нему можно пройти! Если Вы конечно осмелитесь</p>
           </div>
-          <div class="adv__bg  adv__bridge-bg"></div>
-        </li>
-        <li class="adv__item  adv__area">
-          <h2 class="adv__title">Небольшая площадь</h2>
-          <span class="adv__number">№3</span>
-          <p>Все достопримечательности находятся очень близко</p>
-        </li>
-        <li class="adv__item  adv__road">
-          <h2 class="adv__title">Красивая дорога</h2>
-          <span class="adv__number">№4</span>
-          <p>Ехать в седону из лас-вегаса совсем не скучно!</p>
-        </li>
-        <li class="adv__item  adv__a-bit-tourists">
-          <h2 class="adv__title">Мало туристов</h2>
-          <span class="adv__number">№5</span>
-          <p>Большинство едет в гранд каньон и толпится там</p>
+          <div class="col-12  col-md-8  adv__bg  adv__bridge-bg"></div>
+          <ul class="row  col-12  adv__bridge-list">
+            <li class="col-12  col-md-4  adv__bridge-item">
+              <h3 class="adv__title">Небольшая площадь</h3>
+              <span class="adv__number">№3</span>
+              <p>Все достопримечательности находятся очень близко</p>
+            </li>
+            <li class="col-12  col-md-4  adv__bridge-item">
+              <h3 class="adv__title">Красивая дорога</h3>
+              <span class="adv__number">№4</span>
+              <p>Ехать в седону из лас-вегаса совсем не скучно!</p>
+            </li>
+            <li class="col-12  col-md-4  adv__bridge-item">
+              <h3 class="adv__title">Мало туристов</h3>
+              <span class="adv__number">№5</span>
+              <p>Большинство едет в гранд каньон и толпится там</p>
+            </li>
+          </ul>
         </li>
       </ul>
     </section>
     <section class="hotels">
-      <b class="hotels__title">Заинтересовались?</b>
-      <p>Укажите предполагаемые даты поездки и мы покажем вам лучшие предложения гостинниц в Седоне</p>
-      <button type="button" class="btn hotels__btn">Найти гостиницу</button>
-      <div class="hotels__map"></div>
+      <div class="hotels__inner">
+        <h2 class="hotels__title">Заинтересовались?</h2>
+        <p class="hotels__desc">Укажите предполагаемые даты поездки и мы покажем вам лучшие предложения гостинниц в
+          Седоне</p>
+        <button type="button" class="btn hotels__btn">Найти гостиницу</button>
+
+      </div>
+      <div class="hotels__map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26192.59025297216!2d-111.81264836136899!3d34.8543733810828!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872da132f942b00d%3A0x5548c523fa6c8efd!2z0KHQtdC00L7QvdCwLCDQkNGA0LjQt9C-0L3QsCA4NjMzNiwg0KHQqNCQ!5e0!3m2!1sru!2sua!4v1516978777040"
+          width="100%" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
+      </div>
     </section>
   </main>
   <footer class="page-footer">
-    <div class="page-footer__inner">
-      <p class="page-footer__hashtag">
+    <div class="row  page-footer__inner">
+      <p class="col-12  col-md-4  page-footer__hashtag">
         <a href="#">#VISITSEDONA</a>
       </p>
-      <p class="page-footer__social">
-          <span class="social-links">
-            <a class="social-link  social-link--fb  page-footer__btn" href="">Мы в Фейсбуке</a>
-            <a class="social-link  social-link--in  page-footer__btn" href="">Мы в Твиттере</a>
-            <a class="social-link  social-link--vk  page-footer__btn" href="">Мы в Ютубе</a>
+      <p class="col-12  col-md-4  page-footer__social">
+          <span class="social-list">
+            <a class="social-link  btn" href=""><i class="fa fa-facebook" aria-hidden="true"></i></a>
+            <a class="social-link  btn" href=""><i class="fa fa-twitter" aria-hidden="true"></i></a>
+            <a class="social-link  btn" href=""><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
           </span>
       </p>
-      <p class="page-footer__copyright">
-        Layout design by:
-        <a class="page-footer__btn  page-footer__copyright-link" href="https://htmlacademy.ru/"><img src=""
-                                                                                                     alt="Html Academy"
-                                                                                                     title="Html Academy"></a>
+      <p class="col-12  col-md-4  page-footer__copyright">
+        <span>Layout design by:</span>
+        <a class="page-footer__btn  page-footer__copyright-link" href="https://htmlacademy.ru/">
+          <svg id="htmlacademy-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 43.49 54.62" width="28px" height="40px">
+            <title>htmlacademy</title>
+            <g>
+              <path d="M1.4,3.5,21.8,1.4,42.1,3.5V41L21.8,53,1.4,41Z" style="stroke-width: 2.7909998893737793px"/>
+              <path d="M1.7,20.9,21.1,9.6,42,20.9v1.2L21.8,34,1.7,22.1Z" style="stroke-width: 2.056999921798706px"/>
+              <polygon points="21.8 21.1 31.3 27 29.7 27.9 21.8 23.1 21.8 25.3 28 29 26.5 29.9 21.8 27.1 21.8 29 24.7 30.9 21.8 32.8 21.8 37.1 8.7 29.5 8.7 31.4 21.8 39.1 21.8 41.2 8.7 33.3 8.7 35.5 21.8 43.1 34.7 35.3 34.7 26.9 21.8 19 21.8 21.1" style=""/>
+            </g>
+          </svg>
+
+
+        </a>
       </p>
     </div>
   </footer>
-  <div class="modal-content">
-    <h2 class="modal-content__title">Личный кабинет</h2>
-    <p>Введите свой логин и пароль, что бы войти</p>
-    <form class="modal-content__login-form" action="" method="post">
-      <input class="modal-content__field modal-content__field--icon-login" type="text" name="login" placeholder="Логин">
-      <input class="modal-content__field modal-content__field--icon-password" type="password" name="password"
-             placeholder="Пароль">
-      <label class="modal-content__checkbox-label"><input class="modal-content__checkbox-input" type="checkbox"
-                                                          name="remember"><span
-        class="modal-content__checkbox-indicator"></span>Запомните меня</label>
-      <a href="" class="modal-content__restore">Я забыл пароль!</a>
-      <button class="modal-content__login btn" type="submit">Войти</button>
-      <button class="modal-content__close btn" type="button" title="Закрыть">Закрыть</button>
-    </form>
-  </div>
 </div>
 <div class="top" title="Наверх"><i class="fa fa-plane"></i></div>
-<!-- <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css"> -->
+<link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css">
 <link rel="stylesheet" href="css/libs.min.css">
 <link rel="stylesheet" href="css/style.css"> <!-- в разработке использовать неминимизированный -->
 <script src="js/libs.min.js"></script>

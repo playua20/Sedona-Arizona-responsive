@@ -1,5 +1,99 @@
 .page-footer {
-  min-height: 100px;
-  min-height: '*';
-  margin-top: '-*'; // отрицательный margin = height:
+  text-align: center;
+  padding: 20px 0 0;
+  @include conf();
+  background:#fefefe;
+}
+.page-footer__hashtag a {
+  text-align: center;
+  color: black;
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 26px;
+  text-decoration: none;
+  display: inline-block;
+  &:visited {
+    color: #000;
+  }
+}
+
+.social-list {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.social-link {
+  width: 48px;
+  height: 48px;
+  background: $accent;
+  margin-right: 6px;
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.page-footer__copyright {
+  color: black;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 26px;
+  text-align: center;
+  & span {
+    display: inline-block;
+    margin-right: 5px;
+  }
+  & a {
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+
+#htmlacademy-logo path {
+  fill: none;
+  stroke: #000;
+  transition: .2s;
+}
+
+#htmlacademy-logo:hover path {
+  stroke: $accent;
+}
+
+#htmlacademy-logo:active path {
+  stroke: lighten(#000, 70%);
+}
+
+#htmlacademy-logo polygon {
+  fill: #000;
+  transition: .2s;
+}
+
+#htmlacademy-logo:hover polygon {
+  fill: $accent;
+}
+
+#htmlacademy-logo:active polygon {
+  fill: lighten(#000, 70%);
+}
+// mobile only start
+@media (max-width: 767px) {
+  .page-footer__hashtag {
+    padding-bottom: 8px;
+  }
+  .social-list {
+    margin-bottom: 8px;
+  }
+
+// mobile only end
+}
+
+// tablet start
+@media (min-width: 768px) {
+  .page-footer__inner {
+    min-height: 120px;
+    align-items: center;
+    //padding-top: 40px;
+  }
+
+  // tablet end
 }

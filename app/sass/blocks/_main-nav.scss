@@ -81,7 +81,6 @@
   line-height: 25px;
   padding-top: 15px;
   padding-bottom: 15px;
-  font-family: PTSans, sans-serif;
   font-size: 14px;
   font-weight: 700;
   text-transform: uppercase;
@@ -121,8 +120,16 @@
   .main-nav__item a {
     color: #000;
     background: #fff;
+    &:hover {
+      color: $accent;
+    }
+    &:active {
+      color: rgba(0,0,0,.3);
+    }
   }
-
+  .main-nav__item:not(.main-nav__item--logo) {
+    display: block !important;
+  }
   // tablet end
 }
 
