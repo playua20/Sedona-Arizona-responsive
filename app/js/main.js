@@ -28,4 +28,31 @@ $(document).ready(function () {
   });
 });
 
+$(document).ready(function() {
+  if (window.matchMedia("(max-width: 767px)").matches) {
+    $('#view').setZoomPicture({
+      thumbsContainer: '#pics-thumbs',
+      prevContainer: '#nav-left-thumbs',
+      nextContainer: '#nav-right-thumbs',
+      loadMsg: 'Loading...'
+    });
+  }
+  // else  if (window.matchMedia("(min-width: 768px)").matches) {
+  //   $('#view').setZoomPicture({
+  //     thumbsContainer: '#pics-thumbs',
+  //     prevContainer: '#nav-left-thumbs',
+  //     nextContainer: '#nav-right-thumbs',
+  //     zoomContainer: '#zoom',
+  //     loadMsg: 'Loading...'
+  //   });
+  // };
+});
+
+// $(document).ready(function() {
+//   $('#view').setZoomPicture({
+//     if (window.matchMedia("(min-width: 768px)").matches) {
+//     zoomContainer: '#zoom'
+//   }
+//   });
+// });
 // ||  - оператор или

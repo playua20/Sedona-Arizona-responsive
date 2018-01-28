@@ -2,13 +2,16 @@ body {
   opacity: 1;
   overflow-x: hidden;
   background-color: #f2f2f2;
+  color: #333;
   font-family: 'PT Sans', Helvetica, sans-serif;
   text-transform: uppercase;
   font-size: 14px;
   line-height: 21px;
   font-weight: 400;
 }
-
+.page-wrapper {
+  overflow: hidden;
+}
 .btn {
   display: inline-block;
   text-decoration: none;
@@ -41,6 +44,9 @@ body {
   &:disabled {
     background-color: #e5e5e5;
   }
+}
+h1, h2, h3, h4, h4, h6 {
+  color: #000;
 }
 
 // tablet start

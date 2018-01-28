@@ -1,6 +1,5 @@
 .page-footer {
   text-align: center;
-  padding: 20px 0 0;
   @include conf();
   background:#fefefe;
 }
@@ -77,6 +76,9 @@
 }
 // mobile only start
 @media (max-width: 767px) {
+  .page-footer__inner {
+    padding: 20px 0 0;
+  }
   .page-footer__hashtag {
     padding-bottom: 8px;
   }
@@ -92,8 +94,20 @@
   .page-footer__inner {
     min-height: 120px;
     align-items: center;
-    //padding-top: 40px;
+    padding: 0 60px;
   }
 
   // tablet end
+}
+// tablet only start
+@media (min-width: 768px) and (max-width: 1199px) {
+
+  .page-footer__hashtag {
+    text-align: left;
+  }
+  .page-footer__copyright {
+    text-align: right;
+  }
+
+// tablet only end
 }

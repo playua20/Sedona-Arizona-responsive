@@ -3,8 +3,8 @@
 }
 
 .greating {
-  min-height: 117px;
-  padding: 90px 0 85px;
+  min-height: 100px;
+  padding: 50px 0 65px;
   background: #81b3d2 url("/img/bg-desktop.jpg") center no-repeat;
 }
 
@@ -13,9 +13,18 @@
   display: block;
 }
 
+// tablet start
 @media (min-width: 768px) {
   .greating {
-    min-height: 350px;
+    min-height: 250px;
     padding: 68px 0 100px;
   }
+
+  .isnothome  .greating {
+    padding: 100px 0 120px;
+    //min-height: 90px;
+  }
+
+
+// tablet end
 }

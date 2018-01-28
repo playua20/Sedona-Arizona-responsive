@@ -52,6 +52,7 @@ gulp.task('browser-sync', function() { // Создаем таск browser-sync
 gulp.task('js-libs', function() {
 	return gulp.src([ // Берем все необходимые библиотеки
 		'app/libs/jquery/dist/jquery.js', // Берем jQuery
+		'app/libs/gallery-zoom/js/zoom-slideshow.js',
 		// 'app/libs/popper/dist/umd/popper.js',
 		// 'app/libs/tether/dist/js/tether.js',
 		// 'app/libs/bootstrap/js/dist/util.js',
