@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
-  <link  href="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet"> <!-- 3 KB -->
+  <link href="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet"> <!-- 3 KB -->
   <script src="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script>
 </head>
 
@@ -56,20 +56,28 @@
       </div>
     </section>
     <section class="photos">
-      <div id="view">
-        <img src="img/fotorama-1.jpg" alt="" />
+      <div id="gallery" style="display:none;">
+
+        <img alt="Preview Image 1"
+             src="images/thumbs/thumb1.jpg"
+             data-image="img/devils-bridge.jpg"
+             data-description="Preview Image 1 Description">
+
+        <img alt="Preview Image 2"
+             src="images/thumbs/thumb2.jpg"
+             data-image="img/holiday.jpg"
+             data-description="Preview Image 2 Description">
+
+        <img alt="Preview Image 2"
+             src="images/thumbs/thumb2.jpg"
+             data-image="img/oak-creek-canyon.jpg"
+             data-description="Preview Image 2 Description">
+
+        <img alt="Youtube Video"
+             data-type="youtube"
+             data-videoid="A3PDXmYoF5U"
+             data-description="You can include youtube videos easily!">
       </div>
-      <div id="thumbs">
-        <div id="nav-left-thumbs"><</div>
-        <div id="pics-thumbs">
-          <img src="img/fotorama-1.jpg" alt="Nature2" />
-          <img src="img/fotorama-2.jpg" alt="Nature2" />
-          <img src="img/fotorama-3.jpg" alt="Nature3" />
-          <img src="img/fotorama-4.jpg" alt="Nature4" />
-        </div>
-        <div id="nav-right-thumbs">></div>
-      </div>
-      <div id="zoom"></div>
 
     </section>
     <section class="video">
