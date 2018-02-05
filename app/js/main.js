@@ -5,6 +5,7 @@ $(window).scroll(function () {
     $('.top').removeClass('active');
   }
 });
+
 $('.top').click(function () {
   $('html, body').stop().animate({scrollTop: 0}, 'slow', 'swing');
 });
@@ -19,4 +20,14 @@ $(document).ready(function () {
   });
 });
 
-jQuery("#gallery").unitegallery();
+$(document).ready(function () {
+  $('.parent-container').magnificPopup({
+    delegate: '.photo__item > a', // child items selector, by clicking on it popup will open
+    type: 'image',
+    gallery: {enabled: true},
+    image: {
+      cursor: 'mfp-zoom-out-cur',
+    },
+  });
+  // $('.mfp-content .mfp-figure figure').append('.photo__item-caption');
+});

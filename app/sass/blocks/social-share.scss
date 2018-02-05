@@ -1,0 +1,25 @@
+.social-share-list__wrapper {
+  //height: 76px;
+  background: #eee;
+}
+.social-share-list {
+  text-align: center;
+  padding: 5px 0 0;
+  margin: 0 auto;
+}
+div.social-share {
+  margin-bottom: 5px !important;
+  height: 28px;
+}
+
+// tablet start
+@media (min-width: 768px) {
+  .social-share-list__wrapper {
+    //height: 38px;
+  }
+  .social-share-list {
+    width: 600px;
+  }
+
+// tablet end
+}

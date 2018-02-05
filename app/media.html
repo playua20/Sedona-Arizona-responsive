@@ -4,12 +4,56 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-  <link href="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet"> <!-- 3 KB -->
-  <script src="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script>
-</head>
+  <title>Sedona - Media</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#603cba">
+  <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+  <style>
+    body {
+      opacity: 0;
+      overflow-x: hidden;
+    }
 
+    html {
+      background-color: #81b3d2;
+    }
+  </style>
+</head>
 <body class="isnothome">
+<script>(function (d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.12';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<a class="twitter-share-button"
+   href="https://twitter.com/share"
+   data-size="large"
+   data-text="custom share text"
+   data-url="https://dev.twitter.com/web/tweet-button"
+   data-hashtags="example,demo"
+   data-via="twitterdev"
+   data-related="twitterapi,twitter">
+</a>
+<script>
+  window.___gcfg = {
+    lang: 'zh-CN',
+    parsetags: 'onload'
+  };
+</script>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<script
+  type="text/javascript"
+  async defer
+  src="//assets.pinterest.com/js/pinit.js">
+</script>
 <div class="preloader">
   <div class="pulse"></div>
 </div>
@@ -31,7 +75,7 @@
               </picture>
             </li>
             <li class="col-12 col-md main-nav__item"><a href="form.html">Форма отзыва</a></li>
-            <li class="co l-12 col-md main-nav__item"><a href="#hash-footer" disabled>Контакты</a></li>
+            <li class="co l-12 col-md main-nav__item"><a href="#hash-footer">Контакты</a></li>
           </ul>
 
         </div>
@@ -56,29 +100,74 @@
       </div>
     </section>
     <section class="photos">
-      <div id="gallery" style="display:none;">
-
-        <img alt="Preview Image 1"
-             src="images/thumbs/thumb1.jpg"
-             data-image="img/devils-bridge.jpg"
-             data-description="Preview Image 1 Description">
-
-        <img alt="Preview Image 2"
-             src="images/thumbs/thumb2.jpg"
-             data-image="img/holiday.jpg"
-             data-description="Preview Image 2 Description">
-
-        <img alt="Preview Image 2"
-             src="images/thumbs/thumb2.jpg"
-             data-image="img/oak-creek-canyon.jpg"
-             data-description="Preview Image 2 Description">
-
-        <img alt="Youtube Video"
-             data-type="youtube"
-             data-videoid="A3PDXmYoF5U"
-             data-description="You can include youtube videos easily!">
+      <div class="parent-container">
+        <div class="photo__item">
+          <a href="img/holiday.jpg">
+            <img src="img/holiday.jpg" alt="" title="">
+          </a>
+          <div class="photo__item-caption  row">
+            <div class="photo__item-caption-left  row">
+              <p class="photo__item-desc  col-12">Бесплатные бассейны</p>
+              <p class="photo__item-auth  col-12">Рома</p>
+            </div>
+          </div>
+        </div>
+        <div class="photo__item">
+          <a href="img/devils-bridge.jpg">
+            <img src="img/devils-bridge.jpg" alt="" title="">
+          </a>
+          <div class="photo__item-caption  row">
+            <div class="photo__item-caption-left  row">
+              <p class="photo__item-desc  col-12">Дьявольский мост</p>
+              <p class="photo__item-auth  col-12">Артур</p>
+            </div>
+          </div>
+        </div>
+        <div class="photo__item">
+          <a href="img/oak-creek-canyon.jpg">
+            <img src="img/oak-creek-canyon.jpg" alt="" title="">
+          </a>
+          <div class="photo__item-caption  row">
+            <div class="photo__item-caption-left  row">
+              <p class="photo__item-desc  col-12">Снежно-вечерняя Седона</p>
+              <p class="photo__item-auth  col-12">Ира</p>
+            </div>
+          </div>
+        </div>
+        <div class="photo__item">
+          <a href="img/water.jpg">
+            <img src="img/water.jpg" alt="" title="">
+          </a>
+          <div class="photo__item-caption  row">
+            <div class="photo__item-caption-left  row">
+              <p class="photo__item-desc  col-12">Лососевый ручей</p>
+              <p class="photo__item-auth  col-12">Евгений</p>
+            </div>
+          </div>
+        </div>
+        <div class="photo__item">
+          <a href="img/road-north.jpg">
+            <img src="img/road-north.jpg" alt="" title="">
+          </a>
+          <div class="photo__item-caption  row">
+            <div class="photo__item-caption-left  row">
+              <p class="photo__item-desc  col-12">Двое неизвестных</p>
+              <p class="photo__item-auth  col-12">Антон</p>
+            </div>
+          </div>
+        </div>
+        <div class="photo__item">
+          <a href="img/road-north-2.jpg">
+            <img src="img/road-north-2.jpg" alt="" title="">
+          </a>
+          <div class="photo__item-caption">
+            <div class="photo__item-caption-left row">
+              <p class="photo__item-desc  col-12">Дорога в неродные просторы</p>
+              <p class="photo__item-auth  col-12">Елизавета</p>
+            </div>
+          </div>
+        </div>
       </div>
-
     </section>
     <section class="video">
       <div class="video__inner">
@@ -94,15 +183,39 @@
     </section>
   </main>
   <footer id="hash-footer" class="page-footer">
+    <div class="social-share-list__wrapper">
+      <div class="social-share-list  row">
+        <div class="social-share  col-5  col-md-3">
+          <div class="fb-like" data-href="http://localhost:3000/media.html" data-layout="button_count"
+               data-action="like" data-size="large" data-show-faces="false" data-share="false"></div>
+        </div>
+        <div class="social-share  col-5  col-md-3">
+          <iframe
+            src="https://platform.twitter.com/widgets/tweet_button.html?size=l&url=https%3A%2F%2Fdev.twitter.com%2Fweb%2Ftweet-button&via=twitterdev&related=twitterapi%2Ctwitter&text=custom%20share%20text&hashtags=example%2Cdemo"
+            data-size="large"
+            title="Twitter Tweet Button"
+            style="border: 0; overflow: hidden !important;">
+          </iframe>
+        </div>
+        <div class="social-share  pull-1  pull-md-0  col-2  col-md-1">
+          <div class="g-plusone" data-height="40"></div>
+        </div>
+        <div class="social-share  col-10  col-md-5">
+          <a data-pin-do="buttonPin"
+             href="https://www.pinterest.com/pin/create/button/?url=http://www.foodiecrush.com/2014/03/filet-mignon-with-porcini-mushroom-compound-butter/&media=https://i.pinimg.com/736x/17/34/8e/17348e163a3212c06e61c41c4b22b87a.jpg&description=So%20delicious!"
+             data-pin-config="beside" data-pin-tall="28"></a>
+        </div>
+      </div>
+    </div>
     <div class="row  page-footer__inner">
       <p class="col-12  col-md-4  page-footer__hashtag">
         <a href="#">#VISITSEDONA</a>
       </p>
       <p class="col-12  col-md-4  page-footer__social">
           <span class="social-list">
-            <a class="social-link  btn" href=""><i class="fa fa-facebook" aria-hidden="true"></i></a>
-            <a class="social-link  btn" href=""><i class="fa fa-twitter" aria-hidden="true"></i></a>
-            <a class="social-link  btn" href=""><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+            <a class="social-link  btn" href=""><i class="fab fa-facebook" aria-hidden="true"></i></a>
+            <a class="social-link  btn" href=""><i class="fab fa-twitter" aria-hidden="true"></i></a>
+            <a class="social-link  btn" href=""><i class="fab fa-youtube" aria-hidden="true"></i></a>
           </span>
       </p>
       <p class="col-12  col-md-4  page-footer__copyright">
@@ -127,7 +240,6 @@
   </footer>
 </div>
 <div class="top" title="Наверх"><i class="fa fa-plane"></i></div>
-<link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css">
 <link rel="stylesheet" href="css/libs.css">
 <link rel="stylesheet" href="css/style.css"> <!-- в разработке использовать неминимизированный -->
 <script src="js/libs.min.js"></script>

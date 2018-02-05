@@ -1,0 +1,121 @@
+.photos {
+  text-align: center;
+  padding: 0 20px;
+  background: #fff;
+}
+
+.photo__item {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  padding-bottom: 80px;
+}
+
+.photo__item:first-child {
+  width: 100%;
+}
+
+.photo__item a img {
+  display: block;
+  width: 100%;
+}
+
+.photo__item-caption {
+  text-align: left;
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0px;
+  height: 80px;
+  padding: 20px 0;
+  background: #fff;
+  z-index: 1;
+  margin: 0; // удаляем лишние отступы бутстрап
+
+  & p {
+    margin: 0;
+  }
+}
+
+.photo__item-desc {
+  font-weight: bold;
+}
+
+.photo__item-auth {
+  text-transform: none;
+}
+
+.mfp-image-holder .mfp-close, .mfp-iframe-holder .mfp-close {
+  width: 5%;
+  right: 15px;
+}
+
+// tablet start
+@media (min-width: 768px) {
+  .photos {
+    padding: 0 60px;
+  }
+  .photo__item {
+    width: 49.4%;
+  }
+  .photo__item:first-child {
+    overflow: hidden;
+  }
+  .photo__item:first-child a img {
+    margin: -100px 0;
+  }
+  .photo__item-caption {
+    padding: 20px;
+    background: #f2f2f2;
+  }
+
+  // tablet end
+}
+
+// mobile only start
+@media (max-width: 767px) {
+  .photo__item {
+    padding-top: 20px;
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: -20px;
+      right: -20px;
+      height: 1px;
+      background: #e5e5e5;
+      z-index: 20;
+    }
+  }
+  .photo__item:first-child::before {
+    top: 0;
+  }
+
+  // mobile only end
+}
+
+// desktop start
+@media (min-width: 1200px) {
+  .photos {
+    padding: 0;
+  }
+
+  .photo__item {
+    width: 33%;
+    margin-bottom: 5px;
+    padding-bottom: 0;
+  }
+  .photo__item:first-child {
+    overflow: hidden;
+  }
+  .photo__item-caption {
+    color: #fff;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    width: 100%;
+  }
+
+  // desktop end
+}

@@ -52,16 +52,13 @@ gulp.task('browser-sync', function() { // Создаем таск browser-sync
 gulp.task('js-libs', function() {
 	return gulp.src([ // Берем все необходимые библиотеки
 		'app/libs/jquery/dist/jquery.js', // Берем jQuery
-		'app/libs/unitegallery-master/dist/js/unitegallery.js',
-		'app/libs/unitegallery-master/dist/themes/default/ug-theme-default.js',
-		// 'app/libs/gallery-zoom/js/zoom-slideshow.js',
 		// 'app/libs/popper/dist/umd/popper.js',
 		// 'app/libs/tether/dist/js/tether.js',
 		// 'app/libs/bootstrap/js/dist/util.js',
 		// 'app/libs/bootstrap/js/dist/tooltip.js',
 		// 'app/libs/bootstrap/js/dist/popover.js',
+    'app/libs/magnific-popup/dist/jquery.magnific-popup.js',
 		// 'app/js/main.js' // Всегда в конце
-		// 'app/libs/magnific-popup/dist/jquery.magnific-popup.min.js' // использовать для страницы media.html в Sedona
 		])
 		.pipe(concat('libs.min.js')) // Собираем их в кучу в новом файле libs.min.js
 		.pipe(uglify()) // Сжимаем JS файл
