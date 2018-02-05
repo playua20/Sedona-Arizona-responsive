@@ -31,3 +31,9 @@ $(document).ready(function () {
   });
   // $('.mfp-content .mfp-figure figure').append('.photo__item-caption');
 });
+
+$(document).ready(function () {
+  $("#share").jsSocials({
+    shares: ["email", "twitter", "facebook", "googleplus", "linkedin", "pinterest", "stumbleupon", "whatsapp"]
+  });
+});

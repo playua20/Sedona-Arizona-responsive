@@ -12,7 +12,6 @@
   <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
   <meta name="msapplication-TileColor" content="#603cba">
   <meta name="msapplication-TileImage" content="/mstile-144x144.png">
-  <meta name="theme-color" content="#ffffff">
   <style>
     body {
       opacity: 0;
@@ -25,35 +24,6 @@
   </style>
 </head>
 <body class="isnothome">
-<script>(function (d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s);
-  js.id = id;
-  js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.12';
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-<a class="twitter-share-button"
-   href="https://twitter.com/share"
-   data-size="large"
-   data-text="custom share text"
-   data-url="https://dev.twitter.com/web/tweet-button"
-   data-hashtags="example,demo"
-   data-via="twitterdev"
-   data-related="twitterapi,twitter">
-</a>
-<script>
-  window.___gcfg = {
-    lang: 'zh-CN',
-    parsetags: 'onload'
-  };
-</script>
-<script src="https://apis.google.com/js/platform.js" async defer></script>
-<script
-  type="text/javascript"
-  async defer
-  src="//assets.pinterest.com/js/pinit.js">
-</script>
 <div class="preloader">
   <div class="pulse"></div>
 </div>
@@ -169,6 +139,9 @@
         </div>
       </div>
     </section>
+    <section class="share__wrapper">
+      <div id="share"></div>
+    </section>
     <section class="video">
       <div class="video__inner">
         <div class="video__header">
@@ -183,39 +156,15 @@
     </section>
   </main>
   <footer id="hash-footer" class="page-footer">
-    <div class="social-share-list__wrapper">
-      <div class="social-share-list  row">
-        <div class="social-share  col-5  col-md-3">
-          <div class="fb-like" data-href="http://localhost:3000/media.html" data-layout="button_count"
-               data-action="like" data-size="large" data-show-faces="false" data-share="false"></div>
-        </div>
-        <div class="social-share  col-5  col-md-3">
-          <iframe
-            src="https://platform.twitter.com/widgets/tweet_button.html?size=l&url=https%3A%2F%2Fdev.twitter.com%2Fweb%2Ftweet-button&via=twitterdev&related=twitterapi%2Ctwitter&text=custom%20share%20text&hashtags=example%2Cdemo"
-            data-size="large"
-            title="Twitter Tweet Button"
-            style="border: 0; overflow: hidden !important;">
-          </iframe>
-        </div>
-        <div class="social-share  pull-1  pull-md-0  col-2  col-md-1">
-          <div class="g-plusone" data-height="40"></div>
-        </div>
-        <div class="social-share  col-10  col-md-5">
-          <a data-pin-do="buttonPin"
-             href="https://www.pinterest.com/pin/create/button/?url=http://www.foodiecrush.com/2014/03/filet-mignon-with-porcini-mushroom-compound-butter/&media=https://i.pinimg.com/736x/17/34/8e/17348e163a3212c06e61c41c4b22b87a.jpg&description=So%20delicious!"
-             data-pin-config="beside" data-pin-tall="28"></a>
-        </div>
-      </div>
-    </div>
     <div class="row  page-footer__inner">
       <p class="col-12  col-md-4  page-footer__hashtag">
         <a href="#">#VISITSEDONA</a>
       </p>
       <p class="col-12  col-md-4  page-footer__social">
           <span class="social-list">
-            <a class="social-link  btn" href=""><i class="fab fa-facebook" aria-hidden="true"></i></a>
-            <a class="social-link  btn" href=""><i class="fab fa-twitter" aria-hidden="true"></i></a>
-            <a class="social-link  btn" href=""><i class="fab fa-youtube" aria-hidden="true"></i></a>
+            <a class="social-link  btn" href=""><i class="fa fa-facebook" aria-hidden="true"></i></a>
+            <a class="social-link  btn" href=""><i class="fa fa-twitter" aria-hidden="true"></i></a>
+            <a class="social-link  btn" href=""><i class="fa fa-youtube" aria-hidden="true"></i></a>
           </span>
       </p>
       <p class="col-12  col-md-4  page-footer__copyright">

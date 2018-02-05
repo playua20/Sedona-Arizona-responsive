@@ -22,6 +22,9 @@
     "jquery": "^3.2.1",
     "normalize-css": "^7.0.0",
     "popper.js": "^1.12.9",
-    "magnific-popup": "^1.1.0"
-  }
+    "magnific-popup": "^1.1.0",
+    "jssocials": "^1.5.0",
+    "font-awesome": "^4.7.0"
+  },
+  "devDependencies": {}
 }

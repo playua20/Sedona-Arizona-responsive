@@ -58,6 +58,7 @@ gulp.task('js-libs', function() {
 		// 'app/libs/bootstrap/js/dist/tooltip.js',
 		// 'app/libs/bootstrap/js/dist/popover.js',
     'app/libs/magnific-popup/dist/jquery.magnific-popup.js',
+    'app/libs/jssocials/dist/jssocials.js',
 		// 'app/js/main.js' // Всегда в конце
 		])
 		.pipe(concat('libs.min.js')) // Собираем их в кучу в новом файле libs.min.js

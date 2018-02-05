@@ -1,5 +1,7 @@
 /*! normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css */
-@import url(../libs/fontawesome-free-5.0.6/web-fonts-with-css/css/fontawesome-all.css);
+@import url(../libs/font-awesome/css/font-awesome.css);
+@import url(../libs/jssocials/dist/jssocials.css);
+@import url(../libs/jssocials/dist/jssocials-theme-flat.css);
 html {
   font-family: sans-serif;
   line-height: 1.15;
