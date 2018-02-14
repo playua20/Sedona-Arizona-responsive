@@ -1,0 +1,6 @@
+Ключ
+Добавьте этот ключ в HTML-код сайта.
+6Ldrd0UUAAAAAGLKF3WmRiswi4-1xfVd_pHdkC7a
+Секретный ключ
+Этот ключ нужен для связи между вашим сайтом и Google. Никому его не сообщайте.
+6Ldrd0UUAAAAAGKPMhcxwud0OZigUQldbYM7s6mU
