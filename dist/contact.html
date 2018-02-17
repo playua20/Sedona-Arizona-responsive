@@ -23,11 +23,11 @@
     }
   </style>
 </head>
-<body class="inner-page  page-screen">
+<body class="inner-page">
 <div class="preloader">
   <div class="pulse"></div>
 </div>
-<div class="page-wrapper  page-wrapper-thankyou">
+<div class="page-wrapper">
   <header class="page-header">
     <div class="page-header__inner">
       <nav class="main-nav  main-nav--closed  main-nav--nojs">
@@ -61,7 +61,81 @@
   </header>
   <main>
 
-      <h1 class="thankyou__title">Сообщение отправлено!</h1>
+    <div class="container">
+
+      <div class="row">
+
+        <div class="form-wrapper  col-lg-8 col-lg-offset-2">
+
+          <h1 class="intro__slogan-title">Напишите нам</h1>
+
+          <form id="contact-form" method="post" action="contact.php" role="form">
+
+            <div class="messages"></div>
+
+            <div class="controls">
+
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="form_name">Firstname *</label>
+                    <input id="form_name" type="text" name="name" class="form-control" placeholder="Please enter your firstname *" required="required" data-error="Firstname is required.">
+                    <div class="help-block with-errors"></div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="form_lastname">Lastname *</label>
+                    <input id="form_lastname" type="text" name="surname" class="form-control" placeholder="Please enter your lastname *" required="required" data-error="Lastname is required.">
+                    <div class="help-block with-errors"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="form_email">Email *</label>
+                    <input id="form_email" type="email" name="email" class="form-control" placeholder="Please enter your email *" required="required" data-error="Valid email is required.">
+                    <div class="help-block with-errors"></div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="form_phone">Phone</label>
+                    <input id="form_phone" type="tel" name="phone" class="form-control" placeholder="Please enter your phone">
+                    <div class="help-block with-errors"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label for="form_message">Message *</label>
+                    <textarea id="form_message" name="message" class="form-control" placeholder="Message for me *" rows="4" required="required" data-error="Please,leave us a message."></textarea>
+                    <div class="help-block with-errors"></div>
+                  </div>
+                </div>
+
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <!-- Replace data-sitekey with your own one, generated at https://www.google.com/recaptcha/admin -->
+                    <div class="g-recaptcha" data-sitekey="6Ldrd0UUAAAAAGLKF3WmRiswi4-1xfVd_pHdkC7a"></div>
+                  </div>
+                </div>
+
+                <div class="col-md-12">
+                  <input type="submit" class="btn btn-success btn-send" value="Send message">
+                </div>
+              </div>
+            </div>
+
+          </form>
+
+        </div><!-- /.8 -->
+
+      </div> <!-- /.row-->
+
+    </div>
 
   </main>
   <footer id="hash-footer" class="page-footer">
@@ -98,6 +172,9 @@
   </footer>
 </div>
 <div class="top" title="Наверх"><i class="fa fa-plane"></i></div>
+
+<script src='https://www.google.com/recaptcha/api.js'></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="css/libs.min.css">
 <link rel="stylesheet" href="css/style.css"> <!-- в разработке использовать неминимизированный -->
 <script src="js/libs.min.js"></script>

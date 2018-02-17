@@ -59,7 +59,7 @@ $lang = 'en';
         </style>
     </head>
     <body>
-        <h1>reCAPTCHA Example</h1>
+        <h1 class="intro__slogan-title">reCAPTCHA Example</h1>
         <?php if ($siteKey === '' || $secret === ''): ?>
             <h2>Add your keys</h2>
             <p>If you do not have keys already then visit <kbd>

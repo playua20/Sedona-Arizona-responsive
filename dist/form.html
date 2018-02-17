@@ -44,7 +44,8 @@
                 <img src="img/logotype-mobile.svg" alt="городок Седона">
               </picture>
             </li>
-            <li class="col-12 col-md main-nav__item  main-nav__item--active"><a href="form.html">Форма отзыва</a></li>
+            <li class="col-12 col-md main-nav__item  main-nav__item--active"><a href="form.html">Форма отзыва</a>
+            </li>
             <li class="co l-12 col-md main-nav__item"><a href="#hash-footer">Контакты</a></li>
           </ul>
 
@@ -61,81 +62,98 @@
   </header>
   <main>
 
-    <div class="container">
 
-      <div class="row">
+    <section class="intro">
+      <div class="intro__slogan">
+        <h1 class="intro__slogan-title">Оставьте свой отзыв</h1>
+        <p>Помогите нашим отелям стать лучше! оставьте отзыв о них, а также о посещенных вами
+          достопримечательностях</p>
+      </div>
+    </section>
 
-        <div class="form-wrapper  col-lg-8 col-lg-offset-2">
-
-          <h1>Напишите нам</h1>
-
-          <form id="contact-form" method="post" action="contact.php" role="form">
-
-            <div class="messages"></div>
-
-            <div class="controls">
-
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="form_name">Firstname *</label>
-                    <input id="form_name" type="text" name="name" class="form-control" placeholder="Please enter your firstname *" required="required" data-error="Firstname is required.">
-                    <div class="help-block with-errors"></div>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="form_lastname">Lastname *</label>
-                    <input id="form_lastname" type="text" name="surname" class="form-control" placeholder="Please enter your lastname *" required="required" data-error="Lastname is required.">
-                    <div class="help-block with-errors"></div>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="form_email">Email *</label>
-                    <input id="form_email" type="email" name="email" class="form-control" placeholder="Please enter your email *" required="required" data-error="Valid email is required.">
-                    <div class="help-block with-errors"></div>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="form_phone">Phone</label>
-                    <input id="form_phone" type="tel" name="phone" class="form-control" placeholder="Please enter your phone">
-                    <div class="help-block with-errors"></div>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-12">
-                  <div class="form-group">
-                    <label for="form_message">Message *</label>
-                    <textarea id="form_message" name="message" class="form-control" placeholder="Message for me *" rows="4" required="required" data-error="Please,leave us a message."></textarea>
-                    <div class="help-block with-errors"></div>
-                  </div>
-                </div>
-
-                <div class="col-md-12">
-                  <div class="form-group">
-                    <!-- Replace data-sitekey with your own one, generated at https://www.google.com/recaptcha/admin -->
-                    <div class="g-recaptcha" data-sitekey="6Ldrd0UUAAAAAGLKF3WmRiswi4-1xfVd_pHdkC7a"></div>
-                  </div>
-                </div>
-
-                <div class="col-md-12">
-                  <input type="submit" class="btn btn-success btn-send" value="Send message">
-                </div>
-              </div>
+    <section class="s-form-send">
+      <form id="form-send" action="/php/form.php" method="post" name="form-send">
+        <div class="form-send__inner  row">
+          <div class="form-send__initials  form-send__b  row  col-md-5">
+            <h3 class="form-send__title  col-12">Представьтесь, пожалуйста:</h3>
+            <div class="form-send__item  row  col-12">
+              <label class="col-3" for="form-send__name">Имя:</label>
+              <input class="col-9" type="text" name="name" id="form-send__name" placeholder="Джон">
+            </div>
+            <div class="form-send__item  row  col-12">
+              <label class="col-4" for="form-send__burname">Фамилия:</label>
+              <input class="col-8" type="text" name="surname" id="form-send__burname" placeholder="Трамп">
+            </div>
+            <div class="form-send__item  row  col-12">
+              <label class="col-4" for="form-send__patronymic">Отчество:</label>
+              <input class="col-8" type="text" name="patronymic" id="form-send__patronymic" placeholder="Олегович">
             </div>
 
-          </form>
+          </div>
+          <div class="form-send__contacts  form-send__b  row">
+            <h3 class="form-send__title  col-12">Контактная информация:</h3>
+            <div class="form-send__item  row">
+              <label class="col-12" for="form-send__tel">Контактный телефон:</label>
+              <input class="col-12" type="tel" name="tel" id="form-send__tel" placeholder="050-XXX-XX-XX"
+                     pattern="[0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}" required>
+            </div>
 
-        </div><!-- /.8 -->
+            <div class="form-send__item  row">
+              <label class="col-12" for="form-mail">Электронная почта:</label>
+              <input class="col-12" type="mail" name="mail" id="form-mail" placeholder="Введите e-mail">
+            </div>
 
-      </div> <!-- /.row-->
+          </div>
+          <div class="form-send__assessment  form-send__b  row  col-md-5">
+            <h3 class="form-send__title  col-12">Ваше Общее впечатление:</h3>
 
-    </div>
+            <div class="form-send__item  col-12  col-sm-6  offset-sm-3  offset-md-0  col-md-6">
+              <input type="radio" name="assessment" id="form-send__positive" checked><span class="r-indicator"></span>
+              <label for="form-send__positive">Скорее положительное</label>
+            </div>
+
+            <div class="form-send__item  col-12  col-sm-6  offset-sm-3  offset-md-0  col-md-6">
+              <input type="radio" name="assessment" id="form-send__negative"><span class="r-indicator"></span>
+              <label for="form-send__negative">Cкорее отрицательное</label>
+            </div>
+
+            <div class="form-send__item  col-12  col-sm-6  offset-sm-3  offset-md-0  col-md-6">
+              <input type="radio" name="assessment" id="form-send__difficult"><span class="r-indicator"></span>
+              <label for="form-send__difficult">Затрудняюсь ответить</label>
+            </div>
+          </div>
+          <div class="form-send__visited  form-send__b  row">
+            <h3 class="form-send__title  col-12">посещенные
+              достопримечательности:</h3>
+
+            <div class="form-send__item  col-12  col-sm-6  offset-sm-3  offset-md-0  col-md-6">
+              <input type="checkbox" name="bridge" id="form-send__bridge" checked><span class="ch-indicator"></span>
+              <label for="form-send__bridge">Мост Дьявола</label>
+            </div>
+
+            <div class="form-send__item  col-12  col-sm-6  offset-sm-3  offset-md-0  col-md-6">
+              <input type="checkbox" name="park" id="form-send__park"><span class="ch-indicator"></span>
+              <label for="form-send__park">Слайд-парк</label>
+            </div>
+
+            <div class="form-send__item  col-12  col-sm-6  offset-sm-3  offset-md-0  col-md-6">
+              <input type="checkbox" name="mountain" id="form-send__mountain"><span class="ch-indicator"></span>
+              <label for="form-send__mountain">Гора-Колокол</label>
+            </div>
+
+            <div class="form-send__item  col-12  col-sm-6  offset-sm-3  offset-md-0  col-md-6">
+              <input type="checkbox" name="rock" id="form-send__rock"><span class="ch-indicator"></span>
+              <label for="form-send__rock">Красные скалы</div>
+          </div>
+          <div class="form-send__msg  form-send__b col-12">
+            <h3 class="form-send__title">Опишите свои эмоции </h3>
+            <textarea resize="false" class="form-send__textarea"
+                      placeholder="Опишите подробно все свои восторги"></textarea>
+          </div>
+          <button type="submit" form="form-send" class="col-12  col-md-6 form-send__btn  btn">Отправить отзыв</button>
+        </div>
+      </form>
+    </section>
 
   </main>
   <footer id="hash-footer" class="page-footer">

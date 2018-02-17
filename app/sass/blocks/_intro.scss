@@ -19,7 +19,12 @@
   }
 }
 
-.intro h1 {
+.intro__slogan {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.intro__slogan-title {
   margin: 0 0 30px;
   font-size: 18px;
   line-height: 26px;
@@ -31,15 +36,9 @@
   background: #456;
   font-size: 0;
 }
-#h1-br {
-  display: none;
-}
+
 // tablet start
 @media (min-width: 768px) {
-  #h1-br {
-    display: block;
-    font-size: 0;
-  }
   .intro {
     padding: 50px 100px 55px;
     &::after {

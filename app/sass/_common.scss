@@ -1,15 +1,8 @@
 html, body   {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
   height: 100%;
   background-color: #f2f2f2;
 }
-.page-wrapper {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
+
 body {
   opacity: 1;
   overflow-x: hidden;
@@ -17,7 +10,7 @@ body {
   font-family: 'PT Sans', Helvetica, sans-serif;
   text-transform: uppercase;
   font-size: 14px;
-  line-height: 21px;
+  line-height: 24px;
   font-weight: 400;
 }
 .btn {
@@ -55,8 +48,12 @@ body {
   }
 }
 h1, h2, h3, h4, h4, h6 {
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 700;
   color: #000;
 }
+
 
 // tablet start
 @media (min-width: 768px) {
@@ -64,6 +61,14 @@ h1, h2, h3, h4, h4, h6 {
   .col-md-4 {
     flex: 0 0 33.33334%;
     max-width: 33.33334%;
+  }
+
+  h2, h3, h4, h4, h6 {
+    font-size: 21px;
+  }
+
+  h1 {
+    font-size: 30px;
   }
 
 // tablet end

@@ -18,13 +18,12 @@
   ],
   "dependencies": {
     "bootstrap": "v4.0.0-alpha.6",
-    "css-hamburgers": "^0.9.1",
     "jquery": "^3.2.1",
     "normalize-css": "^7.0.0",
-    "popper.js": "^1.12.9",
     "magnific-popup": "^1.1.0",
     "jssocials": "^1.5.0",
-    "font-awesome": "^4.7.0"
+    "font-awesome": "^4.7.0",
+    "jcf": "^1.2.3"
   },
   "devDependencies": {}
 }

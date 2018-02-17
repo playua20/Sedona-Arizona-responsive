@@ -19,6 +19,10 @@
   color: #fff;
 }
 
+.adv__title {
+  margin-bottom: 17px;
+}
+
 .adv__city-bg,
 .adv__bridge-bg {
   min-height: 260px;
@@ -44,7 +48,8 @@
   background: #eee;
 }
 .adv__number {
-  line-height: 1.3rem;
+  display: inline-block;
+  margin-bottom: 17px;
 }
 .adv__item .adv__number {
   position: relative;
@@ -224,7 +229,7 @@
         height: 77px;
         left: 50%;
         transform: translateX(-50%);
-        top: -107px;
+        top: -100px;
         background-repeat: no-repeat;
         z-index: 20;
 

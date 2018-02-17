@@ -57,9 +57,13 @@ gulp.task('js-libs', function() {
     // 'app/libs/bootstrap/js/dist/util.js',
     // 'app/libs/bootstrap/js/dist/tooltip.js',
     // 'app/libs/bootstrap/js/dist/popover.js',
+    // 'app/libs/bootstrap/dist/js/bootstrap.js',
     'app/libs/magnific-popup/dist/jquery.magnific-popup.js',
     'app/libs/jssocials/dist/jssocials.js',
-    'app/libs/bootstrap/dist/js/bootstrap.js',
+    // 'app/libs/jcf/dist/js/jcf.js',
+    // 'app/libs/jcf/dist/js/jcf.checkbox.js',
+    // 'app/libs/jcf/dist/js/jcf.radio.js',
+    // 'app/libs/jcf/dist/js/jcf.textarea.js',
     // 'app/js/main.js' // Всегда в конце
   ])
     .pipe(concat('libs.min.js')) // Собираем их в кучу в новом файле libs.min.js
@@ -98,8 +102,9 @@ gulp.task('img', function() {
     .pipe(gulp.dest('dist/img')); // Выгружаем на продакшен
 });
 
-gulp.task('build', ['clean'], function(fn) {
+gulp.task('build', ['clean', 'clear'], function() {
 
+// gulp.task('build', function(fn) {
   // run('clean', 'clear', 'img', 'sass', 'js', fn);
 
   var buildCss = gulp.src([ // Переносим библиотеки в продакшен
