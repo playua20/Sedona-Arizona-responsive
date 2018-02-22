@@ -1,4 +1,11 @@
-html, body   {
+.row { ///убираем отрицательные отступы  bootstrap
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+html, body {
   height: 100%;
   background-color: #f2f2f2;
 }
@@ -13,6 +20,13 @@ body {
   line-height: 24px;
   font-weight: 400;
 }
+
+.main-page,
+.inner-page {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
 .btn {
   display: inline-block;
   text-decoration: none;
@@ -41,19 +55,19 @@ body {
   }
   &:active {
     background-color: darken($accent, 10%);
-    color: rgba(255,255,255,.3)
+    color: rgba(255, 255, 255, .3)
   }
   &:disabled {
     background-color: #e5e5e5;
   }
 }
+
 h1, h2, h3, h4, h4, h6 {
   font-size: 18px;
   line-height: 26px;
   font-weight: 700;
   color: #000;
 }
-
 
 // tablet start
 @media (min-width: 768px) {
@@ -71,5 +85,5 @@ h1, h2, h3, h4, h4, h6 {
     font-size: 30px;
   }
 
-// tablet end
+  // tablet end
 }

@@ -1,7 +1,7 @@
 .video {
   background: #fff;
   text-align: center;
-  padding: 35px 0 50px; }
+  padding-top: 35px; }
 
 .video__inner {
   margin: 0 auto; }
@@ -29,7 +29,7 @@
 
 @media (min-width: 768px) {
   .video {
-    padding: 65px 0 50px; }
+    padding-top: 65px; }
   .video__title {
     font-size: 30px;
     line-height: 26px;
@@ -45,7 +45,7 @@
 
 @media (min-width: 1200px) {
   .video {
-    padding: 65px 0 85px; }
+    padding-top: 65px; }
   .video__wrapper {
     width: 800px;
     height: 450px;
