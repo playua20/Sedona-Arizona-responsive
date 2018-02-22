@@ -1,8 +1,13 @@
 .page-footer {
   text-align: center;
-  @include conf();
+  //();
   background:#fefefe;
 }
+
+.inner-page .page-footer {
+  margin-top: 47px;
+}
+
 .page-footer__hashtag a {
   text-align: center;
   color: black;
@@ -80,10 +85,10 @@
     padding: 20px 0 0;
   }
   .page-footer__hashtag {
-    padding-bottom: 8px;
+    padding-bottom: 23px;
   }
   .social-list {
-    margin-bottom: 8px;
+    margin-bottom: 23px;
   }
 
 // mobile only end
@@ -95,9 +100,20 @@
     min-height: 120px;
     align-items: center;
     padding: 0 60px;
-    & p {
-      margin-bottom: 0 !important;
+    p {
+      margin-bottom: 0;
+      padding-left: 0;
+      padding-right: 0;
     }
+  }
+  .page-footer__hashtag {
+    text-align: left;
+  }
+  .page-footer__copyright {
+    text-align: right;
+  }
+  .inner-page .page-footer {
+    margin-top: 61px;
   }
 
   // tablet end
@@ -105,12 +121,17 @@
 // tablet only start
 @media (min-width: 768px) and (max-width: 1199px) {
 
-  .page-footer__hashtag {
-    text-align: left;
+// tablet only end
+}
+
+// desktop start
+@media (min-width: 1200px) {
+  .inner-page .page-footer {
+    margin-top: 66px;
   }
-  .page-footer__copyright {
-    text-align: right;
+  .page-footer__inner {
+    padding: 0 120px;
   }
 
-// tablet only end
+// desktop end
 }

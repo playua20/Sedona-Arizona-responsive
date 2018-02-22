@@ -1,12 +1,15 @@
 .intro {
   background: #fff;
-  @include conf();
+  //();
   position: relative;
-  padding: 50px 45px 55px;
+  padding: 45px 45px 55px;
   text-align: center;
   font-size: 14px;
   color: #333;
   text-transform: uppercase;
+  & p {
+    margin-bottom: 0;
+  }
   &::after {
     content: '';
     position: absolute;
@@ -17,6 +20,10 @@
     background: #fff;
     clip-path: polygon(0 0, 50% 100%, 100% 0, 100% 100%, 0 100%);
   }
+}
+
+.inner-page .intro {
+  padding-bottom: 20px;
 }
 
 .intro__slogan {
