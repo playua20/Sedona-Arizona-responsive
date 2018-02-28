@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sedona</title>
+  <link rel="stylesheet" type="text/css" href="/css/style.min.css"/>
+</head>
+
+<body>
+<form action="/php/send-mail.php" method="POST">
+  <label for="field_name">Name:</label>
+  <input type="text" id="field_name" name="sender_name">
+  <br/><br/>
+
+  <label for="field_email">Your e-mail:</label>
+  <input type="text" id="field_email" name="sender_email">
+  <br/><br/>
+
+  <label for="field_phone">Phone:</label>
+  <input type="text" id="field_phone" name="sender_phone">
+  <br/><br/>
+
+  <label for="field_message">Message:</label>
+  <textarea id="field_message" name="sender_message"></textarea>
+  <br/><br/>
+  <p>Select your hosting plan:</p>
+  <input id="radio_1" type="radio" name="radio_group_1" value="shared">
+  <label for="radio_1">Shared server</label>
+
+  <input id="radio_2" type="radio" name="radio_group_1" value="vps">
+  <label for="radio_2">Virtual Private Server</label>
+
+  <input id="radio_3" type="radio" name="radio_group_1" value="dedicated">
+  <label for="radio_3">Dedicated Server</label>
+  <br/><br/>
+  <p>Additional hosting options:</p>
+  <input id="check_1" type="checkbox" name="checkbox_group_1[]" value="privacy">
+  <label for="check_1">Domain Privacy</label>
+
+  <input id="check_2" type="checkbox" name="checkbox_group_1[]" value="ssl">
+  <label for="check_2">SSL certificate</label>
+
+  <input id="check_3" type="checkbox" name="checkbox_group_1[]" value="mysql">
+  <label for="check_3">Additional MySQL Databases</label>
+  <br/><br/>
+
+  <button class="btn" type="submit" name="send_message">Отправить</button>
+</form>
+</body>
+</html>
+

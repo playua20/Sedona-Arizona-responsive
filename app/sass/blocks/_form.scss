@@ -102,14 +102,12 @@ input[type="mail"] {
 .form-send__item-tel,
 .form-send__item-mail {
   position: relative;
-  text-transform: none;
   &::after {
     position: absolute;
     width: 58px;
     height: 58px;
     line-height: 58px;
-    right: 1px;
-    top: 0;
+    right: 0;
     bottom: 0;
     background: #e6e6e6;
     pointer-events: none;
@@ -229,6 +227,10 @@ textarea {
   }
 
   .form-send__contacts span {
+    display: none;
+  }
+
+  .form-send__required {
     display: none;
   }
 
