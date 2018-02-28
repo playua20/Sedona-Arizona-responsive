@@ -15,5 +15,5 @@
  * Gulp
  * Scss
 
- Design by https://htmlacademy.ru/
+ Layout design by https://htmlacademy.ru/
  

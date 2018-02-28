@@ -1063,14 +1063,24 @@ input[type="mail"] {
 
 .form-send__item-tel,
 .form-send__item-mail {
+<<<<<<< HEAD
   position: relative; }
+=======
+  position: relative;
+  text-transform: none; }
+>>>>>>> 18f000a569ffe69fabcc5283f4d2da6f2605a39a
   .form-send__item-tel::after,
   .form-send__item-mail::after {
     position: absolute;
     width: 58px;
     height: 58px;
     line-height: 58px;
+<<<<<<< HEAD
     right: 0;
+=======
+    right: 1px;
+    top: 0;
+>>>>>>> 18f000a569ffe69fabcc5283f4d2da6f2605a39a
     bottom: 0;
     background: #e6e6e6;
     pointer-events: none;
@@ -1179,8 +1189,11 @@ textarea {
       background: #e5e5e5;
       z-index: 1; }
   .form-send__contacts span {
+<<<<<<< HEAD
     display: none; }
   .form-send__required {
+=======
+>>>>>>> 18f000a569ffe69fabcc5283f4d2da6f2605a39a
     display: none; } }
 
 @media (min-width: 768px) {
