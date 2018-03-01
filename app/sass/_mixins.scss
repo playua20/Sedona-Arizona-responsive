@@ -3,15 +3,18 @@
   width: auto;
   padding: 0 20px;
   box-sizing: border-box;
-
-  @media #{$tab} {
+  // tablet start
+  @media (min-width: 768px) {
     margin: 0 auto;
     padding: 0 60px;
+  // tablet end
   }
-
-    @media #{$desk} {
+    // desktop start
+    @media (min-width: 1200px) {
       //width: 95%;
       max-width: 1200px;
+
+    // desktop end
     }
 }
 
@@ -19,20 +22,20 @@
 //   @return $px / 16px + 0rem;
 // }
 
-@mixin mobile {
-  @media #{$mob-only} {
-    @content;
-  }
-}
-
-@mixin tablet {
-  @media #{$tab-only} {
-    @content;
-  }
-}
-
-@mixin desktop {
-  @media #{$desk} {
-    @content;
-  }
-}
+//@mixin mob {
+//  @media #{$mob-only} {
+//    @content;
+//  }
+//}
+//
+//@mixin tab {
+//  @media #{$tab-only} {
+//    @content;
+//  }
+//}
+//
+//@mixin des {
+//  @media #{$desk} {
+//    @content;
+//  }
+//}

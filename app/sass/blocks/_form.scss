@@ -41,18 +41,21 @@
   }
 }
 
+.form-send__item label {
+  line-height: 26px;
+  margin-bottom: 0;
+  padding: 16px 0;
+  vertical-align: middle;
+}
+
 .form-send__assessment label,
 .form-send__visited label {
   font-weight: 700;
-}
-
-.form-send__item label {
-  margin-bottom: 0;
+  padding: 19px 0;
 }
 
 .form-send__initials label {
   line-height: 26px;
-  padding: 16px 0;
 }
 
 .form-send__contacts label {

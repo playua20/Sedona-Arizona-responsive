@@ -998,7 +998,7 @@ html, body {
     margin-bottom: 0; }
 
 .form-send__btn {
-  bottom: 16px 0;
+  bottom: 0;
   background: #81b3d2; }
   .form-send__btn:hover {
     background: #669ec0; }

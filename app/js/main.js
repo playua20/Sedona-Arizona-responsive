@@ -34,7 +34,7 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   $("#share").jsSocials({
-    shares: ["email", "twitter", "facebook", "googleplus", "linkedin", "pinterest", "stumbleupon", "whatsapp"]
+    shares: [ "twitter", "facebook", "googleplus", "linkedin", "pinterest", "stumbleupon", "pocket", "vkontakte", "line", "email"]
   });
 });
 

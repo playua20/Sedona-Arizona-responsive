@@ -1,8 +1,8 @@
-# Barbershop "Borodinski" responsive
+# "Sedona" responsive
 
- * index.html - https://playua18.github.io/sedona-adaptive/dist/index.html - Главная
- * index.html - https://playua18.github.io/sedona-adaptive/dist/media.html - Медиа
- * index.html - https://playua18.github.io/sedona-adaptive/dist/form.html - Форма отзыва
+ * http://sedona.kl.com.ua/ - Главная
+ * http://sedona.kl.com.ua/media.html - Медиа
+ * http://sedona.kl.com.ua/form.html - рабочая обратная связь с использованием PHP-скрипта
 
 ## Особенности:
  * Responsive

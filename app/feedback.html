@@ -2,16 +2,26 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="sender_viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Sedona - Media</title>
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/manifest.json">
-  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-  <meta name="msapplication-TileColor" content="#603cba">
-  <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+  <title>Sedona - Форма отзыва</title>
+  <link rel="apple-touch-icon" sizes="57x57" href="/img/favicons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/img/favicons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/img/favicons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/img/favicons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/img/favicons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/img/favicons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/img/favicons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/favicons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/img/favicons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/img/favicons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/favicons/favicon-16x16.png">
+  <link rel="manifest" href="/img/favicons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/img/favicons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
   <style>
     body {
       opacity: 0;
@@ -23,7 +33,7 @@
     }
   </style>
 </head>
-<body class="inner-page  inner-page-feedback">
+<body class="inner-page">
 <div class="preloader">
   <div class="pulse"></div>
 </div>
@@ -44,7 +54,8 @@
                 <img src="img/logotype-mobile.svg" alt="городок Седона">
               </picture>
             </li>
-            <li class="col-12 col-md main-nav__item  main-nav__item--active"><a href="form.html">Форма отзыва</a></li>
+            <li class="col-12 col-md main-nav__item  main-nav__item--active"><a href="feedback.html">Форма отзыва</a>
+            </li>
             <li class="co l-12 col-md main-nav__item"><a href="#hash-footer">Контакты</a></li>
           </ul>
 
@@ -59,17 +70,103 @@
       </div>
     </div>
   </header>
-  <main>
+  <main class="inner-page">
 
-    <div id="feedback-form">
-      <form class="row" method="post" action="php/feedback.php">
-        <label class="col-6" for="feedback-form__email">Email:
-        <input class="col-10" id="feedback-form__email" name="email" type="text" placeholder="yourmail@gmail.com"></label>
-        <label class="col-12" for="feedback-form__message">Message:
-        <textarea class="col-12" id="feedback-form__message" name="message" rows="5" placeholder="Ваше сообщение..."></textarea></label><br>
-        <input class="col-12  col-md-6  btn" type="submit">
+    <section class="intro">
+      <div class="intro__slogan">
+        <h1 class="intro__slogan-title">Оставьте свой отзыв</h1>
+        <p>Помогите нашим отелям стать лучше! оставьте отзыв о них, а также о посещенных вами
+          достопримечательностях</p>
+      </div>
+    </section>
+
+    <section class="s-form-send">
+      <form id="form-send" action="/php/feedback.php" method="post" name="sender_form-send">
+        <div class="form-send__inner  row">
+          <div class="form-send__initials  form-send__b  row  col-md-6">
+              <h3 class="form-send__title">Представьтесь, пожалуйста:</h3>
+            <div class="form-send__item  row  col-12">
+              <label class="col-2  col-sm-1  col-md-2" for="form-send__name">Имя:</label>
+              <input class="col-10  col-sm-11  col-md-10" type="text" name="sender_name" id="form-send__name" placeholder="Джон">
+            </div>
+            <div class="form-send__item  row  col-12">
+              <label class="col-3  col-sm-2  col-md-3  col-md-2" for="form-send__surname">Фамилия:</label>
+              <input class="col-9 col-sm-10  col-md-9" type="text" name="sender_surname" id="form-send__surname" placeholder="Трамп">
+            </div>
+            <div class="form-send__item  row  col-12">
+              <label class="col-3  col-sm-2  col-md-3  col-md-2" for="form-send__patronymic">Отчество:</label>
+              <input class="col-9  col-sm-10  col-md-9" type="text" name="sender_patronymic" id="form-send__patronymic" placeholder="Олегович">
+            </div>
+
+          </div>
+          <div class="form-send__contacts  form-send__b  row">
+            <div class="form-send__contacts-title-row  row  col-12">
+                <h3 class="form-send__title">Контактная информация:</h3>
+            </div>
+            <div class="form-send__item  form-send__item-tel  col-md-12  col-xl-6  row">
+              <label class="col-12  col-xl-5" for="form-send__tel">Контактный телефон:</label>
+              <input class="col-12  col-xl-7" type="tel" name="sender_tel" id="form-send__tel" placeholder="050-XXX-XX-XX" required>
+            </div>
+            <div class="form-send__item  form-send__item-mail  col-md-12  col-xl-6  row">
+              <label class="col-12  col-xl-5" for="form-send__mail">Электронная почта:</label>
+              <input class="col-12  col-xl-7" type="mail" name="sender_mail" id="form-send__mail" placeholder="Введите e-mail">
+            </div>
+
+          </div>
+          <div class="form-send__assessment  form-send__b  row  col-md-6">
+              <h3 class="form-send__title">Ваше общее впечатление:</h3>
+            <div class="form-send__item  col-12  col-sm-6  offset-sm-3  offset-md-0  col-md-12">
+              <input type="radio" name="assessment_r_group_1" id="form-send__positive" value="Скорее положительное" checked><span class="r-indicator"></span>
+              <label for="form-send__positive">Скорее положительное</label>
+            </div>
+
+            <div class="form-send__item  col-12  col-sm-6  offset-sm-3  offset-md-0  col-md-12">
+              <input type="radio" name="assessment_r_group_1" id="form-send__negative" value="Cкорее отрицательное"><span class="r-indicator"></span>
+              <label for="form-send__negative">Cкорее отрицательное</label>
+            </div>
+
+            <div class="form-send__item  col-12  col-sm-6  offset-sm-3  offset-md-0  col-md-12">
+              <input type="radio" name="assessment_r_group_1" id="form-send__difficult" value="Затрудняюсь ответить"><span class="r-indicator"></span>
+              <label for="form-send__difficult">Затрудняюсь ответить</label>
+            </div>
+          </div>
+          <div class="form-send__visited  form-send__b  row">
+              <h3 class="form-send__title">Посещенные достопримечательности:</h3>
+            <div class="form-send__visited-list  row  col-12">
+              <div class="form-send__item  col-12  col-sm-6  offset-sm-3  offset-md-0  col-md-6  col-xl-3">
+                <input type="checkbox" name="visited_ch_group_1[]" id="form-send__bridge" value="Мост Дьявола" checked><span
+                  class="ch-indicator"></span>
+                <label for="form-send__bridge">Мост Дьявола</label>
+              </div>
+
+              <div class="form-send__item  col-12  col-sm-6  offset-sm-3  offset-md-0  col-md-6  col-xl-3">
+                <input type="checkbox" name="visited_ch_group_1[]" id="form-send__park" value="Слайд-парк"><span
+                  class="ch-indicator"></span>
+                <label for="form-send__park">Слайд-парк</label>
+              </div>
+
+              <div class="form-send__item  col-12  col-sm-6  offset-sm-3  offset-md-0  col-md-6  col-xl-3">
+                <input type="checkbox" name="visited_ch_group_1[]" id="form-send__mountain" value="Гора-Колокол"><span
+                  class="ch-indicator"></span>
+                <label for="form-send__mountain">Гора-Колокол</label>
+              </div>
+
+              <div class="form-send__item  col-12  col-sm-6  offset-sm-3  offset-md-0  col-md-6  col-xl-3">
+                <input type="checkbox" name="visited_ch-group[]" id="form-send__rock" value="Красные скалы"><span
+                  class="ch-indicator"></span>
+                <label for="form-send__rock">Красные скалы</label>
+              </div>
+            </div>
+          </div>
+          <div class="form-send__msg  form-send__b col-12  row">
+              <h3 class="form-send__title">Опишите свои эмоции </h3>
+            <textarea resize="false" class="form-send__textarea" name="sender_msg"
+                      placeholder="Опишите подробно все свои восторги"></textarea>
+          </div>
+          <button type="submit" form="form-send" class="col-12  col-md-6 form-send__btn  btn">Отправить отзыв</button><span class="form-send__required  col-md-6">* — обязательные поля</span>
+        </div>
       </form>
-    </div>
+    </section>
 
   </main>
   <footer id="hash-footer" class="page-footer">
@@ -79,9 +176,9 @@
       </p>
       <p class="col-12  col-md-4  page-footer__social">
           <span class="social-list">
-            <a class="social-link  btn" href=""><i class="fa fa-facebook" aria-hidden="true"></i></a>
-            <a class="social-link  btn" href=""><i class="fa fa-twitter" aria-hidden="true"></i></a>
-            <a class="social-link  btn" href=""><i class="fa fa-youtube" aria-hidden="true"></i></a>
+            <a class="social-link  btn" href=""><i class="fab fa-facebook" aria-hidden="true"></i></a>
+            <a class="social-link  btn" href=""><i class="fab fa-twitter" aria-hidden="true"></i></a>
+            <a class="social-link  btn" href=""><i class="fab fa-youtube" aria-hidden="true"></i></a>
           </span>
       </p>
       <p class="col-12  col-md-4  page-footer__copyright">
@@ -89,7 +186,6 @@
         <a class="page-footer__btn  page-footer__copyright-link" href="https://htmlacademy.ru/">
           <svg id="htmlacademy-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 43.49 54.62" width="28px"
                height="40px">
-            <title>htmlacademy</title>
             <g>
               <path d="M1.4,3.5,21.8,1.4,42.1,3.5V41L21.8,53,1.4,41Z" style="stroke-width: 2.7909998893737793px"/>
               <path d="M1.7,20.9,21.1,9.6,42,20.9v1.2L21.8,34,1.7,22.1Z" style="stroke-width: 2.056999921798706px"/>
@@ -99,16 +195,19 @@
             </g>
           </svg>
 
+
         </a>
       </p>
     </div>
   </footer>
 </div>
 <div class="top" title="Наверх"><i class="fa fa-plane"></i></div>
+
+<script src='https://www.google.com/recaptcha/api.js'></script>
 <link rel="stylesheet" href="css/libs.min.css">
 <link rel="stylesheet" href="css/style.min.css"> <!-- в разработке использовать неминимизированный -->
 <script src="js/libs.min.js"></script>
-<script src="js/main.js"></script>  <!-- в разработке использовать неминимизированный -->
+<script src="js/main.min.js"></script>  <!-- в разработке использовать неминимизированный -->
 </body>
 
 </html>
