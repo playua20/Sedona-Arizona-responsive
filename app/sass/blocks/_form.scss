@@ -3,13 +3,38 @@
   @include conf();
 }
 
+// перебиваем стили списка выбора стран
+.country-select {
+  width: 100%;
+}
+
+#country {
+  width: 100%;
+  padding-left: 77px;
+  padding-right: 20px;
+}
+
+.country-list {
+  position: relative;
+  z-index: 200;
+  position: absolute;
+}
+
+.country-select.inside .selected-flag {
+  width: 58px;
+  height: 58px;
+  margin-left: -1px;
+  margin-top: -1px;
+  padding-left: 19px;
+  background: #E6E6E6;
+  & .arrow {
+    right: 7px;
+  }
+}
+
 .form-send__title {
   margin: 0 auto 25px;
   text-align: center;
-
-  h2 {
-    width: auto;
-  }
 }
 
 .form-send__b {
@@ -19,6 +44,15 @@
 
 .form-send__msg {
   padding-bottom: 50px;
+}
+
+.form-send__country .form-send__item,
+.form-send__count .form-send__item {
+  text-align: center;
+}
+
+.form-send__count option {
+  text-align: center;
 }
 
 .form-send__item {
@@ -45,13 +79,15 @@
   line-height: 26px;
   margin-bottom: 0;
   padding: 16px 0;
-  vertical-align: middle;
 }
 
 .form-send__assessment label,
 .form-send__visited label {
+  position: relative;
   font-weight: 700;
-  padding: 19px 0;
+  padding: 15px 0;
+  padding-left: 80px;
+  display: inline-block;
 }
 
 .form-send__initials label {
@@ -75,6 +111,7 @@ input[type="checkbox"] {
 input[type="text"],
 input[type="tel"],
 input[type="mail"],
+  //select[name="sender_count"],
 textarea {
   background: #f2f2f2;
   color: #000;
@@ -102,6 +139,63 @@ input[type="mail"] {
   padding-right: 78px;
 }
 
+input[name="sender_count"] {
+  padding-right: 78px;
+  position: relative;
+}
+
+.count__wrapper {
+  display: inline-flex;
+  position: relative;
+
+  input {
+    width: 121px;
+  }
+}
+
+.count__arrows {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 58px;
+  //background: #f6f;
+}
+
+.count__arrow-up,
+.count__arrow-down {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background: #E6E6E6;
+  &::before {
+    position: absolute;
+    font: bold 25px FontAwesome;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #555555;
+  }
+}
+
+.count__arrow-up {
+  top: 0;
+  border-bottom: 1px solid #939393;
+  &::before {
+    content: '\f106';
+  }
+}
+
+.count__arrow-down {
+  bottom: 0;
+  border-top: 1px solid #eee;
+  &::before {
+    content: '\f107';
+  }
+}
+
 .form-send__item-tel,
 .form-send__item-mail {
   position: relative;
@@ -123,18 +217,18 @@ input[type="mail"] {
 .form-send__item-tel::after {
   content: "\f095";
 }
+
 .form-send__item-mail::after {
   content: '\f0e0';
 }
 
 .r-indicator,
 .ch-indicator {
-  position: relative;
-  display: inline-block;
-  vertical-align: middle;
+  position: absolute;
   width: 56px;
   height: 56px;
-  margin-right: 23px;
+  left: 0;
+  top: 0;
   background-color: #f2f2f2;
   border-radius: 50%;
   &::before,
@@ -142,6 +236,15 @@ input[type="mail"] {
     content: '';
     position: absolute;
   }
+}
+
+.r-indicator {
+  top: 50%;
+}
+
+.r-indicator {
+  bottom: 0;
+  transform: translateY(-50%);
 }
 
 .form-send__item:hover .r-indicator,
@@ -169,15 +272,15 @@ c .ch-indicator::after {
   border-radius: 3px;
 }
 
-input:checked ~ .r-indicator::before,
-input:checked ~ .ch-indicator::before,
-input:checked ~ .ch-indicator::after {
+input:checked ~ label .r-indicator::before,
+input:checked ~ label .ch-indicator::before,
+input:checked ~ label .ch-indicator::after {
   content: '';
   position: absolute;
   background: #333;
 }
 
-input:checked ~ .r-indicator::before {
+input:checked ~ label .r-indicator::before {
   width: 20px;
   height: 20px;
   left: 50%;
@@ -185,13 +288,13 @@ input:checked ~ .r-indicator::before {
   transform: translate(-50%, -50%);
 }
 
-.form-send__item:active:active input:checked ~ .r-indicator::before,
-.form-send__item:active:active input:checked ~ .ch-indicator::before,
-.form-send__item:active:active input:checked ~ .ch-indicator::after {
+.form-send__item:active:active input:checked ~ label .r-indicator::before,
+.form-send__item:active:active input:checked ~ label .ch-indicator::before,
+.form-send__item:active:active input:checked ~ label .ch-indicator::after {
   background-color: lighten(#333, 50%);
 }
 
-input:checked ~ .ch-indicator::before {
+input:checked ~ label .ch-indicator::before {
   height: 22px;
   width: 5px;
   bottom: 18px;
@@ -199,7 +302,7 @@ input:checked ~ .ch-indicator::before {
   transform: rotate(45deg);
 }
 
-input:checked ~ .ch-indicator::after {
+input:checked ~ label .ch-indicator::after {
   height: 15px;
   width: 5px;
   bottom: 18px;
@@ -252,8 +355,25 @@ textarea {
     padding-bottom: 55px;
   }
 
-  .form-send__initials {
+  .form-send__initials,
+  .form-send__count {
     padding-left: 5%;
+  }
+
+  .form-send__country {
+    padding-right: 5%;
+    position: relative;
+    padding-right: 5%;
+    &::after {
+      content: '';
+      position: absolute;
+      top: 20px;
+      bottom: 40px;
+      right: 0;
+      width: 1px;
+      background: #e5e5e5;
+      z-index: 1;
+    }
   }
 
   .form-send__assessment {
@@ -264,7 +384,7 @@ textarea {
       content: '';
       position: absolute;
       top: 20px;
-      bottom: 50px;
+      bottom: 40px;
       right: 0;
       width: 1px;
       background: #e5e5e5;
@@ -272,11 +392,11 @@ textarea {
     }
   }
 
-  .form-send__title-wrapper {
-    margin-bottom: 30px;
+  .form-send__title {
+    margin-bottom: 50px;
   }
 
-  .form-send__b {
+  .form-send__b:not(.form-send__country) {
     overflow: hidden;
   }
 

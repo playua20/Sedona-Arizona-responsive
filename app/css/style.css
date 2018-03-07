@@ -977,11 +977,32 @@ html, body {
     .s-form-send {
       max-width: 1200px; } }
 
+.country-select {
+  width: 100%; }
+
+#country {
+  width: 100%;
+  padding-left: 77px;
+  padding-right: 20px; }
+
+.country-list {
+  position: relative;
+  z-index: 200;
+  position: absolute; }
+
+.country-select.inside .selected-flag {
+  width: 58px;
+  height: 58px;
+  margin-left: -1px;
+  margin-top: -1px;
+  padding-left: 19px;
+  background: #E6E6E6; }
+  .country-select.inside .selected-flag .arrow {
+    right: 7px; }
+
 .form-send__title {
   margin: 0 auto 25px;
   text-align: center; }
-  .form-send__title h2 {
-    width: auto; }
 
 .form-send__b {
   padding-top: 20px;
@@ -989,6 +1010,13 @@ html, body {
 
 .form-send__msg {
   padding-bottom: 50px; }
+
+.form-send__country .form-send__item,
+.form-send__count .form-send__item {
+  text-align: center; }
+
+.form-send__count option {
+  text-align: center; }
 
 .form-send__item {
   margin-bottom: 20px;
@@ -1008,13 +1036,15 @@ html, body {
 .form-send__item label {
   line-height: 26px;
   margin-bottom: 0;
-  padding: 16px 0;
-  vertical-align: middle; }
+  padding: 16px 0; }
 
 .form-send__assessment label,
 .form-send__visited label {
+  position: relative;
   font-weight: 700;
-  padding: 19px 0; }
+  padding: 15px 0;
+  padding-left: 80px;
+  display: inline-block; }
 
 .form-send__initials label {
   line-height: 26px; }
@@ -1064,6 +1094,57 @@ input[type="mail"] {
   padding-left: 20px;
   padding-right: 78px; }
 
+input[name="sender_count"] {
+  padding-right: 78px;
+  position: relative; }
+
+.count__wrapper {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: relative; }
+  .count__wrapper input {
+    width: 121px; }
+
+.count__arrows {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 58px; }
+
+.count__arrow-up,
+.count__arrow-down {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background: #E6E6E6; }
+  .count__arrow-up::before,
+  .count__arrow-down::before {
+    position: absolute;
+    font: bold 25px FontAwesome;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    color: #555555; }
+
+.count__arrow-up {
+  top: 0;
+  border-bottom: 1px solid #939393; }
+  .count__arrow-up::before {
+    content: '\f106'; }
+
+.count__arrow-down {
+  bottom: 0;
+  border-top: 1px solid #eee; }
+  .count__arrow-down::before {
+    content: '\f107'; }
+
 .form-send__item-tel,
 .form-send__item-mail {
   position: relative; }
@@ -1089,12 +1170,11 @@ input[type="mail"] {
 
 .r-indicator,
 .ch-indicator {
-  position: relative;
-  display: inline-block;
-  vertical-align: middle;
+  position: absolute;
   width: 56px;
   height: 56px;
-  margin-right: 23px;
+  left: 0;
+  top: 0;
   background-color: #f2f2f2;
   -webkit-border-radius: 50%;
           border-radius: 50%; }
@@ -1103,6 +1183,15 @@ input[type="mail"] {
   .ch-indicator::after {
     content: '';
     position: absolute; }
+
+.r-indicator {
+  top: 50%; }
+
+.r-indicator {
+  bottom: 0;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%); }
 
 .form-send__item:hover .r-indicator,
 .form-send__item:hover .ch-indicator {
@@ -1126,14 +1215,14 @@ c .ch-indicator::after {
   -webkit-border-radius: 3px;
           border-radius: 3px; }
 
-input:checked ~ .r-indicator::before,
-input:checked ~ .ch-indicator::before,
-input:checked ~ .ch-indicator::after {
+input:checked ~ label .r-indicator::before,
+input:checked ~ label .ch-indicator::before,
+input:checked ~ label .ch-indicator::after {
   content: '';
   position: absolute;
   background: #333; }
 
-input:checked ~ .r-indicator::before {
+input:checked ~ label .r-indicator::before {
   width: 20px;
   height: 20px;
   left: 50%;
@@ -1142,12 +1231,12 @@ input:checked ~ .r-indicator::before {
       -ms-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%); }
 
-.form-send__item:active:active input:checked ~ .r-indicator::before,
-.form-send__item:active:active input:checked ~ .ch-indicator::before,
-.form-send__item:active:active input:checked ~ .ch-indicator::after {
+.form-send__item:active:active input:checked ~ label .r-indicator::before,
+.form-send__item:active:active input:checked ~ label .ch-indicator::before,
+.form-send__item:active:active input:checked ~ label .ch-indicator::after {
   background-color: #b3b3b3; }
 
-input:checked ~ .ch-indicator::before {
+input:checked ~ label .ch-indicator::before {
   height: 22px;
   width: 5px;
   bottom: 18px;
@@ -1156,7 +1245,7 @@ input:checked ~ .ch-indicator::before {
       -ms-transform: rotate(45deg);
           transform: rotate(45deg); }
 
-input:checked ~ .ch-indicator::after {
+input:checked ~ label .ch-indicator::after {
   height: 15px;
   width: 5px;
   bottom: 18px;
@@ -1192,8 +1281,22 @@ textarea {
     padding-bottom: 40px; }
   .form-send__msg {
     padding-bottom: 55px; }
-  .form-send__initials {
+  .form-send__initials,
+  .form-send__count {
     padding-left: 5%; }
+  .form-send__country {
+    padding-right: 5%;
+    position: relative;
+    padding-right: 5%; }
+    .form-send__country::after {
+      content: '';
+      position: absolute;
+      top: 20px;
+      bottom: 40px;
+      right: 0;
+      width: 1px;
+      background: #e5e5e5;
+      z-index: 1; }
   .form-send__assessment {
     -webkit-box-ordinal-group: 0;
     -webkit-order: -1;
@@ -1205,14 +1308,14 @@ textarea {
       content: '';
       position: absolute;
       top: 20px;
-      bottom: 50px;
+      bottom: 40px;
       right: 0;
       width: 1px;
       background: #e5e5e5;
       z-index: 1; }
-  .form-send__title-wrapper {
-    margin-bottom: 30px; }
-  .form-send__b {
+  .form-send__title {
+    margin-bottom: 50px; }
+  .form-send__b:not(.form-send__country) {
     overflow: hidden; }
   .form-send__contacts .form-send__title,
   .form-send__visited .form-send__title,

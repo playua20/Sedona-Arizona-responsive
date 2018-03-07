@@ -74,11 +74,12 @@ gulp.task('js-main', function () {
 
 gulp.task('js-libs', function () {
   return gulp.src([ // Берем все необходимые библиотеки
-    'app/libs/jquery/dist/jquery.js', // Берем jQuery
+    'app/libs/jquery/dist/jquery.min.js', // Берем jQuery
     // 'app/libs/bootstrap/dist/js/bootstrap.js',
-    'app/libs/magnific-popup/dist/jquery.magnific-popup.js',
-    'app/libs/fontawesome-free-5.0.6/on-server/js/fontawesome-all.js',
+    'app/libs/magnific-popup/dist/jquery.magnific-popup.min.js',
+    'app/libs/font-awesome/svg-with-js/js/fontawesome-all.min.js',
     'app/libs/jssocials/dist/jssocials.js',
+    'app/libs/country-select-js/build/js/countrySelect.js',
     // 'app/js/main.js' // Всегда в конце
   ])
     .pipe(concat('libs.min.js')) // Собираем их в кучу в новом файле libs.min.js

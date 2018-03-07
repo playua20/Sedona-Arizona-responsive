@@ -5,11 +5,13 @@ $mail_to = 'admin@sedona.kl.com.ua'; // мой email
 $name = $_POST['sender_name'];
 $surname = $_POST['sender_surname'];
 $patronymic = $_POST['sender_patronymic'];
+$country = $_POST['sender_country'];
+$count = $_POST['sender_count'];
 $mail_from = $_POST['sender_mail'];
 $phone = $_POST['sender_tel'];
 $message = $_POST['sender_msg'];
-$assessment = $_POST['assessment_r_group_1'];
-$visited = implode(', ', $_POST['visited_ch_group_1']);
+$assessment = $_POST['assessment_r_group'];
+$visited = implode(', ', $_POST['visited_ch_group']);
 
 // Construct subject of the email
 $subject = 'sedona.kl.com.ua Сообщение от ' . $name;
@@ -31,6 +33,8 @@ $body_message = $wrapper_s . $item_s . $option_s . 'Имя: ' . $span_e . $value
     $item_s . $option_s . 'Фамилия: ' . $span_e . $value_s . $surname . $span_e . $div_e . $br .
     $item_s . $option_s . 'Отчество: ' . $span_e . $value_s . $patronymic . $span_e . $div_e . $br .
     $item_s . $option_s . 'E-mail: ' . $span_e . $value_s . $mail_from . $span_e . $div_e . $br .
+    $item_s . $option_s . 'Cтрана: ' . $span_e . $value_s . $country . $span_e . $div_e . $br .
+    $item_s . $option_s . 'Персоны: ' . $span_e . $value_s . $count . $span_e . $div_e . $br .
     $item_s . $option_s . 'Тел.: ' . $span_e . $value_s . $phone . $span_e . $div_e . $br .
     $item_s . $option_s . 'Сообщение: ' . $span_e . $value_s . $message . $span_e . $div_e . $br .
     $item_s . $option_s . 'Общее впечатление: ' . $span_e . $value_s . $assessment . $span_e . $div_e . $br .
@@ -38,7 +42,7 @@ $body_message = $wrapper_s . $item_s . $option_s . 'Имя: ' . $span_e . $value
 
 // Строим headers для сообщения
 //	$headers = 'From: ' . $mail_from . "\r\n"; // не работает на бесплатном хостинге zzz.com.ua
-$headers = 'From: ' . $mail_to . "\r\nContent-type: text/html; charset=utf-8\r\n"; // Content-type: text/html - для отображения html тегов в сообщении
+$headers = 'From: ' . $mail_to . "\r\nContent-type: text/html; charset=\"utf-8\"\r\n"; // Content-type: text/html - для отображения html тегов в сообщении
 $headers .= 'Reply-To: ' . $mail_from . "\r\n";
 
 $mail_sent = mail("$mail_to", "$subject", "$body_message", "$headers");
@@ -50,7 +54,7 @@ if ($mail_sent == true) { ?>
   </script>
 <?php } else { ?>
   <script language="javascript" type="text/javascript">
-    alert('Сообщение не от. Please, notify site administrator admin@sedona.kl.com.ua');
+    alert('Сообщение не отправлено. Пожалуйста, сообщите администратору сайта admin@sedona.kl.com.ua');
     window.location = '/../feedback.html';
   </script>
     <?php

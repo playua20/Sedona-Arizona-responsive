@@ -17,11 +17,13 @@
     "tests"
   ],
   "dependencies": {
-    "bootstrap": "v4.0.0-alpha.6",
     "jquery": "^3.2.1",
+    "bootstrap": "v4.0.0-alpha.6",
     "normalize-css": "^7.0.0",
     "magnific-popup": "^1.1.0",
     "jssocials": "^1.5.0",
+    "font-awesome": "^5.0.8",
+    "country-select-js": "^2.0.1"
   },
   "devDependencies": {}
 }
