@@ -963,6 +963,34 @@ html, body {
   background: #fff;
   padding: 20px 0; }
 
+#form-send__status {
+  display: none;
+  position: relative;
+  width: 100%;
+  padding: .75rem 1.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  -webkit-border-radius: .25rem;
+          border-radius: .25rem;
+  font-family: 'PT Sans', Helvetica, sans-serif;
+  text-align: center;
+  -webkit-transition: 1s;
+  -o-transition: 1s;
+  transition: 1s; }
+
+#form-send__loader {
+  background: url("/img/loader.gif") center no-repeat; }
+
+.form-send__error {
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb; }
+
+.form-send__success {
+  color: #155724;
+  background-color: #d4edda;
+  border-color: #c3e6cb; }
+
 .s-form-send {
   background: #fff;
   width: auto;
@@ -1032,6 +1060,8 @@ html, body {
     background: #669ec0; }
   .form-send__btn:active {
     background: #5496bd; }
+  .form-send__btn[disabled="disabled"], .form-send__btn[disabled="disabled"]:hover, .form-send__btn[disabled="disabled"]:active {
+    background: #8eb0c5; }
 
 .form-send__item label {
   line-height: 26px;
@@ -1096,7 +1126,8 @@ input[type="mail"] {
 
 input[name="sender_count"] {
   padding-right: 78px;
-  position: relative; }
+  position: relative;
+  text-align: center; }
 
 .count__wrapper {
   display: -webkit-inline-box;
@@ -1373,10 +1404,7 @@ textarea {
   .form-send__contacts label {
     padding: 16px 0; }
   .form-send__item-mail {
-    padding-left: 5%; }
-  .form-send__contacts .form-send__item,
-  .form-send__visited .form-send__item {
-    margin-bottom: 0; } }
+    padding-left: 5%; } }
 
 .page-wrapper-thankyou {
   overflow: hidden; }

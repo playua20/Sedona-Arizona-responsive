@@ -1,3 +1,6 @@
+<?php
+//require('php/constant.php');
+//?>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -27,7 +30,6 @@
       opacity: 0;
       overflow-x: hidden;
     }
-
     html {
       background-color: #81b3d2;
     }
@@ -54,7 +56,7 @@
                 <img src="img/logotype-mobile.svg" alt="городок Седона">
               </picture>
             </li>
-            <li class="col-12 col-md main-nav__item  main-nav__item--active"><a href="feedback.html">Форма отзыва</a>
+            <li class="col-12 col-md main-nav__item  main-nav__item--active"><a href="send-form.html">Форма отзыва</a>
             </li>
             <li class="co l-12 col-md main-nav__item"><a class="hash-footer" href="#hash-footer">Контакты</a></li>
           </ul>
@@ -81,7 +83,7 @@
     </section>
 
     <section class="s-form-send">
-      <form action="php/feedback.php" id="form-send" method="post" name="sender_form-send">
+      <form id="form-send" method="POST" novalidate="novalidate">
         <div class="form-send__inner  row">
           <div class="form-send__initials  form-send__b  row  col-md-6">
             <h3 class="form-send__title">Представьтесь, пожалуйста:</h3>
@@ -125,12 +127,12 @@
             </div>
             <div class="form-send__item  form-send__item-tel  col-md-12  col-xl-6  row">
               <label class="col-12  col-xl-5" for="form-send__tel">Контактный телефон:</label>
-              <input class="col-12  col-xl-7" type="tel" name="sender_tel" id="form-send__tel"
+              <input class="col-12  col-xl-7" type="tel" name="sender_phone" id="form-send__tel"
                      placeholder="050-XXX-XX-XX">
             </div>
             <div class="form-send__item  form-send__item-mail  col-md-12  col-xl-6  row">
               <label class="col-12  col-xl-5" for="form-send__mail">Электронная почта:</label>
-              <input class="col-12  col-xl-7" type="mail" name="sender_mail" id="form-send__mail"
+              <input class="col-12  col-xl-7" type="mail" name="sender_email" id="form-send__mail"
                      placeholder="Введите e-mail">
             </div>
           </div>
@@ -163,8 +165,7 @@
             <h3 class="form-send__title">Посещенные достопримечательности:</h3>
             <div class="form-send__visited-list  row  col-12">
               <div class="form-send__item  col-12  col-sm-6  offset-sm-3  offset-md-0  col-md-6  col-xl-3">
-                <input type="checkbox" name="visited_ch_group[]" id="form-send__bridge" value="Мост Дьявола"
-                       checked>
+                <input type="checkbox" name="visited_ch_group[]" id="form-send__bridge" value="Мост Дьявола">
                 <label for="form-send__bridge">
                   <span class="ch-indicator"></span>
                   Мост Дьявола</label>
@@ -190,6 +191,14 @@
                   <span class="ch-indicator"></span>
                   Красные скалы</label>
               </div>
+
+<!--              <div class="form-group form-send__item  col-12  col-sm-6  offset-sm-3  offset-md-0  col-md-6  col-xl-3">-->
+<!--                <input type="checkbox" name="visited_ch_group[]" id="form-send__own-choice" value="">-->
+<!--                <label for="form-send__own-choice">-->
+<!--                  <span class="ch-indicator"></span></label>-->
+<!--                <input type="text" name="sender_guest-option" class="form-send__own-choice-field"-->
+<!--                       placeholder="Свой вариант">-->
+<!--              </div>-->
             </div>
           </div>
           <div class="form-send__msg  form-send__b col-12  row">
@@ -197,8 +206,12 @@
             <textarea resize="false" class="form-send__textarea" name="sender_msg"
                       placeholder="Опишите подробно все свои восторги"></textarea>
           </div>
-          <button type="submit" form="form-send" class="col-12  col-md-6 form-send__btn  btn">Отправить отзыв</button>
-          <span class="form-send__required  col-md-6">* — обязательные поля</span>
+          <div class="col-12" id="form-send__status"></div>
+          <div class="col-12" id="form-send__loader"></div>
+<!--          <div class="col-12  col-md-6 g-recaptcha" data-sitekey="--><?php //echo SITE_KEY; ?><!--"></div>-->
+          <div class="col-12  col-md-6 g-recaptcha" data-sitekey="6Ldrd0UUAAAAAGLKF3WmRiswi4-1xfVd_pHdkC7a"></div>
+          <button type="submit"  id="send-message"  class="col-12  col-md-6 form-send__btn  btn">Отправить отзыв</button>
+<!--          <span class="form-send__required  col-md-6">* — обязательные поля</span>-->
         </div>
       </form>
     </section>
@@ -237,11 +250,11 @@
   </footer>
 </div>
 <div class="top" title="Наверх"><i class="fa fa-plane"></i></div>
-<!--<script src='https://www.google.com/recaptcha/api.js'></script>-->
+ <script src='https://www.google.com/recaptcha/api.js'></script>
 <link rel="stylesheet" href="css/libs.min.css">
-<link rel="stylesheet" href="css/style.min.css"> <!-- в разработке использовать неминимизированный -->
+<link rel="stylesheet" href="css/style.css"> <!-- в разработке использовать неминимизированный -->
 <script src="js/libs.min.js"></script>
-<script src="js/main.min.js"></script>  <!-- в разработке использовать неминимизированный -->
+<script src="js/main.js"></script>  <!-- в разработке использовать неминимизированный -->
 </body>
 
 </html>

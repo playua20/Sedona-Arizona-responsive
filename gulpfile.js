@@ -87,10 +87,11 @@ gulp.task('js-libs', function () {
     .pipe(gulp.dest('app/js')); // Выгружаем в папку app/js
 });
 
-gulp.task('watch', ['browser-sync', 'styles', 'css-libs', 'js-libs', 'js-main'], function () {
+gulp.task('watch', ['browser-sync', 'css-libs', 'styles', 'js-libs', 'js-main'], function () {
   gulp.watch('app/sass/**/*.scss', ['styles']); // Наблюдение за sass файлами в папке sass
   gulp.watch('app/*.html', browserSync.reload); // Наблюдение за HTML файлами в корне проекта
   gulp.watch('app/js/*.js', ['js-main']);   // Наблюдение за JS файлами в папке js
+  gulp.watch('app/**/*.php', browserSync.reload);   // Наблюдение за PHP файлами
   // gulp.watch('app/php/*.php', browserSync.reload);
 });
 
@@ -110,7 +111,7 @@ gulp.task('img', function () {
     .pipe(gulp.dest('dist/img')); // Выгружаем на продакшн
 });
 
-gulp.task('build', ['clean', 'clear'], function () {
+gulp.task('build', ['clean', 'clear', 'styles', 'css-libs', 'js-libs', 'js-main'], function () {
 
 // gulp.task('build', function(fn) {
   // run('clean', 'clear', 'img', 'sass', 'js', fn);
@@ -122,7 +123,7 @@ gulp.task('build', ['clean', 'clear'], function () {
     .pipe(gulp.dest('dist/css'))
 
   var buildHtml = gulp.src('app/*.html') // Переносим HTML в продакшн
-    .pipe(gulp.dest('dist'));
+    .pipe(gulp.dest('dist'))
 
   var buildFonts = gulp.src('app/fonts/**/*') // Переносим шрифты в продакшн
     .pipe(gulp.dest('dist/fonts'))
@@ -130,11 +131,14 @@ gulp.task('build', ['clean', 'clear'], function () {
   var buildFonts = gulp.src('app/img/**/*') // Переносим картинки в продакшн
     .pipe(gulp.dest('dist/img'))
 
-  var buildJs = gulp.src('app/js/**/*') // Переносим скрипты в продакшн
+  var buildJs = gulp.src('app/js/**/*') // Переносим js скрипты в продакшн
     .pipe(gulp.dest('dist/js'))
 
-  var buildJs = gulp.src('app/php/**/*') // Переносим скрипты в продакшн
+  var buildJs = gulp.src('app/php/**/*') // Переносим php скрипты в продакшн
     .pipe(gulp.dest('dist/php'))
+
+  var buildJs = gulp.src('app/*.php') // Переносим php страницы и скрипты в продакшн
+    .pipe(gulp.dest('dist'))
 
 });
 

@@ -11,9 +11,29 @@ $mail_from = $_POST['sender_mail'];
 $phone = $_POST['sender_tel'];
 $message = $_POST['sender_msg'];
 $assessment = $_POST['assessment_r_group'];
-$visited = implode(', ', $_POST['visited_ch_group']);
+$visited = implode($_POST['visited_ch_group']);
+$response = $_POST["g-recaptcha-response"];
+$url = 'https://www.google.com/recaptcha/api/siteverify';
+$data = array(
+    'secret' => '6Ldrd0UUAAAAAGKPMhcxwud0OZigUQldbYM7s6mU',
+    'response' => $_POST["g-recaptcha-response"]
+);
+$options = array(
+    'http' => array(
+        'method' => 'POST',
+        'content' => http_build_query($data)
+    )
+);
+$context = stream_context_create($options);
+$verify = file_get_contents($url, false, $context);
+$captcha_success = json_decode($verify);
+if ($captcha_success->success == false) {
+    echo "<p>You are a bot! Go away!</p>";
+} else if ($captcha_success->success == true) {
+    echo "<p>You are not not a bot!</p>";
+}
 
-// Construct subject of the email
+// Тема письма
 $subject = 'sedona.kl.com.ua Сообщение от ' . $name;
 
 //// html-контент для письма
@@ -36,9 +56,9 @@ $body_message = $wrapper_s . $item_s . $option_s . 'Имя: ' . $span_e . $value
     $item_s . $option_s . 'Cтрана: ' . $span_e . $value_s . $country . $span_e . $div_e . $br .
     $item_s . $option_s . 'Персоны: ' . $span_e . $value_s . $count . $span_e . $div_e . $br .
     $item_s . $option_s . 'Тел.: ' . $span_e . $value_s . $phone . $span_e . $div_e . $br .
-    $item_s . $option_s . 'Сообщение: ' . $span_e . $value_s . $message . $span_e . $div_e . $br .
     $item_s . $option_s . 'Общее впечатление: ' . $span_e . $value_s . $assessment . $span_e . $div_e . $br .
-    $item_s . $option_s . 'Посещенные достопримечательности: ' . $span_e . $value_s . $visited . $span_e . $div_e . $div_e;
+    $item_s . $option_s . 'Посещенные достопримечательности: ' . $span_e . $value_s . $visited . $span_e . $div_e . $br .
+    $item_s . $option_s . 'Сообщение: ' . $span_e . $value_s . $message . $span_e . $div_e . $div_e;
 
 // Строим headers для сообщения
 //	$headers = 'From: ' . $mail_from . "\r\n"; // не работает на бесплатном хостинге zzz.com.ua
@@ -58,5 +78,5 @@ if ($mail_sent == true) { ?>
     window.location = '/../feedback.html';
   </script>
     <?php
-}
-?>
+} ?>
+

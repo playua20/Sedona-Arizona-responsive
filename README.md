@@ -2,7 +2,7 @@
 
  * http://sedona.kl.com.ua/ - Главная
  * http://sedona.kl.com.ua/media.html - Медиа
- * http://sedona.kl.com.ua/form.html - рабочая обратная связь с использованием PHP-скрипта
+ * http://sedona.kl.com.ua/form.html - рабочая feedback форма
 
 ## Особенности:
  * Responsive
