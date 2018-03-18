@@ -9,10 +9,10 @@ if ($_POST) {
   $country = filter_var($_POST["country"], FILTER_SANITIZE_STRING);
   $count = filter_var($_POST["count"], FILTER_SANITIZE_STRING);
   $mail_from = filter_var($_POST["email"], FILTER_SANITIZE_EMAIL);
-  $phone = filter_var($_POST["phone"], FILTER_SANITIZE_STRING);
-  $message = filter_var($_POST["message"], FILTER_SANITIZE_STRING);
-  $assessment = filter_var($_POST["assessment"], FILTER_SANITIZE_STRING);
+  $phone = filter_var($_POST["phone"], FILTER_SANITIZE_NUMBER_INT);
+  $assessment = $_POST["assessment"];
   $visited = $_POST["visited"];
+  $message = filter_var($_POST["message"], FILTER_SANITIZE_STRING);
 
   if (empty($name)) {
     $empty[] = "<b>Имя</b>";
@@ -50,7 +50,7 @@ if ($_POST) {
   }
 
   if (!filter_var($mail_from, FILTER_VALIDATE_EMAIL)) { //email validation
-    $output = json_encode(array('type' => 'error', 'text' => '<b>' . $mail_from . '</b> Неверный email, пожалуйста, исправьте его.'));
+    $output = json_encode(array('type' => 'error', 'text' => '<b>' . $mail_from . '</b>' . ' неверный email, пожалуйста, исправьте его.'));
     die($output);
   }
 
@@ -76,25 +76,27 @@ if ($_POST) {
 //$content = '';
 
 // Стиль письма:
-  $wrapper_s = '<div style="font-weight: bold; font-size: 14px; background: #63cd66; padding: 15px 30px; border: 3px solid #74C26D; box-shadow: inset 2px 3px 5px #444, inset -2px -2px 1px #ccc;">';
+  $wrapper_s = '<div style="font-weight: bold; font-size: 14px; background: #63cd66; padding: 30px; border: 3px solid #74C26D; box-shadow: inset 2px 3px 5px #444, inset -2px -2px 1px #ccc;">';
   $item_s = '<div style="margin-bottom: 10px;">';
   $option_s = '<span style="text-shadow: 1px 1px 0 #156282; color: #56B6C2;">';
   $value_s = '<span style="text-shadow: 1px 1px 0 #858223; color: #fafa00; letter-spacing: 1px;">';
   $div_e = '</div>';
   $span_e = '</span>';
   $br = '<br>';
+  $semicolon = ';';
 
 // Строим body для email
-  $body_message = $wrapper_s . $item_s . $option_s . 'Имя: ' . $span_e . $value_s . $name . $span_e . $div_e . $br .
-    $item_s . $option_s . 'Фамилия: ' . $span_e . $value_s . $surname . $span_e . $div_e . $br .
-    $item_s . $option_s . 'Отчество: ' . $span_e . $value_s . $patronymic . $span_e . $div_e . $br .
-    $item_s . $option_s . 'E-mail: ' . $span_e . $value_s . $mail_from . $span_e . $div_e . $br .
-    $item_s . $option_s . 'Cтрана: ' . $span_e . $value_s . $country . $span_e . $div_e . $br .
-    $item_s . $option_s . 'Персоны: ' . $span_e . $value_s . $count . $span_e . $div_e . $br .
-    $item_s . $option_s . 'Тел.: ' . $span_e . $value_s . $phone . $span_e . $div_e . $br .
-    $item_s . $option_s . 'Общее впечатление: ' . $span_e . $value_s . $assessment . $span_e . $div_e . $br .
-    $item_s . $option_s . 'Посещенные достопримечательности: ' . $span_e . $value_s . $visited . $span_e . $div_e . $br .
-    $item_s . $option_s . 'Сообщение: ' . $span_e . $value_s . $message . $span_e . $div_e . $div_e;
+  $body_message = $wrapper_s . $item_s . $option_s . 'Имя: ' . $span_e . $value_s . $name . $semicolon . $span_e . $div_e . $br .
+    $item_s . $option_s . 'Фамилия: ' . $span_e . $value_s . $surname . $semicolon . $span_e . $div_e . $br .
+    $item_s . $option_s . 'Отчество: ' . $span_e . $value_s . $patronymic . $semicolon . $span_e . $div_e . $br .
+//    $item_s . $option_s . 'E-mail: ' . $span_e . $value_s . $mail_from . $semicolon . $span_e . $div_e . $br .
+    $item_s . $option_s . 'Электронная почта: ' . $span_e . $value_s . $mail_from . $semicolon . $span_e . $div_e . $br .
+    $item_s . $option_s . 'Cтрана: ' . $span_e . $value_s . $country . $semicolon . $span_e . $div_e . $br .
+    $item_s . $option_s . 'Персоны: ' . $span_e . $value_s . $count . $semicolon . $span_e . $div_e . $br .
+    $item_s . $option_s . 'Тел.: ' . $span_e . $value_s . $phone . $semicolon . $span_e . $div_e . $br .
+    $item_s . $option_s . 'Общее впечатление: ' . $span_e . $value_s . $assessment . $semicolon . $span_e . $div_e . $br .
+    $item_s . $option_s . 'Посещенные достопримечательности:' . $span_e . $value_s . $visited . $semicolon . $span_e . $div_e . $br .
+    $item_s . $option_s . 'Сообщение: ' . $span_e . $value_s . $message . $semicolon . $span_e . $div_e . $div_e;
 
 // Строим headers для сообщения
   $mail_to = 'admin@sedona.kl.com.ua'; // мой email
@@ -111,7 +113,7 @@ $mail_sent = mail("$mail_to", "$subject", "$body_message", "$headers");
     $output = json_encode(array('type' => 'message', 'text' => $name . ', Спасибо за отзыв.'));
     die($output);
   } else {
-    $output = json_encode(array('type' => 'error', 'text' => 'Unable to send email, please contact' . SENDER_EMAIL));
+    $output = json_encode(array('type' => 'error', 'text' => 'Не удалось отправить письмо, пожалуйста, свяжитесь с нами' . $mail_to));
     die($output);
   }
 }

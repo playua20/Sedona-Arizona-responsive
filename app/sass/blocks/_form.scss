@@ -13,9 +13,11 @@
 
 #form-send__loader {
   display: none;
+  height: 20px;
   width: 100%;
-  height: 50px;
   background: url("/img/loader.gif") center no-repeat;
+  padding: .75rem 0;
+  margin-bottom: 1rem;
  }
 
 .form-send__error {
@@ -242,7 +244,7 @@ input[name="sender_count"] {
     height: 58px;
     line-height: 58px;
     right: 0;
-    bottom: 0;
+    top: 0;
     background: #e6e6e6;
     pointer-events: none;
     font-size: 20px;

@@ -72,19 +72,19 @@ $(document).ready(function () {
 $(document).ready(function (e){
   $("#form-send").on('submit',(function(e){
     e.preventDefault();
-    var checkboxes = new Array();
-    $('input[name="visited_ch_group[]"]:checked').each(function() {
-      checkboxes.push(this.value);
-    });
-
     // var checkboxes = new Array();
-    // $('input:checked').each(function() {
-    //   data['visited_ch_group[]'].push($(this).val());
+    // $('input[name="visited_ch_group[]"]:checked').each(function() {
+    //   checkboxes.push(this.value);
     // });
-    // var myCheckboxes = new Array();
-    // $("input:checked").each(function() {
-    //   data['myCheckboxes[]'].push($(this).val());
-    // });
+    var checkboxes = [];
+    $('input[name="visited_ch_group[]"]').each(function() {
+      if($(this).is(":checked"))
+      {
+        checkboxes.push($(this).val());
+      }
+    });
+    checkboxes = checkboxes.toString();
+
     $("#form-send__status").hide();
     // $('#send-message').hide();
     $('#form-send__loader').show();
@@ -102,7 +102,6 @@ $(document).ready(function (e){
         "email" :$('input[name="sender_email"]').val(),
         "phone" :$('input[name="sender_phone"]').val(),
         "message" :$('textarea[name="sender_msg"]').val(),
-        // "visited":checkboxes,
         "visited":checkboxes,
         "assessment" :$('input[name="assessment_r_group"]:checked').val(),
         "g-recaptcha-response":$('textarea[id="g-recaptcha-response"]').val()},
