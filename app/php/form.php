@@ -95,7 +95,7 @@ if ($_POST) {
     $item_s . $option_s . 'Персоны: ' . $span_e . $value_s . $count . $semicolon . $span_e . $div_e . $br .
     $item_s . $option_s . 'Тел.: ' . $span_e . $value_s . $phone . $semicolon . $span_e . $div_e . $br .
     $item_s . $option_s . 'Общее впечатление: ' . $span_e . $value_s . $assessment . $semicolon . $span_e . $div_e . $br .
-    $item_s . $option_s . 'Посещенные достопримечательности:' . $span_e . $value_s . $visited . $semicolon . $span_e . $div_e . $br .
+    $item_s . $option_s . 'Посещенные достопримечательности: ' . $span_e . $value_s . $visited . $semicolon . $span_e . $div_e . $br .
     $item_s . $option_s . 'Сообщение: ' . $span_e . $value_s . $message . $semicolon . $span_e . $div_e . $div_e;
 
 // Строим headers для сообщения

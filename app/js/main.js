@@ -72,10 +72,6 @@ $(document).ready(function () {
 $(document).ready(function (e){
   $("#form-send").on('submit',(function(e){
     e.preventDefault();
-    // var checkboxes = new Array();
-    // $('input[name="visited_ch_group[]"]:checked').each(function() {
-    //   checkboxes.push(this.value);
-    // });
     var checkboxes = [];
     $('input[name="visited_ch_group[]"]').each(function() {
       if($(this).is(":checked"))
@@ -83,10 +79,10 @@ $(document).ready(function (e){
         checkboxes.push($(this).val());
       }
     });
-    checkboxes = checkboxes.toString();
+    checkboxes = checkboxes.join(", ").toString();
 
     $("#form-send__status").hide();
-    // $('#send-message').hide();
+    $('#send-message').hide();
     $('#form-send__loader').show();
     $.ajax({
       url: "php/form.php",
@@ -109,10 +105,10 @@ $(document).ready(function (e){
         $("#form-send__status").fadeIn();
         $('#form-send__loader').hide();
         if(response.type == "error") {
-          // $('#send-message').show();
+          $('#send-message').show();
           $("#form-send__status").attr("class","form-send__error");
         } else if(response.type == "message"){
-          // $('#send-message').hide();
+          $('#send-message').hide();
           $("#form-send__status").attr("class","form-send__success");
         }
         $("#form-send__status").html(response.text);

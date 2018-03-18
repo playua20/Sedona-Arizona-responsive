@@ -128,7 +128,7 @@
             <div class="form-send__item  form-send__item-tel  col-md-12  col-xl-6  row">
               <label class="col-12  col-xl-5" for="form-send__tel">Контактный телефон:</label>
               <input class="col-12  col-xl-7" type="tel" name="sender_phone" id="form-send__tel"
-                     placeholder="050-XXX-XX-XX">
+                     pattern="[0-9]-[-]" placeholder="050-XXX-XX-XX">
             </div>
             <div class="form-send__item  form-send__item-mail  col-md-12  col-xl-6  row">
               <label class="col-12  col-xl-5" for="form-send__mail">Электронная почта:</label>
@@ -165,28 +165,28 @@
             <h3 class="form-send__title">Посещенные достопримечательности:</h3>
             <div class="form-send__visited-list  row  col-12">
               <div class="form-send__item  col-12  col-sm-6  offset-sm-3  offset-md-0  col-md-6  col-xl-3">
-                <input type="checkbox" name="visited_ch_group[]" id="form-send__bridge" value=" Мост Дьявола">
+                <input type="checkbox" name="visited_ch_group[]" id="form-send__bridge" value="Мост Дьявола">
                 <label for="form-send__bridge">
                   <span class="ch-indicator"></span>
                   Мост Дьявола</label>
               </div>
 
               <div class="form-send__item  col-12  col-sm-6  offset-sm-3  offset-md-0  col-md-6  col-xl-3">
-                <input type="checkbox" name="visited_ch_group[]" id="form-send__park" value=" Слайд-парк">
+                <input type="checkbox" name="visited_ch_group[]" id="form-send__park" value="Слайд-парк">
                 <label for="form-send__park">
                   <span class="ch-indicator"></span>
                   Слайд-парк</label>
               </div>
 
               <div class="form-send__item  col-12  col-sm-6  offset-sm-3  offset-md-0  col-md-6  col-xl-3">
-                <input type="checkbox" name="visited_ch_group[]" id="form-send__mountain" value=" Гора-Колокол">
+                <input type="checkbox" name="visited_ch_group[]" id="form-send__mountain" value="Гора-Колокол">
                 <label for="form-send__mountain">
                   <span class="ch-indicator"></span>
                   Гора-Колокол</label>
               </div>
 
               <div class="form-send__item  col-12  col-sm-6  offset-sm-3  offset-md-0  col-md-6  col-xl-3">
-                <input type="checkbox" name="visited_ch_group[]" id="form-send__rock" value=" Красные скалы">
+                <input type="checkbox" name="visited_ch_group[]" id="form-send__rock" value="Красные скалы">
                 <label for="form-send__rock">
                   <span class="ch-indicator"></span>
                   Красные скалы</label>
