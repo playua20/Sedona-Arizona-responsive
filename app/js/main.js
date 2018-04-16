@@ -69,133 +69,93 @@ $(document).ready(function () {
 });
 
 
-$(document).ready(function (e){
-  $("#form-send").on('submit',(function(e){
-    e.preventDefault();
-    var checkboxes = [];
-    $('input[name="visited_ch_group[]"]').each(function() {
-      if($(this).is(":checked"))
-      {
-        checkboxes.push($(this).val());
-      }
-    });
-    checkboxes = checkboxes.join(", ").toString();
-
-    $("#form-send__status").hide();
-    $('#send-message').hide();
-    $('#form-send__loader').show();
-    $.ajax({
-      url: "php/form.php",
-      type: "POST",
-      dataType:'json',
-      cache: false, //на время разработки
-      data: {
-        "name" :$('input[name="sender_name"]').val(),
-        "surname" :$('input[name="sender_surname"]').val(),
-        "patronymic" :$('input[name="sender_patronymic"]').val(),
-        "country" :$('input[name="sender_country"]').val(),
-        "count" :$('input[name="sender_count"]').val(),
-        "email" :$('input[name="sender_email"]').val(),
-        "phone" :$('input[name="sender_phone"]').val(),
-        "message" :$('textarea[name="sender_msg"]').val(),
-        "visited":checkboxes,
-        "assessment" :$('input[name="assessment_r_group"]:checked').val(),
-        "g-recaptcha-response":$('textarea[id="g-recaptcha-response"]').val()},
-      success: function(response){
-        $("#form-send__status").fadeIn();
-        $('#form-send__loader').hide();
-        if(response.type == "error") {
-          $('#send-message').show();
-          $("#form-send__status").attr("class","form-send__error");
-        } else if(response.type == "message"){
-          $('#send-message').hide();
-          $("#form-send__status").attr("class","form-send__success");
-        }
-        $("#form-send__status").html(response.text);
-      },
-      error: function(){}
-    });
-  }));
-});
-
-// $(document).ready(function () {
-//   if ('.recaptcha-checkbox[aria-checked="true"]') {
-//     $('.form-send__btn').prop('disabled', false);
-//   } else if ('.recaptcha-checkbox[aria-checked="false"]') {
-//     $('.form-send__btn').prop('disabled', true);
-//   }
-// });
-
-// $(document).ready(function () {
-//     $('.form-send__btn').prop('disabled', true);
-// });
-
-// $('.form-send__success--close').click(function () {
-//   $('.form-send__success').fadeOut();
-// });
+// $(document).ready(function (e) {
 //
-
-
-// $(document).ready(function () {
+//   $("#form-send").on('submit', (function (e) {
+//       e.preventDefault();
 //
-// function sendBefore() {
-//   $('.preloader').show().css('opacity', 0.5);
-// }
-//
-// function sendSuccess() {
-//   // $('.form-send__success').show();
-//   alert("Ваш отзыв отправлен");
-//   $('#form-send')[0].reset();
-//   grecaptcha.reset();
-//   $('.preloader').fadeOut('slow');
-// }
-//
-//   $("#form-send").submit(function () {
-//     $.ajax({
-//       type: "POST",
-//       url: "../php/send-form.html",
-//       data : $(this).serialize(),
-//       dataType: "html",
-//       // sitekey : '6Ldrd0UUAAAAAGKPMhcxwud0OZigUQldbYM7s6mU',
-//       // beforeSend: sendBefore,
-//       beforeSend: "../recaptcha.php",
-//       success: sendSuccess
-//     });
-//     return false;
-//   });
-// });
-
-
-// $(document).ready(function () {
-//   $(".ui-selectmenu-text").attr('name', 'sender_country');
-// });
-
-// $(function () {
-//
-//   $('#contact-form').validator();
-//
-//   $('#contact-form').on('submit', function (e) {
-//     if (!e.isDefaultPrevented()) {
-//       var url = "../contact.php";
-//
-//       $.ajax({
-//         type: "POST",
-//         url: url,
-//         data: $(this).serialize(),
-//         success: function (data)
-//         {
-//           var messageAlert = 'alert-' + data.type;
-//           var messageText = data.message;
-//
-//           var alertBox = '<div class="alert ' + messageAlert + ' alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>' + messageText + '</div>';
-//           if (messageAlert && messageText) {
-//             $('#contact-form').find('.messages').html(alertBox);
-//             $('#contact-form')[0].reset();
-//             grecaptcha.reset();
-//           }
+//       var checkboxes = [];
+//       $('input[name="visited_ch_group[]"]').each(function () {
+//         if ($(this).is(":checked")) {
+//           checkboxes.push($(this).val());
 //         }
 //       });
-//       return false;
+//       checkboxes = checkboxes.join(", ").toString();
+//
+//       $("#form-send__status").hide();
+//       // $('#send-message').hide();
+//       $('#form-send__loader').show();
+//         $.ajax({
+//           url: "php/form.php",
+//           type: "POST",
+//           dataType: 'json',
+//           cache: false,
+//           // contentType: false,
+//           // processData: false,
+//           data: {
+//             "name": $('input[name="sender_name"]').val(),
+//             "surname": $('input[name="sender_surname"]').val(),
+//             "patronymic": $('input[name="sender_patronymic"]').val(),
+//             "country": $('input[name="sender_country"]').val(),
+//             "count": $('input[name="sender_count"]').val(),
+//             "email": $('input[name="sender_email"]').val(),
+//             "phone": $('input[name="sender_phone"]').val(),
+//             "message": $('textarea[name="sender_msg"]').val(),
+//             "visited": checkboxes,
+//             "assessment": $('input[name="assessment_r_group"]:checked').val(),
+//             "g-recaptcha-response": $('textarea[id="g-recaptcha-response"]').val()
+//           },
+//           success: function (response) {
+//             $("#form-send__status").fadeIn();
+//             $('#form-send__loader').hide();
+//             if (response.type == "error") {
+//               // $('#send-message').show();
+//               $("#form-send__status").attr("class", "form-send__error");
+//             } else if (response.type == "message") {
+//               // $('#send-message').hide();
+//               $("#form-send__status").attr("class", "form-send__success");
+//             }
+//             $("#form-send__status").html(response.text);
+//           },
+//           error: function () {
+//           }
+//         });
 //     }
-//   })
+//   ));
 // });
+
+$(document).ready(function (e) {
+
+  $("#form-send").on('submit', (function (e) {
+      e.preventDefault();
+      var formData = new FormData($(this)[0]);
+
+      $("#form-send__status").hide();
+      // $('#send-message').hide();
+      $('#form-send__loader').show();
+        $.ajax({
+          url: "php/form2.php",
+          type: "POST",
+          dataType: 'json',
+          cache: false,
+          contentType: false,
+          processData: false,
+          data: formData,
+          success: function (response) {
+            $("#form-send__status").fadeIn();
+            $('#form-send__loader').hide();
+            if (response.type == "error") {
+              // $('#send-message').show();
+              $("#form-send__status").attr("class", "form-send__error");
+            } else if (response.type == "message") {
+              // $('#send-message').hide();
+              $("#form-send__status").attr("class", "form-send__success");
+            }
+            $("#form-send__status").html(response.text);
+          },
+          error: function () {
+          }
+        });
+    }
+  ));
+});

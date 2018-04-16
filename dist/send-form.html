@@ -30,6 +30,7 @@
       opacity: 0;
       overflow-x: hidden;
     }
+
     html {
       background-color: #81b3d2;
     }
@@ -47,7 +48,7 @@
           <ul class="row main-nav__list">
             <div class="main-nav__hamb--up"></div>
             <div class="main-nav__hamb--down"></div>
-            <li class="col-12 col-md main-nav__item"><a href="index.html">Главная</a></li>
+            <li class="col-12 col-md main-nav__item"><a href="/">Главная</a></li>
             <li class="col-12 col-md main-nav__item"><a href="media.html">Фото и видео</a></li>
             <li class="col-12 col-md main-nav__item main-nav__item--logo">
               <picture>
@@ -83,7 +84,7 @@
     </section>
 
     <section class="s-form-send">
-      <form id="form-send" method="POST" novalidate="novalidate">
+      <form id="form-send" method="POST" enctype="multipart/form-data">
         <div class="form-send__inner  row">
           <div class="form-send__initials  form-send__b  row  col-md-6">
             <h3 class="form-send__title">Представьтесь, пожалуйста:</h3>
@@ -128,7 +129,7 @@
             <div class="form-send__item  form-send__item-tel  col-md-12  col-xl-6  row">
               <label class="col-12  col-xl-5" for="form-send__tel">Контактный телефон:</label>
               <input class="col-12  col-xl-7" type="tel" name="sender_phone" id="form-send__tel"
-                     placeholder="050-XXX-XX-XX">
+                     pattern="^[0-9\-\+\s\(\)]*$" placeholder="+38(066)XXX-XX-XX">
             </div>
             <div class="form-send__item  form-send__item-mail  col-md-12  col-xl-6  row">
               <label class="col-12  col-xl-5" for="form-send__mail">Электронная почта:</label>
@@ -165,40 +166,48 @@
             <h3 class="form-send__title">Посещенные достопримечательности:</h3>
             <div class="form-send__visited-list  row  col-12">
               <div class="form-send__item  col-12  col-sm-6  offset-sm-3  offset-md-0  col-md-6  col-xl-3">
-                <input type="checkbox" name="visited_ch_group[]" id="form-send__bridge" value=" Мост Дьявола">
+                <input type="checkbox" name="visited_ch_group[]" id="form-send__bridge" value="Мост Дьявола">
                 <label for="form-send__bridge">
                   <span class="ch-indicator"></span>
                   Мост Дьявола</label>
               </div>
 
               <div class="form-send__item  col-12  col-sm-6  offset-sm-3  offset-md-0  col-md-6  col-xl-3">
-                <input type="checkbox" name="visited_ch_group[]" id="form-send__park" value=" Слайд-парк">
+                <input type="checkbox" name="visited_ch_group[]" id="form-send__park" value="Слайд-парк">
                 <label for="form-send__park">
                   <span class="ch-indicator"></span>
                   Слайд-парк</label>
               </div>
 
               <div class="form-send__item  col-12  col-sm-6  offset-sm-3  offset-md-0  col-md-6  col-xl-3">
-                <input type="checkbox" name="visited_ch_group[]" id="form-send__mountain" value=" Гора-Колокол">
+                <input type="checkbox" name="visited_ch_group[]" id="form-send__mountain" value="Гора-Колокол">
                 <label for="form-send__mountain">
                   <span class="ch-indicator"></span>
                   Гора-Колокол</label>
               </div>
 
               <div class="form-send__item  col-12  col-sm-6  offset-sm-3  offset-md-0  col-md-6  col-xl-3">
-                <input type="checkbox" name="visited_ch_group[]" id="form-send__rock" value=" Красные скалы">
+                <input type="checkbox" name="visited_ch_group[]" id="form-send__rock" value="Красные скалы">
                 <label for="form-send__rock">
                   <span class="ch-indicator"></span>
                   Красные скалы</label>
               </div>
 
-<!--              <div class="form-group form-send__item  col-12  col-sm-6  offset-sm-3  offset-md-0  col-md-6  col-xl-3">-->
-<!--                <input type="checkbox" name="visited_ch_group[]" id="form-send__own-choice" value="">-->
-<!--                <label for="form-send__own-choice">-->
-<!--                  <span class="ch-indicator"></span></label>-->
-<!--                <input type="text" name="sender_guest-option" class="form-send__own-choice-field"-->
-<!--                       placeholder="Свой вариант">-->
-<!--              </div>-->
+              <!--              <div class="form-group form-send__item  col-12  col-sm-6  offset-sm-3  offset-md-0  col-md-6  col-xl-3">-->
+              <!--                <input type="checkbox" name="visited_ch_group[]" id="form-send__own-choice" value="">-->
+              <!--                <label for="form-send__own-choice">-->
+              <!--                  <span class="ch-indicator"></span></label>-->
+              <!--                <input type="text" name="sender_guest-option" class="form-send__own-choice-field"-->
+              <!--                       placeholder="Свой вариант">-->
+              <!--              </div>-->
+            </div>
+          </div>
+          <div class="form-send__userfile  form-send__b col-12  row">
+            <h3 class="form-send__title">Фото посещённых мест</h3>
+            <div class="form-send__item  col-12">
+              <p>Фото 1: <input type="file" name="file1"></p>
+              <p>Фото 2: <input type="file" name="file2"></p>
+              <p>Фото 3: <input type="file" name="file3"></p>
             </div>
           </div>
           <div class="form-send__msg  form-send__b col-12  row">
@@ -206,12 +215,16 @@
             <textarea resize="false" class="form-send__textarea" name="sender_msg"
                       placeholder="Опишите подробно все свои восторги"></textarea>
           </div>
-          <div class="col-12" id="form-send__status"></div>
-          <div class="col-12" id="form-send__loader"></div>
-          <!--<div class="col-12  col-md-6 g-recaptcha" data-sitekey="<?php //echo SITE_KEY; ?>"></div>-->
-          <div class="col-12  col-md-6 g-recaptcha" data-sitekey="6Ldrd0UUAAAAAGLKF3WmRiswi4-1xfVd_pHdkC7a"></div>
-          <button type="submit"  id="send-message"  class="col-12  col-md-6 form-send__btn  btn">Отправить отзыв</button>
-<!--          <span class="form-send__required  col-md-6">* — обязательные поля</span>-->
+          <div class="form-send__b form-send__b-recaptcha  row  col-12">
+            <div class="col-12" id="form-send__status"></div>
+            <div class="col-12" id="form-send__loader"></div>
+            <!--<div class="col-12  col-md-6 g-recaptcha" data-sitekey="<?php //echo SITE_KEY; ?>"></div>-->
+            <div class="form-send__captcha-wrapper  col-12  col-md-6">
+              <div class="g-recaptcha" data-sitekey="6Ldrd0UUAAAAAGLKF3WmRiswi4-1xfVd_pHdkC7a"></div>
+            </div>
+            <button type="submit" id="send-message" class="col-12  col-md-6 form-send__btn  btn">Отправить отзыв
+            </button>
+            <!--          <span class="form-send__required  col-md-6">* — обязательные поля</span>--></div>
         </div>
       </form>
     </section>
@@ -250,11 +263,11 @@
   </footer>
 </div>
 <div class="top" title="Наверх"><i class="fa fa-plane"></i></div>
- <script src='https://www.google.com/recaptcha/api.js'></script>
+<script src='https://www.google.com/recaptcha/api.js'></script>
 <link rel="stylesheet" href="css/libs.min.css">
 <link rel="stylesheet" href="css/style.min.css"> <!-- в разработке использовать неминимизированный -->
 <script src="js/libs.min.js"></script>
-<script src="js/main.js"></script>  <!-- в разработке использовать неминимизированный -->
+<script src="js/main.min.js"></script>  <!-- в разработке использовать неминимизированный -->
 </body>
 
 </html>

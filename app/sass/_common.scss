@@ -69,6 +69,11 @@ h1, h2, h3, h4, h4, h6 {
   color: #000;
 }
 
+ul,
+ol {
+  list-style-type: none;
+}
+
 // tablet start
 @media (min-width: 768px) {
   /* перебиваем стили бутстрап, что бы не было зазоров между col-md-4 */

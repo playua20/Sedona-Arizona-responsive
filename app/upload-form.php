@@ -2,9 +2,9 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="sender_viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Sedona - Media</title>
+  <title>Sedona - Форма отзыва</title>
   <link rel="apple-touch-icon" sizes="57x57" href="/img/favicon/apple-icon-57x57.png">
   <link rel="apple-touch-icon" sizes="60x60" href="img/favicons/apple-icon-60x60.png">
   <link rel="apple-touch-icon" sizes="72x72" href="/img/favicon/apple-icon-72x72.png">
@@ -14,7 +14,7 @@
   <link rel="apple-touch-icon" sizes="144x144" href="/img/favicon/apple-icon-144x144.png">
   <link rel="apple-touch-icon" sizes="152x152" href="/img/favicon/apple-icon-152x152.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-icon-180x180.png">
-  <link rel="icon" type="image/png" sizes="192x192"  href="/img/favicon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/img/favicon/android-icon-192x192.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="96x96" href="/img/favicon/favicon-96x96.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png">
@@ -46,7 +46,7 @@
             <div class="main-nav__hamb--up"></div>
             <div class="main-nav__hamb--down"></div>
             <li class="col-12 col-md main-nav__item"><a href="/">Главная</a></li>
-            <li class="col-12 col-md main-nav__item  main-nav__item--active"><a>Фото и видео</a></li>
+            <li class="col-12 col-md main-nav__item"><a href="media.html">Фото и видео</a></li>
             <li class="col-12 col-md main-nav__item main-nav__item--logo">
               <picture>
                 <source media="(min-width: 1080px)" srcset="img/logotype-desktop.svg">
@@ -54,8 +54,9 @@
                 <img src="img/logotype-mobile.svg" alt="городок Седона">
               </picture>
             </li>
-            <li class="col-12 col-md main-nav__item"><a href="send-form.html">Форма отзыва</a></li>
-            <li class="co l-12 col-md main-nav__item"><a href="#hash-footer">Контакты</a></li>
+            <li class="col-12 col-md main-nav__item"><a href="send-form.html">Форма отзыва</a>
+            </li>
+            <li class="co l-12 col-md main-nav__item"><a class="hash-footer" href="#hash-footer">Контакты</a></li>
           </ul>
 
         </div>
@@ -69,98 +70,26 @@
       </div>
     </div>
   </header>
-  <main>
-    <section class="intro">
-      <div class="intro__slogan">
-        <h1 class="intro__slogan-title">Фото и видео</h1>
-        <p>Не можете решиться на путешествие из-за курса? Фотографии помогут вам забыть о политике и экономике.
-        </p>
-      </div>
-    </section>
-    <section class="photos">
-      <div class="parent-container">
-        <div class="photo__item">
-          <a href="img/holiday.jpg">
-            <img src="img/holiday.jpg" alt="" title="">
-          </a>
-          <div class="photo__item-caption  row">
-            <div class="photo__item-caption-left  row">
-              <p class="photo__item-desc  col-12">Бесплатные бассейны</p>
-              <p class="photo__item-auth  col-12">Рома</p>
-            </div>
-          </div>
-        </div>
-        <div class="photo__item">
-          <a href="img/devils-bridge.jpg">
-            <img src="img/devils-bridge.jpg" alt="" title="">
-          </a>
-          <div class="photo__item-caption  row">
-            <div class="photo__item-caption-left  row">
-              <p class="photo__item-desc  col-12">Дьявольский мост</p>
-              <p class="photo__item-auth  col-12">Артур</p>
-            </div>
-          </div>
-        </div>
-        <div class="photo__item">
-          <a href="img/oak-creek-canyon.jpg">
-            <img src="img/oak-creek-canyon.jpg" alt="" title="">
-          </a>
-          <div class="photo__item-caption  row">
-            <div class="photo__item-caption-left  row">
-              <p class="photo__item-desc  col-12">Снежно-вечерняя Седона</p>
-              <p class="photo__item-auth  col-12">Ира</p>
-            </div>
-          </div>
-        </div>
-        <div class="photo__item">
-          <a href="img/water.jpg">
-            <img src="img/water.jpg" alt="" title="">
-          </a>
-          <div class="photo__item-caption  row">
-            <div class="photo__item-caption-left  row">
-              <p class="photo__item-desc  col-12">Лососевый ручей</p>
-              <p class="photo__item-auth  col-12">Евгений</p>
-            </div>
-          </div>
-        </div>
-        <div class="photo__item">
-          <a href="img/road-north.jpg">
-            <img src="img/road-north.jpg" alt="" title="">
-          </a>
-          <div class="photo__item-caption  row">
-            <div class="photo__item-caption-left  row">
-              <p class="photo__item-desc  col-12">Двое неизвестных</p>
-              <p class="photo__item-auth  col-12">Антон</p>
-            </div>
-          </div>
-        </div>
-        <div class="photo__item">
-          <a href="img/road-north-2.jpg">
-            <img src="img/road-north-2.jpg" alt="" title="">
-          </a>
-          <div class="photo__item-caption">
-            <div class="photo__item-caption-left row">
-              <p class="photo__item-desc  col-12">Дорога в неродные просторы</p>
-              <p class="photo__item-auth  col-12">Елизавета</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="share__wrapper">
-      <div id="share"></div>
-    </section>
-    <section class="video">
-      <div class="video__inner">
-        <div class="video__header">
-          <div class="video__title"><b>Всё ещё сомневаетесь?</b></div>
-          <p>Смотрите видеопрезентацию и скорее за билетами, пока <br> они не подорожали в очередной раз!</p>
-        </div>
-        <div class="video__wrapper">
-          <iframe width="100%" height="100%" src="https://www.youtube-nocookie.com/embed/uhpCnqK1kxo" frameborder="0"
-                  allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        </div>
-      </div>
+  <main class="inner-page">
+    <section>
+
+          <p>Send an e-mail with an attachment:</p>
+          <form action="php/upload.php" method="post"
+                enctype="multipart/form-data" name="form1">
+            <p>Your name: <input type="text" name="fromname"></p>
+            <p>Your e-mail: <input type="text" name="fromemail"></p>
+            <p>Mod List: <textarea  name="question" maxlength="1000" cols="25" rows="6" name="modlist"></textarea>
+            <p>File: <input type="file" name="file1"></p>
+            <p>File: <input type="file" name="file2"></p>
+            <p>File: <input type="file" name="file3"></p>
+            <p>File: <input type="file" name="file4"></p>
+            <p>File: <input type="file" name="file5"></p>
+            <p>File: <input type="file" name="file6"></p>
+            <p>File: <input type="file" name="file7"></p>
+            <p>File: <input type="file" name="file8"></p>
+            <p><input type="submit" name="Submit" value="Submit"></p>
+          </form>
+
     </section>
   </main>
   <footer id="hash-footer" class="page-footer">
@@ -180,7 +109,6 @@
         <a class="page-footer__btn  page-footer__copyright-link" href="https://htmlacademy.ru/">
           <svg id="htmlacademy-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 43.49 54.62" width="28px"
                height="40px">
-            <title>htmlacademy</title>
             <g>
               <path d="M1.4,3.5,21.8,1.4,42.1,3.5V41L21.8,53,1.4,41Z" style="stroke-width: 2.7909998893737793px"/>
               <path d="M1.7,20.9,21.1,9.6,42,20.9v1.2L21.8,34,1.7,22.1Z" style="stroke-width: 2.056999921798706px"/>
@@ -197,10 +125,12 @@
   </footer>
 </div>
 <div class="top" title="Наверх"><i class="fa fa-plane"></i></div>
+<script src='https://www.google.com/recaptcha/api.js'></script>
 <link rel="stylesheet" href="css/libs.min.css">
 <link rel="stylesheet" href="css/style.min.css"> <!-- в разработке использовать неминимизированный -->
 <script src="js/libs.min.js"></script>
-<script src="js/main.min.js"></script>  <!-- в разработке использовать неминимизированный -->
+<script src="js/main.js"></script>  <!-- в разработке использовать неминимизированный -->
+<script src="js/upload.js"></script>
 </body>
 
 </html>

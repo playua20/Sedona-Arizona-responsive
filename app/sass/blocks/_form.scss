@@ -1,3 +1,80 @@
+//#maindiv{
+//  width:960px;
+//  margin:10px auto;
+//  padding:10px;
+//  font-family:'Droid Sans',sans-serif
+//}
+//#formdiv{
+//  width:500px;
+//  float:left;
+//  text-align:center
+//}
+//form{
+//  padding:40px 20px;
+//  box-shadow:0 0 10px;
+//  border-radius:2px
+//}
+//h2{
+//  margin-left:30px
+//}
+//.upload{
+//  background-color:red;
+//  border:1px solid red;
+//  color:#fff;
+//  border-radius:5px;
+//  padding:10px;
+//  text-shadow:1px 1px 0 green;
+//  box-shadow:2px 2px 15px rgba(0,0,0,.75)
+//}
+//.upload:hover{
+//  cursor:pointer;
+//  background:#c20b0b;
+//  border:1px solid #c20b0b;
+//  box-shadow:0 0 5px rgba(0,0,0,.75)
+//}
+//#file{
+//  color:green;
+//  padding:5px;
+//  border:1px dashed #123456;
+//  background-color:#f9ffe5
+//}
+//#upload{
+//  margin-left:45px
+//}
+//#noerror{
+//  color:green;
+//  text-align:left
+//}
+//#error{
+//  color:red;
+//  text-align:left
+//}
+//#img{
+//  width:17px;
+//  border:none;
+//  height:17px;
+//  margin-left:-20px;
+//  margin-bottom:91px
+//}
+//.abcd{
+//  text-align:center
+//}
+//.abcd img{
+//  height:100px;
+//  width:100px;
+//  padding:5px;
+//  border:1px solid #e8debd
+//}
+//b{
+//  color:red
+//}
+
+
+
+.form-send__b-recaptcha {
+  padding-bottom: 0 !important;
+}
+
 #form-send__status {
   display:none;
   position: relative;
@@ -35,6 +112,23 @@
 .s-form-send {
   background: #fff;
   @include conf();
+}
+
+input[name="userfile"] {
+  display: block;
+  line-height: 50px;
+  margin: 0 auto;
+  border: 1px dashed $accent;
+  cursor: pointer;
+}
+
+.form-send__captcha-wrapper {
+  padding: 0;
+}
+
+#send-message {
+  margin: auto;
+  vertical-align: middle;
 }
 
 // перебиваем стили списка выбора стран
@@ -99,6 +193,7 @@
 }
 
 .form-send__btn {
+  height: 50px;
   bottom: 0;
   background: $accent;
   &:hover {
@@ -239,12 +334,13 @@ input[name="sender_count"] {
 .form-send__item-mail {
   position: relative;
   &::after {
+    content: '';
     position: absolute;
     width: 58px;
     height: 58px;
     line-height: 58px;
     right: 0;
-    top: 0;
+    bottom: 0;
     background: #e6e6e6;
     pointer-events: none;
     font-size: 20px;
@@ -350,6 +446,7 @@ input:checked ~ label .ch-indicator::after {
 }
 
 textarea {
+  resize: vertical;
   height: 160px;
   width: 100%;
 }
@@ -364,6 +461,10 @@ textarea {
 
 // mobile only start
 @media (max-width: 767px) {
+
+  .form-send__captcha-wrapper {
+    margin-bottom: 20px;
+  }
 
   .form-send__b {
     position: relative;
@@ -449,6 +550,7 @@ textarea {
 
   .form-send__contacts .form-send__title,
   .form-send__visited .form-send__title,
+  .form-send__userfile .form-send__title,
   .form-send__msg .form-send__title {
     width: 400px;
     position: relative;
@@ -520,6 +622,14 @@ textarea {
 
   .form-send__item-mail {
     padding-left: 5%;
+  }
+
+  .form-send__item-tel,
+  .form-send__item-mail {
+    position: relative;
+    &::after {
+      top: 0;
+    }
   }
 
   .form-send__contacts .form-send__item,
