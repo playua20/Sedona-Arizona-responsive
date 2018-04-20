@@ -1,5 +1,4 @@
 <?php
-
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
@@ -21,8 +20,8 @@ if(isset($_FILES) && (bool) $_FILES) {
     }
 
     // email fields: to, from, subject, and so on
-    $to = "<<TO EMAIL>>";
-    $from = "<<FROM EMAIL>>";
+    $to = "admin@sedona.kl.com.ua";
+    $from = "admin@sedona.kl.com.ua";
     $subject ="test attachment";
     $message = "this is a test message";
     $headers = "From: $from";

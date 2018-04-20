@@ -85,7 +85,7 @@ if ($_POST) {
     $subject = 'sedona.kl.com.ua Сообщение от ' . $name;
 
 // Стиль письма:
-    $wrapper_s = '<div style="font-weight: bold; font-size: 14px; background: #63cd66; padding: 30px; border: 3px solid #74C26D; box-shadow: inset 2px 3px 5px #444, inset -2px -2px 1px #ccc;">';
+    $wrapper_s = '<div style="font-weight: bold; font-size: 14px; background: rgba(200, 50 , 50, 0.5); padding: 30px; border: 3px solid #74C26D; box-shadow: inset 2px 3px 5px #444, inset -2px -2px 1px #ccc;">';
     $item_s = '<div style="margin-bottom: 10px;">';
     $option_s = '<span style="text-shadow: 1px 1px 0 #156282; color: #56B6C2;">';
     $value_s = '<span style="text-shadow: 1px 1px 0 #858223; color: #fafa00; letter-spacing: 1px;">';

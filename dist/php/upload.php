@@ -3,6 +3,7 @@ if ($_SERVER['REQUEST_METHOD']=="POST"){
 
     // we'll begin by assigning the To address and message subject
     $to="admin@sedona.kl.com.ua";
+    $from="admin@sedona.kl.com.ua";
     $subject="E-mail with attachment";
 
     // get the sender's name and email address

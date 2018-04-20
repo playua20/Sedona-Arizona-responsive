@@ -133,29 +133,66 @@ $(document).ready(function (e) {
       $("#form-send__status").hide();
       // $('#send-message').hide();
       $('#form-send__loader').show();
-        $.ajax({
-          url: "php/form2.php",
-          type: "POST",
-          dataType: 'json',
-          cache: false,
-          contentType: false,
-          processData: false,
-          data: formData,
-          success: function (response) {
-            $("#form-send__status").fadeIn();
-            $('#form-send__loader').hide();
-            if (response.type == "error") {
-              // $('#send-message').show();
-              $("#form-send__status").attr("class", "form-send__error");
-            } else if (response.type == "message") {
-              // $('#send-message').hide();
-              $("#form-send__status").attr("class", "form-send__success");
-            }
-            $("#form-send__status").html(response.text);
-          },
-          error: function () {
+      $.ajax({
+        url: "php/form2.php",
+        type: "POST",
+        dataType: 'json',
+        cache: false,
+        contentType: false,
+        processData: false,
+        data: formData,
+        success: function (response) {
+          $("#form-send__status").fadeIn();
+          $('#form-send__loader').hide();
+          if (response.type == "error") {
+            // $('#send-message').show();
+            $("#form-send__status").attr("class", "form-send__error");
+          } else if (response.type == "msg") {
+            // $('#send-message').hide();
+            $("#form-send__status").attr("class", "form-send__success");
           }
-        });
+          $("#form-send__status").html(response.text);
+        },
+        error: function () {
+        }
+      });
     }
   ));
+});
+
+// $(document).ready( function() {
+//   $("#datepicker").datepicker({
+//     showOtherMonths: true,
+//     selectOtherMonths: true
+//   });
+// });
+
+$(function () {
+  var dateFormat = "mm/dd/yy",
+    from = $("#from")
+      .datepicker({
+        defaultDate: "+1w",
+        changeMonth: true,
+      })
+      .on("change", function () {
+        to.datepicker("option", "minDate", getDate(this));
+      }),
+    to = $("#to").datepicker({
+      defaultDate: "+1w",
+      changeMonth: true,
+    })
+      .on("change", function () {
+        from.datepicker("option", "maxDate", getDate(this));
+      });
+
+  function getDate(element) {
+    var date;
+    try {
+      date = $.datepicker.parseDate(dateFormat, element.value);
+    } catch (error) {
+      date = null;
+    }
+
+    return date;
+  }
 });

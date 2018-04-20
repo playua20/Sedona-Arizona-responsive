@@ -75,7 +75,9 @@ gulp.task('js-main', function () {
 gulp.task('js-libs', function () {
   return gulp.src([ // Берем все необходимые библиотеки
     'app/libs/jquery/dist/jquery.min.js', // Берем jQuery
-    // 'app/libs/bootstrap/dist/js/bootstrap.js',
+    'app/libs/jquery-ui/jquery-ui.min.js',
+    'app/libs/jquery-ui/ui/i18n/datepicker-ru.js',
+    // 'app/libs/bootstrap/dist/js/bootstrap.js',s
     'app/libs/magnific-popup/dist/jquery.magnific-popup.min.js',
     'app/libs/font-awesome/svg-with-js/js/fontawesome-all.min.js',
     'app/libs/jssocials/dist/jssocials.js',

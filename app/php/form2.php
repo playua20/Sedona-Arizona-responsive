@@ -13,6 +13,9 @@ if ($_SERVER['REQUEST_METHOD']=="POST") {
     $assessment = $_POST['assessment_r_group'];
     $visited = nl2br(implode(', ', $_POST['visited_ch_group']));
     $msg = filter_var($_POST["sender_msg"], FILTER_SANITIZE_STRING);
+    $dateFrom = $_POST["from"];
+    $dateTo = $_POST["to"];
+    $msg = filter_var($_POST["sender_msg"], FILTER_SANITIZE_STRING);
 
     $boundary = uniqid('np');
 
@@ -75,7 +78,7 @@ if ($_SERVER['REQUEST_METHOD']=="POST") {
     $subject = 'sedona.kl.com.ua Сообщение от ' . $name;
 
 // Стиль письма:
-    $wrapper_s = '<div style="font-weight: bold; font-size: 14px; background: #63cd66; padding: 30px; border: 3px solid #74C26D; box-shadow: inset 2px 3px 5px #444, inset -2px -2px 1px #ccc;">';
+    $wrapper_s = '<div style="font-weight: bold; font-size: 14px; background: rgba(200, 50 , 50, 0.5); padding: 30px; border: 3px solid #74C26D; box-shadow: inset 2px 3px 5px #444, inset -2px -2px 1px #ccc;">';
     $item_s = '<div style="margin-bottom: 10px;">';
     $option_s = '<span style="text-shadow: 1px 1px 0 #156282; color: #56B6C2;">';
     $value_s = '<span style="text-shadow: 1px 1px 0 #858223; color: #fafa00; letter-spacing: 1px;">';
@@ -95,8 +98,9 @@ if ($_SERVER['REQUEST_METHOD']=="POST") {
         $item_s . $option_s . 'Тел.: ' . $span_e . $value_s . $phone . $semicolon . $span_e . $div_e . $br .
         $item_s . $option_s . 'Общее впечатление: ' . $span_e . $value_s . $assessment . $semicolon . $span_e . $div_e . $br .
         $item_s . $option_s . 'Посещенные достопримечательности: ' . $span_e . $value_s . $visited . $semicolon . $span_e . $div_e . $br .
-        $item_s . $option_s . 'Сообщение: ' . $span_e . $value_s . $msg . $semicolon . $span_e . $div_e . $div_e . $br .
-        $item_s . $option_s . 'Фотографии: ' . $span_e . $value_s . $photos . $semicolon . $span_e . $div_e . $div_e;
+        $item_s . $option_s . 'Период пребывания от: ' . $span_e . $value_s . $dateFrom . $option_s . ' до ' . $span_e . $dateTo . $semicolon . $span_e . $div_e . $br .
+        $item_s . $option_s . 'Сообщение: ' . $span_e . $value_s . $msg . $semicolon . $span_e . $div_e . $br .
+        $item_s . $option_s . 'Фотографии: ' . $span_e . $value_s . $photos . $span_e. $div_e . $div_e;
 
 // Мой email
     $to = 'admin@sedona.kl.com.ua'; // мой email

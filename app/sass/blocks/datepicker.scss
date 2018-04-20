@@ -1,0 +1,60 @@
+#datepicker {
+  display: block;
+  margin: 0 auto;
+}
+.ui-datepicker-inline {
+  margin: 0 auto;
+}
+
+.ui-datepicker-prev-hover,
+.ui-datepicker-next-hover {
+  top: 2px!important;
+}
+
+.ui-datepicker-prev-hover {
+  left: 2px !important;
+}
+
+.ui-datepicker-next-hover {
+  right: 2px !important;
+}
+
+.form-send__item-date {
+  text-align: center;
+}
+
+.form-send__item-date-from,
+.form-send__item-date-to {
+  display: inline-flex;
+  position: relative;
+  &:after {
+    //content: '';
+    position: absolute;
+    width: 58px;
+    height: 58px;
+    line-height: 58px;
+    right: 0;
+    bottom: 0;
+    background: #e6e6e6;
+    pointer-events: none;
+    font-size: 20px;
+    font-family: FontAwesome;
+    text-align: center;
+  }
+}
+
+.form-send__item-date-from:after {
+    content: '\f274';
+}
+
+.form-send__item-date-to:after {
+    content: '\f273';
+}
+
+input[name="from"],
+input[name="to"] {
+  position: relative;
+  margin-left: 10px;
+  padding-right: 80px;
+
+}

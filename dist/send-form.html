@@ -96,12 +96,12 @@
             <div class="form-send__item  row  col-12">
               <label class="col-3  col-sm-2  col-md-3  col-md-2" for="form-send__surname">Фамилия:</label>
               <input class="col-9 col-sm-10  col-md-9" type="text" name="sender_surname" id="form-send__surname"
-                     placeholder="Трамп">
+                     placeholder="Зотова">
             </div>
             <div class="form-send__item  row  col-12">
               <label class="col-3  col-sm-2  col-md-3  col-md-2" for="form-send__patronymic">Отчество:</label>
               <input class="col-9  col-sm-10  col-md-9" type="text" name="sender_patronymic" id="form-send__patronymic"
-                     placeholder="Олеговна">
+                     placeholder="Игоревна">
             </div>
           </div>
           <div class="form-send__country  form-send__b  row  col-12  col-md-6">
@@ -210,8 +210,22 @@
               <p>Фото 3: <input type="file" name="file3"></p>
             </div>
           </div>
+          <div class="form-send__date  form-send__b col-12  row">
+            <h3 class="form-send__title">Период пребывания</h3>
+            <div class="form-send__item  form-send__item-date  col-12">
+              <div class="form-send__item-date-from">
+                <label for="from">От</label>
+                <input type="text" id="from" name="from" placeholder="31.01.2018">
+              </div>
+            </div>
+            <div class="form-send__item  form-send__item-date  col-12">
+              <div class="form-send__item-date-to">
+                <label for="to">До</label>
+                <input type="text" id="to" name="to" placeholder="14.02.2018"></div>
+            </div>
+          </div>
           <div class="form-send__msg  form-send__b col-12  row">
-            <h3 class="form-send__title">Опишите свои эмоции </h3>
+            <h3 class="form-send__title">Опишите свои эмоции</h3>
             <textarea resize="false" class="form-send__textarea" name="sender_msg"
                       placeholder="Опишите подробно все свои восторги"></textarea>
           </div>
@@ -222,7 +236,7 @@
             <div class="form-send__captcha-wrapper  col-12  col-md-6">
               <div class="g-recaptcha" data-sitekey="6Ldrd0UUAAAAAGLKF3WmRiswi4-1xfVd_pHdkC7a"></div>
             </div>
-            <button type="submit" id="send-message" class="col-12  col-md-6 form-send__btn  btn">Отправить отзыв
+            <button type="submit" id="send-message" class="col-12  col-md-6 form-send__btn  btn" ы>Отправить отзыв
             </button>
             <!--          <span class="form-send__required  col-md-6">* — обязательные поля</span>--></div>
         </div>
@@ -265,9 +279,9 @@
 <div class="top" title="Наверх"><i class="fa fa-plane"></i></div>
 <script src='https://www.google.com/recaptcha/api.js'></script>
 <link rel="stylesheet" href="css/libs.min.css">
-<link rel="stylesheet" href="css/style.min.css"> <!-- в разработке использовать неминимизированный -->
+<link rel="stylesheet" href="css/style.min.css">
 <script src="js/libs.min.js"></script>
-<script src="js/main.min.js"></script>  <!-- в разработке использовать неминимизированный -->
+<script src="js/main.js"></script>
 </body>
 
 </html>

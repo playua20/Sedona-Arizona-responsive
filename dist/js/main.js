@@ -69,65 +69,130 @@ $(document).ready(function () {
 });
 
 
+// $(document).ready(function (e) {
+//
+//   $("#form-send").on('submit', (function (e) {
+//       e.preventDefault();
+//
+//       var checkboxes = [];
+//       $('input[name="visited_ch_group[]"]').each(function () {
+//         if ($(this).is(":checked")) {
+//           checkboxes.push($(this).val());
+//         }
+//       });
+//       checkboxes = checkboxes.join(", ").toString();
+//
+//       $("#form-send__status").hide();
+//       // $('#send-message').hide();
+//       $('#form-send__loader').show();
+//         $.ajax({
+//           url: "php/form.php",
+//           type: "POST",
+//           dataType: 'json',
+//           cache: false,
+//           // contentType: false,
+//           // processData: false,
+//           data: {
+//             "name": $('input[name="sender_name"]').val(),
+//             "surname": $('input[name="sender_surname"]').val(),
+//             "patronymic": $('input[name="sender_patronymic"]').val(),
+//             "country": $('input[name="sender_country"]').val(),
+//             "count": $('input[name="sender_count"]').val(),
+//             "email": $('input[name="sender_email"]').val(),
+//             "phone": $('input[name="sender_phone"]').val(),
+//             "message": $('textarea[name="sender_msg"]').val(),
+//             "visited": checkboxes,
+//             "assessment": $('input[name="assessment_r_group"]:checked').val(),
+//             "g-recaptcha-response": $('textarea[id="g-recaptcha-response"]').val()
+//           },
+//           success: function (response) {
+//             $("#form-send__status").fadeIn();
+//             $('#form-send__loader').hide();
+//             if (response.type == "error") {
+//               // $('#send-message').show();
+//               $("#form-send__status").attr("class", "form-send__error");
+//             } else if (response.type == "message") {
+//               // $('#send-message').hide();
+//               $("#form-send__status").attr("class", "form-send__success");
+//             }
+//             $("#form-send__status").html(response.text);
+//           },
+//           error: function () {
+//           }
+//         });
+//     }
+//   ));
+// });
+
 $(document).ready(function (e) {
 
   $("#form-send").on('submit', (function (e) {
       e.preventDefault();
-
-      // var ajaxData = new FormData();
-      // $.each($(".email_attachment"), function(i, obj) {
-      //   $.each(obj.files,function(i,file){
-      //     ajaxData.append('photo['+i+']', file);
-      //   });
-      // });
-
-      var checkboxes = [];
-      $('input[name="visited_ch_group[]"]').each(function () {
-        if ($(this).is(":checked")) {
-          checkboxes.push($(this).val());
-        }
-      });
-      checkboxes = checkboxes.join(", ").toString();
+      var formData = new FormData($(this)[0]);
 
       $("#form-send__status").hide();
       // $('#send-message').hide();
       $('#form-send__loader').show();
-        $.ajax({
-          url: "php/form.php",
-          type: "POST",
-          dataType: 'json',
-          cache: false,
-          // contentType: false,
-          // processData: false,
-          data: {
-            // "photos" : ajaxData,
-            "name": $('input[name="sender_name"]').val(),
-            "surname": $('input[name="sender_surname"]').val(),
-            "patronymic": $('input[name="sender_patronymic"]').val(),
-            "country": $('input[name="sender_country"]').val(),
-            "count": $('input[name="sender_count"]').val(),
-            "email": $('input[name="sender_email"]').val(),
-            "phone": $('input[name="sender_phone"]').val(),
-            "message": $('textarea[name="sender_msg"]').val(),
-            "visited": checkboxes,
-            "assessment": $('input[name="assessment_r_group"]:checked').val(),
-            "g-recaptcha-response": $('textarea[id="g-recaptcha-response"]').val()
-          },
-          success: function (response) {
-            $("#form-send__status").fadeIn();
-            $('#form-send__loader').hide();
-            if (response.type == "error") {
-              // $('#send-message').show();
-              $("#form-send__status").attr("class", "form-send__error");
-            } else if (response.type == "message") {
-              // $('#send-message').hide();
-              $("#form-send__status").attr("class", "form-send__success");
-            }
-            $("#form-send__status").html(response.text);
-          },
-          error: function () {
+      $.ajax({
+        url: "php/form2.php",
+        type: "POST",
+        dataType: 'json',
+        cache: false,
+        contentType: false,
+        processData: false,
+        data: formData,
+        success: function (response) {
+          $("#form-send__status").fadeIn();
+          $('#form-send__loader').hide();
+          if (response.type == "error") {
+            // $('#send-message').show();
+            $("#form-send__status").attr("class", "form-send__error");
+          } else if (response.type == "msg") {
+            // $('#send-message').hide();
+            $("#form-send__status").attr("class", "form-send__success");
           }
-        });
+          $("#form-send__status").html(response.text);
+        },
+        error: function () {
+        }
+      });
     }
   ));
+});
+
+// $(document).ready( function() {
+//   $("#datepicker").datepicker({
+//     showOtherMonths: true,
+//     selectOtherMonths: true
+//   });
+// });
+
+$(function () {
+  var dateFormat = "mm/dd/yy",
+    from = $("#from")
+      .datepicker({
+        defaultDate: "+1w",
+        changeMonth: true,
+      })
+      .on("change", function () {
+        to.datepicker("option", "minDate", getDate(this));
+      }),
+    to = $("#to").datepicker({
+      defaultDate: "+1w",
+      changeMonth: true,
+    })
+      .on("change", function () {
+        from.datepicker("option", "maxDate", getDate(this));
+      });
+
+  function getDate(element) {
+    var date;
+    try {
+      date = $.datepicker.parseDate(dateFormat, element.value);
+    } catch (error) {
+      date = null;
+    }
+
+    return date;
+  }
 });
