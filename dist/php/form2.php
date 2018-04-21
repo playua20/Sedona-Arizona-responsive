@@ -13,8 +13,8 @@ if ($_SERVER['REQUEST_METHOD']=="POST") {
     $assessment = $_POST['assessment_r_group'];
     $visited = nl2br(implode(', ', $_POST['visited_ch_group']));
     $msg = filter_var($_POST["sender_msg"], FILTER_SANITIZE_STRING);
-    $dateFrom = $_POST["from"];
-    $dateTo = $_POST["to"];
+    $date_from = $_POST["from"];
+    $date_to = $_POST["to"];
     $msg = filter_var($_POST["sender_msg"], FILTER_SANITIZE_STRING);
 
     $boundary = uniqid('np');
@@ -88,7 +88,7 @@ if ($_SERVER['REQUEST_METHOD']=="POST") {
     $semicolon = ';';
 
 //// Строим body для email
-    $body = $wrapper_s . $item_s . $option_s . 'Имя: ' . $span_e . $value_s . $name . $semicolon . $span_e . $div_e . $br .
+    $body .= $wrapper_s . $item_s . $option_s . 'Имя: ' . $span_e . $value_s . $name . $semicolon . $span_e . $div_e . $br .
         $item_s . $option_s . 'Фамилия: ' . $span_e . $value_s . $surname . $semicolon . $span_e . $div_e . $br .
         $item_s . $option_s . 'Отчество: ' . $span_e . $value_s . $patronymic . $semicolon . $span_e . $div_e . $br .
 //    $item_s . $option_s . 'E-mail: ' . $span_e . $value_s . $from . $semicolon . $span_e . $div_e . $br .
@@ -98,78 +98,71 @@ if ($_SERVER['REQUEST_METHOD']=="POST") {
         $item_s . $option_s . 'Тел.: ' . $span_e . $value_s . $phone . $semicolon . $span_e . $div_e . $br .
         $item_s . $option_s . 'Общее впечатление: ' . $span_e . $value_s . $assessment . $semicolon . $span_e . $div_e . $br .
         $item_s . $option_s . 'Посещенные достопримечательности: ' . $span_e . $value_s . $visited . $semicolon . $span_e . $div_e . $br .
-        $item_s . $option_s . 'Период пребывания от: ' . $span_e . $value_s . $dateFrom . $option_s . ' до ' . $span_e . $dateTo . $semicolon . $span_e . $div_e . $br .
+        $item_s . $option_s . 'Период пребывания от ' . $span_e . $value_s . $date_from . $option_s . ' до ' . $span_e . $date_to . $semicolon . $span_e . $div_e . $br .
         $item_s . $option_s . 'Сообщение: ' . $span_e . $value_s . $msg . $semicolon . $span_e . $div_e . $br .
-        $item_s . $option_s . 'Фотографии: ' . $span_e . $value_s . $photos . $span_e. $div_e . $div_e;
+        $item_s . $option_s . 'Фотографии: ' . $span_e . $_FILES . $div_e . $div_e;
 
 // Мой email
     $to = 'admin@sedona.kl.com.ua'; // мой email
 //    $from="admin@sedona.kl.com.ua";
 
-// Строим headers для сообщения
+// Строим headers сообщения
 //  $headers = 'From: ' . $from . "\r\n"; // не работает на бесплатном хостинге zzz.com.ua, нужно указывать свой email
 //    $headers = 'From: ' . $to . "Content-type: text/html; charset=\"utf-8\"\r\n"; // Content-type: text/html - для отображения html тегов в сообщении
 //$headers .= 'Reply-To: ' . $from . "\r\n";
 
 
-    // generate a random string to be used as the boundary marker
+    // генерируем случайную строку, которая будет использоваться в качестве граничного маркера
     $mime_boundary = "==Multipart_Boundary_x" . md5(mt_rand()) . "x";
 
-    // now we'll build the message headers
+    // строим заголовки сообщений
     $headers = "From: ' . $to\r\n" .
         "MIME-Version: 1.0\r\n" .
         "Content-Type: multipart/mixed;\r\n" .
         " boundary=\"{$mime_boundary}\"";
 
-    // here, we'll start the message body.
-    // this is the text that will be displayed
-    // in the e-mail
-//    $body = "This is an example";
-
-//    body .= "Name:".$_POST["sender_name"]."Message Posted:".$_POST["modlist"];
-
-    // next, we'll build the invisible portion of the message body
-    // note that we insert two dashes in front of the MIME boundary
-    // when we use it
-    $body .= "This is a multi-part message in MIME format.\n\n" .
+    // строим невидимую часть тела сообщения
+    // внимание, вставляем две тире перед границей MIME
+    // когда мы его используем
+    $body = "This is a multi-part message in MIME format.\n\n" .
         "--{$mime_boundary}\n" .
         "Content-type: text/html; charset=\"utf-8\"\n" .
         "Content-Transfer-Encoding: 7bit\n\n" .
         $body . "\n\n";
 
-    // now we'll process our uploaded files
+    // обработаем наши загруженные файлы
     foreach ($_FILES as $userfile) {
-        // store the file information to variables for easier access
+        // храниv информацию о файлах в переменных
         $tmp_name = $userfile['tmp_name'];
         $type = $userfile['type'];
-        $name = $userfile['name'];
+        $file_name = $userfile['name'];
         $size = $userfile['size'];
 
-        // if the upload succeded, the file will exist
+        // если загрузка выполнена успешно, файл будет существовать
         if (file_exists($tmp_name)) {
 
-            // check to make sure that it is an uploaded file and not a system file
+            // проверяем, что это загруженный файл, а не системный файл
             if (is_uploaded_file($tmp_name)) {
 
-                // open the file for a binary read
+                // открыть файл для двоичного чтения
                 $file = fopen($tmp_name, 'rb');
 
-                // read the file content into a variable
+                // читаем содержимое файла в переменной
                 $data = fread($file, filesize($tmp_name));
 
-                // close the file
+                // закрываем файл
                 fclose($file);
 
-                // now we encode it and split it into acceptable length lines
+                // теперь мы кодируем его и разделяем на допустимые длины строк
                 $data = chunk_split(base64_encode($data));
             }
 
-            // now we'll insert a boundary to indicate we're starting the attachment
-            // we have to specify the content type, file name, and disposition as
-            // an attachment, then add the file content.
-            // NOTE: we don't set another boundary to indicate that the end of the
-            // file has been reached here. we only want one boundary between each file
-            // we'll add the final one after the loop finishes.
+            // теперь мы вставим границу, чтобы указать, что мы запускаем вложение
+            // мы должны указать тип содержимого, имя файла и расположение как
+            // вложение, затем добавьте содержимое файла.
+            // ПРИМЕЧАНИЕ: мы не устанавливаем другую границу, чтобы указать, что конец
+            // файл был достигнут здесь. нам нужна только одна граница между каждым файлом
+            // добавим окончательный после завершения цикла.
             $body .= "--{$mime_boundary}\n" .
                 "Content-Type: {$type};\n" .
                 " name=\"{$name}\"\n" .
@@ -179,7 +172,7 @@ if ($_SERVER['REQUEST_METHOD']=="POST") {
                 $data . "\n\n";
         }
     }
-    // here's our closing mime boundary that indicates the last of the message
+    // здесь находится граница закрытия mime, которая указывает последнее сообщение
     $body .= "--{$mime_boundary}--\n";
     // now we just send the message
     $mail_sent = @mail("$to", "$subject", "$body", "$headers");

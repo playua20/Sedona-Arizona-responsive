@@ -160,19 +160,14 @@ $(document).ready(function (e) {
   ));
 });
 
-// $(document).ready( function() {
-//   $("#datepicker").datepicker({
-//     showOtherMonths: true,
-//     selectOtherMonths: true
-//   });
-// });
-
 $(function () {
   var dateFormat = "mm/dd/yy",
     from = $("#from")
       .datepicker({
         defaultDate: "+1w",
         changeMonth: true,
+        showOtherMonths: true,
+        selectOtherMonths: true
       })
       .on("change", function () {
         to.datepicker("option", "minDate", getDate(this));
@@ -180,6 +175,8 @@ $(function () {
     to = $("#to").datepicker({
       defaultDate: "+1w",
       changeMonth: true,
+      showOtherMonths: true,
+      selectOtherMonths: true
     })
       .on("change", function () {
         from.datepicker("option", "maxDate", getDate(this));

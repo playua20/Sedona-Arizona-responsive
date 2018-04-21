@@ -55,7 +55,7 @@ body {
   opacity: 1;
   overflow-x: hidden;
   color: #333;
-  font-family: 'PT Sans', Helvetica, sans-serif;
+  font-family: "PT Sans", Helvetica, sans-serif;
   text-transform: uppercase;
   font-size: 14px;
   line-height: 24px;
@@ -979,7 +979,7 @@ html, body {
   border: 1px solid transparent;
   -webkit-border-radius: .25rem;
           border-radius: .25rem;
-  font-family: 'PT Sans', Helvetica, sans-serif;
+  font-family: "PT Sans", Helvetica, sans-serif;
   text-align: center;
   -webkit-transition: .3s;
   -o-transition: .3s;
@@ -1016,13 +1016,6 @@ html, body {
   @media (min-width: 1200px) {
     .s-form-send {
       max-width: 1200px; } }
-
-input[name="userfile"] {
-  display: block;
-  line-height: 50px;
-  margin: 0 auto;
-  border: 1px dashed #81b3d2;
-  cursor: pointer; }
 
 .form-send__captcha-wrapper {
   padding: 0; }
@@ -1127,7 +1120,7 @@ textarea {
   font-size: 18px;
   line-height: 26px;
   padding: 16px 22px;
-  font-family: 'PT Sans', Helvetica, sans-serif;
+  font-family: "PT Sans", Helvetica, sans-serif;
   border: none;
   outline: none; }
   input[type="text"]:hover,
@@ -1318,6 +1311,12 @@ textarea {
   height: 160px;
   width: 100%; }
 
+.form-send__userfiles {
+  padding-left: 5%;
+  text-align: center; }
+  .form-send__userfiles input[type="file"] {
+    margin-left: 10px; }
+
 @media (max-width: 767px) {
   .form-send__captcha-wrapper {
     margin-bottom: 20px; }
@@ -1347,7 +1346,6 @@ textarea {
   .form-send__count {
     padding-left: 5%; }
   .form-send__country {
-    padding-right: 5%;
     position: relative;
     padding-right: 5%; }
     .form-send__country::after {
@@ -1381,15 +1379,12 @@ textarea {
     overflow: hidden; }
   .form-send__contacts .form-send__title,
   .form-send__visited .form-send__title,
-  .form-send__userfiles .form-send__title,
   .form-send__msg .form-send__title {
     width: 400px;
     position: relative; }
     .form-send__contacts .form-send__title::before, .form-send__contacts .form-send__title::after,
     .form-send__visited .form-send__title::before,
     .form-send__visited .form-send__title::after,
-    .form-send__userfiles .form-send__title::before,
-    .form-send__userfiles .form-send__title::after,
     .form-send__msg .form-send__title::before,
     .form-send__msg .form-send__title::after {
       content: '';
@@ -1402,13 +1397,11 @@ textarea {
               transform: translateY(-50%); }
     .form-send__contacts .form-send__title::before,
     .form-send__visited .form-send__title::before,
-    .form-send__userfiles .form-send__title::before,
     .form-send__msg .form-send__title::before {
       left: -999px;
       right: 100%; }
     .form-send__contacts .form-send__title::after,
     .form-send__visited .form-send__title::after,
-    .form-send__userfiles .form-send__title::after,
     .form-send__msg .form-send__title::after {
       left: 100%;
       right: -999px; }
@@ -1483,8 +1476,21 @@ textarea {
 .ui-datepicker-next-hover {
   right: 2px !important; }
 
+.form-send__date {
+  position: relative; }
+  .form-send__date::after {
+    content: '';
+    position: absolute;
+    top: 20px;
+    bottom: 70px;
+    right: 0;
+    width: 1px;
+    background: #e5e5e5;
+    z-index: 1; }
+
 .form-send__item-date {
-  text-align: center; }
+  text-align: center;
+  padding-right: 5%; }
 
 .form-send__item-date-from,
 .form-send__item-date-to {
@@ -1493,8 +1499,8 @@ textarea {
   display: -ms-inline-flexbox;
   display: inline-flex;
   position: relative; }
-  .form-send__item-date-from:after,
-  .form-send__item-date-to:after {
+  .form-send__item-date-from::after,
+  .form-send__item-date-to::after {
     position: absolute;
     width: 58px;
     height: 58px;
