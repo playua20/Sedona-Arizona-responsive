@@ -84,7 +84,7 @@
     </section>
 
     <section class="s-form-send">
-      <form id="form-send" method="POST" enctype="multipart/form-data">
+      <form id="form-send" method="POST">
         <div class="form-send__inner  row">
           <div class="form-send__initials  form-send__b  row  col-md-6">
             <h3 class="form-send__title">Представьтесь, пожалуйста:</h3>
@@ -104,6 +104,21 @@
                      placeholder="Игоревна">
             </div>
           </div>
+          <div class="form-send__contacts  form-send__b  row">
+            <div class="form-send__contacts-title-row  row  col-12">
+              <h3 class="form-send__title">Контактная информация:</h3>
+            </div>
+            <div class="form-send__item  form-send__item-tel  col-md-12  col-xl-6  row">
+              <label class="col-12  col-xl-5" for="form-send__tel">Контактный телефон:</label>
+              <input class="col-12  col-xl-7" type="tel" name="sender_phone" id="form-send__tel"
+                     pattern="^[0-9\-\+\s\(\)]*$" placeholder="+38(066)XXX-XX-XX">
+            </div>
+            <div class="form-send__item  form-send__item-mail  col-md-12  col-xl-6  row">
+              <label class="col-12  col-xl-5" for="form-send__mail">Электронная почта:</label>
+              <input class="col-12  col-xl-7" type="mail" name="sender_email" id="form-send__mail"
+                     placeholder="Введите e-mail">
+            </div>
+          </div>
           <div class="form-send__country  form-send__b  row  col-12  col-md-6">
             <h3 class="form-send__title">Выберите свою страну:</h3>
             <div class="form-send__item  col-12">
@@ -120,21 +135,6 @@
                   <a href="#" class="count__arrow-down"></a>
                 </div>
               </div>
-            </div>
-          </div>
-          <div class="form-send__contacts  form-send__b  row">
-            <div class="form-send__contacts-title-row  row  col-12">
-              <h3 class="form-send__title">Контактная информация:</h3>
-            </div>
-            <div class="form-send__item  form-send__item-tel  col-md-12  col-xl-6  row">
-              <label class="col-12  col-xl-5" for="form-send__tel">Контактный телефон:</label>
-              <input class="col-12  col-xl-7" type="tel" name="sender_phone" id="form-send__tel"
-                     pattern="^[0-9\-\+\s\(\)]*$" placeholder="+38(066)XXX-XX-XX">
-            </div>
-            <div class="form-send__item  form-send__item-mail  col-md-12  col-xl-6  row">
-              <label class="col-12  col-xl-5" for="form-send__mail">Электронная почта:</label>
-              <input class="col-12  col-xl-7" type="mail" name="sender_email" id="form-send__mail"
-                     placeholder="Введите e-mail">
             </div>
           </div>
           <div class="form-send__assessment  form-send__b  row  col-md-6">
@@ -202,15 +202,7 @@
               <!--              </div>-->
             </div>
           </div>
-          <div class="form-send__userfile  form-send__b col-12  row">
-            <h3 class="form-send__title">Фото посещённых мест</h3>
-            <div class="form-send__item  col-12">
-              <p>Фото 1: <input type="file" name="file1"></p>
-              <p>Фото 2: <input type="file" name="file2"></p>
-              <p>Фото 3: <input type="file" name="file3"></p>
-            </div>
-          </div>
-          <div class="form-send__date  form-send__b col-12  row">
+          <div class="form-send__date  form-send__b  col-md-6  row">
             <h3 class="form-send__title">Период пребывания</h3>
             <div class="form-send__item  form-send__item-date  col-12">
               <div class="form-send__item-date-from">
@@ -222,6 +214,14 @@
               <div class="form-send__item-date-to">
                 <label for="to">До</label>
                 <input type="text" id="to" name="to" placeholder="14.02.2018"></div>
+            </div>
+          </div>
+          <div class="form-send__userfiles  form-send__b  col-md-6  row">
+            <h3 class="form-send__title">Фото посещённых мест</h3>
+            <div class="form-send__item  col-12">
+              <p>Фото 1 <input type="file" name="file1"></p>
+              <p>Фото 2 <input type="file" name="file2"></p>
+              <p>Фото 3 <input type="file" name="file3"></p>
             </div>
           </div>
           <div class="form-send__msg  form-send__b col-12  row">
@@ -281,7 +281,7 @@
 <link rel="stylesheet" href="css/libs.min.css">
 <link rel="stylesheet" href="css/style.min.css">
 <script src="js/libs.min.js"></script>
-<script src="js/main.js"></script>
+<script src="js/main.min.js"></script>
 </body>
 
 </html>

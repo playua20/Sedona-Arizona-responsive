@@ -19,16 +19,30 @@
   right: 2px !important;
 }
 
+.form-send__date {
+  position: relative;
+  &::after {
+    content: '';
+    position: absolute;
+    top: 20px;
+    bottom: 70px;
+    right: 0;
+    width: 1px;
+    background: #e5e5e5;
+    z-index: 1;
+  }
+}
+
 .form-send__item-date {
   text-align: center;
+  padding-right: 5%;
 }
 
 .form-send__item-date-from,
 .form-send__item-date-to {
   display: inline-flex;
   position: relative;
-  &:after {
-    //content: '';
+  &::after {
     position: absolute;
     width: 58px;
     height: 58px;

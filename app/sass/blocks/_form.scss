@@ -1,76 +1,3 @@
-//#maindiv{
-//  width:960px;
-//  margin:10px auto;
-//  padding:10px;
-//  font-family:'Droid Sans',sans-serif
-//}
-//#formdiv{
-//  width:500px;
-//  float:left;
-//  text-align:center
-//}
-//form{
-//  padding:40px 20px;
-//  box-shadow:0 0 10px;
-//  border-radius:2px
-//}
-//h2{
-//  margin-left:30px
-//}
-//.upload{
-//  background-color:red;
-//  border:1px solid red;
-//  color:#fff;
-//  border-radius:5px;
-//  padding:10px;
-//  text-shadow:1px 1px 0 green;
-//  box-shadow:2px 2px 15px rgba(0,0,0,.75)
-//}
-//.upload:hover{
-//  cursor:pointer;
-//  background:#c20b0b;
-//  border:1px solid #c20b0b;
-//  box-shadow:0 0 5px rgba(0,0,0,.75)
-//}
-//#file{
-//  color:green;
-//  padding:5px;
-//  border:1px dashed #123456;
-//  background-color:#f9ffe5
-//}
-//#upload{
-//  margin-left:45px
-//}
-//#noerror{
-//  color:green;
-//  text-align:left
-//}
-//#error{
-//  color:red;
-//  text-align:left
-//}
-//#img{
-//  width:17px;
-//  border:none;
-//  height:17px;
-//  margin-left:-20px;
-//  margin-bottom:91px
-//}
-//.abcd{
-//  text-align:center
-//}
-//.abcd img{
-//  height:100px;
-//  width:100px;
-//  padding:5px;
-//  border:1px solid #e8debd
-//}
-//b{
-//  color:red
-//}
-
-
-
 .form-send__b-recaptcha {
   padding-bottom: 0 !important;
 }
@@ -83,7 +10,7 @@
   margin-bottom: 1rem;
   border: 1px solid transparent;
   border-radius: .25rem;
-  font-family: 'PT Sans', Helvetica, sans-serif;
+  font-family: $ff;
   text-align: center;
   transition: .3s;
 }
@@ -112,14 +39,6 @@
 .s-form-send {
   background: #fff;
   @include conf();
-}
-
-input[name="userfile"] {
-  display: block;
-  line-height: 50px;
-  margin: 0 auto;
-  border: 1px dashed $accent;
-  cursor: pointer;
 }
 
 .form-send__captcha-wrapper {
@@ -253,7 +172,7 @@ textarea {
   font-size: 18px;
   line-height: 26px;
   padding: 16px 22px;
-  font-family: 'PT Sans', Helvetica, sans-serif;
+  font-family: $ff;
   border: none;
   outline: none;
 
@@ -451,6 +370,14 @@ textarea {
   width: 100%;
 }
 
+.form-send__userfiles {
+  padding-left: 5%;
+  text-align: center;
+  input[type="file"] {
+    margin-left: 10px;
+  }
+}
+
 .form-send__preloader {
 
 }
@@ -509,7 +436,6 @@ textarea {
   }
 
   .form-send__country {
-    padding-right: 5%;
     position: relative;
     padding-right: 5%;
     &::after {
@@ -550,7 +476,6 @@ textarea {
 
   .form-send__contacts .form-send__title,
   .form-send__visited .form-send__title,
-  .form-send__userfile .form-send__title,
   .form-send__msg .form-send__title {
     width: 400px;
     position: relative;

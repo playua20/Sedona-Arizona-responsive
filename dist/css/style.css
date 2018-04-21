@@ -1381,15 +1381,15 @@ textarea {
     overflow: hidden; }
   .form-send__contacts .form-send__title,
   .form-send__visited .form-send__title,
-  .form-send__userfile .form-send__title,
+  .form-send__userfiles .form-send__title,
   .form-send__msg .form-send__title {
     width: 400px;
     position: relative; }
     .form-send__contacts .form-send__title::before, .form-send__contacts .form-send__title::after,
     .form-send__visited .form-send__title::before,
     .form-send__visited .form-send__title::after,
-    .form-send__userfile .form-send__title::before,
-    .form-send__userfile .form-send__title::after,
+    .form-send__userfiles .form-send__title::before,
+    .form-send__userfiles .form-send__title::after,
     .form-send__msg .form-send__title::before,
     .form-send__msg .form-send__title::after {
       content: '';
@@ -1402,13 +1402,13 @@ textarea {
               transform: translateY(-50%); }
     .form-send__contacts .form-send__title::before,
     .form-send__visited .form-send__title::before,
-    .form-send__userfile .form-send__title::before,
+    .form-send__userfiles .form-send__title::before,
     .form-send__msg .form-send__title::before {
       left: -999px;
       right: 100%; }
     .form-send__contacts .form-send__title::after,
     .form-send__visited .form-send__title::after,
-    .form-send__userfile .form-send__title::after,
+    .form-send__userfiles .form-send__title::after,
     .form-send__msg .form-send__title::after {
       left: 100%;
       right: -999px; }
