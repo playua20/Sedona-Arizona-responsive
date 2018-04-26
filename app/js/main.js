@@ -126,36 +126,62 @@ $(document).ready(function (e) {
 
 $(document).ready(function (e) {
 
+  var allowed_file_size   = "4194304"; //Разрешен размер файла 4 МБ
+  var allowed_file_types  = ['image/png', 'image/gif', 'image/jpeg', 'image/pjpeg', 'application/x-zip-compressed', 'application/pdf']; //Допустимые типы файлов
+
   $("#form-send").on('submit', (function (e) {
       e.preventDefault();
-      var formData = new FormData($(this)[0]);
+      proceed = true;
 
-      $("#form-send__status").hide();
-      // $('#send-message').hide();
-      $('#form-send__loader').show();
-      $.ajax({
-        url: "php/form2.php",
-        type: "POST",
-        dataType: 'json',
-        cache: false,
-        contentType: false,
-        processData: false,
-        data: formData,
-        success: function (response) {
-          $("#form-send__status").fadeIn();
-          $('#form-send__loader').hide();
-          if (response.type == "error") {
-            // $('#send-message').show();
-            $("#form-send__status").attr("class", "form-send__error");
-          } else if (response.type == "msg") {
-            // $('#send-message').hide();
-            $("#form-send__status").attr("class", "form-send__success");
+      //проверять размер и тип файла перед загрузкой, работает в современных браузерах
+      if (window.File && window.FileReader && window.FileList && window.Blob) {
+        var total_files_size = 0;
+        $(this.elements['file1', 'file2', 'file3'].files).each(function (i, ifile) {
+          if (ifile.value !== "") { //продолжить, только если выбран файл(ы)
+            if (allowed_file_types.indexOf(ifile.type) === -1) { //проверить неподдерживаемый файл
+              alert(ifile.name + " is unsupported file type!");
+              proceed = false;
+            }
+            total_files_size = total_files_size + ifile.size; //добавить размер файла к общему размеру
           }
-          $("#form-send__status").html(response.text);
-        },
-        error: function () {
+        });
+        if (total_files_size > allowed_file_size) {
+          alert("Убедитесь, что размер файла меньше 4 МБ!");
+          proceed = false;
         }
-      });
+      }
+
+      if (proceed) {
+
+        var formData = new FormData($(this)[0]);
+
+        $("#form-send__status").hide();
+        // $('#send-message').hide();
+        $('#form-send__loader').show();
+        $.ajax({
+          url: "php/form2.php",
+          type: "POST",
+          dataType: 'json',
+          cache: false,
+          contentType: false,
+          processData: false,
+          data: formData,
+          success: function (response) {
+            $("#form-send__status").fadeIn();
+            $('#form-send__loader').hide();
+            if (response.type == "error") {
+              // $('#send-message').show();
+              $("#form-send__status").attr("class", "form-send__error");
+            } else if (response.type == "msg") {
+              // $('#send-message').hide();
+              $("#form-send__status").attr("class", "form-send__success");
+            }
+            $("#form-send__status").html(response.text);
+          },
+          error: function () {
+          }
+        });
+      }
     }
   ));
 });

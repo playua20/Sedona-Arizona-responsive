@@ -9,7 +9,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Sedona - Форма отзыва</title>
   <link rel="apple-touch-icon" sizes="57x57" href="/img/favicon/apple-icon-57x57.png">
-  <link rel="apple-touch-icon" sizes="60x60" href="img/favicons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/img/favicons/apple-icon-60x60.png">
   <link rel="apple-touch-icon" sizes="72x72" href="/img/favicon/apple-icon-72x72.png">
   <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon/apple-icon-76x76.png">
   <link rel="apple-touch-icon" sizes="114x114" href="/img/favicon/apple-icon-114x114.png">
@@ -23,7 +23,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png">
   <link rel="manifest" href="/img/favicon/manifest.json">
   <meta name="msapplication-TileColor" content="#ffffff">
-  <meta name="msapplication-TileImage" content=/img/favicon"/ms-icon-144x144.png">
+  <meta name="msapplication-TileImage" content=/img/favicon/ms-icon-144x144.png">
   <meta name="theme-color" content="#ffffff">
   <style>
     body {
@@ -46,8 +46,8 @@
       <nav class="main-nav  main-nav--closed  main-nav--nojs">
         <div class="main-nav__inner">
           <ul class="row main-nav__list">
-            <div class="main-nav__hamb--up"></div>
-            <div class="main-nav__hamb--down"></div>
+            <span class="main-nav__hamb--up"></span>
+            <span class="main-nav__hamb--down"></span>
             <li class="col-12 col-md main-nav__item"><a href="/">Главная</a></li>
             <li class="col-12 col-md main-nav__item"><a href="media.html">Фото и видео</a></li>
             <li class="col-12 col-md main-nav__item main-nav__item--logo">
@@ -202,30 +202,38 @@
               <!--              </div>-->
             </div>
           </div>
-          <div class="form-send__date  form-send__b  col-md-6  row">
-            <h3 class="form-send__title">Период пребывания</h3>
+          <div class="form-send__date  form-send__b  justify-content-start  align-items-start  col-md-6  row">
+            <h3 class="form-send__title">Период пребывания:</h3>
             <div class="form-send__item  form-send__item-date  col-12">
               <div class="form-send__item-date-from">
-                <label for="from">От</label>
-                <input type="text" id="from" name="from" placeholder="31.01.2018">
+                <label class="col-2  col-xl-3" for="from">От</label>
+                <input class="col-10  col-xl-9" type="text" id="from" name="from" placeholder="31.01.2018">
               </div>
             </div>
             <div class="form-send__item  form-send__item-date  col-12">
               <div class="form-send__item-date-to">
-                <label for="to">До</label>
-                <input type="text" id="to" name="to" placeholder="14.02.2018"></div>
+                <label class="col-2  col-xl-3" for="to">До</label>
+                <input class="col-10  col-xl-9" type="text" id="to" name="to" placeholder="14.02.2018">
+              </div>
             </div>
           </div>
           <div class="form-send__userfiles  form-send__b  col-md-6  row">
-            <h3 class="form-send__title">Фото посещённых мест</h3>
-            <div class="form-send__item  col-12">
-              <p>Фото 1 <input type="file" name="file1"></p>
-              <p>Фото 2 <input type="file" name="file2"></p>
-              <p>Фото 3 <input type="file" name="file3"></p>
+            <h3 class="form-send__title">Фото посещённых мест:</h3>
+            <div class="form-send__files-item  col-12">
+              <label for="file1">Фото 1</label>
+              <input id="file1" type="file" name="file1">
+            </div>
+            <div class="form-send__files-item  col-12">
+              <label for="file2">Фото 2</label>
+              <input id="file2" type="file" name="file2">
+            </div>
+            <div class="form-send__files-item  col-12">
+              <label for="file3">Фото 3</label>
+              <input id="file3" type="file" name="file3">
             </div>
           </div>
           <div class="form-send__msg  form-send__b col-12  row">
-            <h3 class="form-send__title">Опишите свои эмоции</h3>
+            <h3 class="form-send__title">Опишите свои эмоции:</h3>
             <textarea resize="false" class="form-send__textarea" name="sender_msg"
                       placeholder="Опишите подробно все свои восторги"></textarea>
           </div>

@@ -1,12 +1,13 @@
 // container-fluid
 @mixin conf() {
-  width: auto;
-  padding: 0 20px;
-  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
   // tablet start
   @media (min-width: 768px) {
-    margin: 0 auto;
-    padding: 0 60px;
+    padding-left: 60px;
+    padding-right: 60px;
   // tablet end
   }
     // desktop start

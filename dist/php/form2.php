@@ -100,7 +100,7 @@ if ($_SERVER['REQUEST_METHOD']=="POST") {
         $item_s . $option_s . 'Посещенные достопримечательности: ' . $span_e . $value_s . $visited . $semicolon . $span_e . $div_e . $br .
         $item_s . $option_s . 'Период пребывания от ' . $span_e . $value_s . $date_from . $option_s . ' до ' . $span_e . $date_to . $semicolon . $span_e . $div_e . $br .
         $item_s . $option_s . 'Сообщение: ' . $span_e . $value_s . $msg . $semicolon . $span_e . $div_e . $br .
-        $item_s . $option_s . 'Фотографии: ' . $span_e . $_FILES . $div_e . $div_e;
+        $item_s . $option_s . 'Фотографии: ' . $span_e . $photos . $div_e . $div_e;
 
 // Мой email
     $to = 'admin@sedona.kl.com.ua'; // мой email

@@ -1,5 +1,39 @@
+// mobile only start
+@media (min-width: 320px) and (max-width: 480px) {
+  .s-form-send {
+    max-width: 320px;
+    margin: 0 auto;
+  }
+// mobile only end
+}
+.form-send__inner {
+  margin: 0 auto !important;
+}
+
+#form-send * {
+  align-items: flex-start;
+}
+
+
 .form-send__b-recaptcha {
   padding-bottom: 0 !important;
+
+  .rc-anchor-light.rc-anchor-normal {
+    border: none !important;
+    outline: none !important;
+  }
+
+  iframe {
+    max-width: 280px !important;
+    border-right: 1px solid #d3d3d3;
+    border-radius: 5px;
+  }
+  .rc-anchor-logo-img-portrait {
+    margin: 0 !important;
+  }
+  div.rc-anchor-logo-text {
+    margin-left: -30px !important;
+  }
 }
 
 #form-send__status {
@@ -38,7 +72,7 @@
 
 .s-form-send {
   background: #fff;
-  @include conf();
+  //@include conf();
 }
 
 .form-send__captcha-wrapper {
@@ -85,6 +119,7 @@
 }
 
 .form-send__b {
+  @include conf();
   padding-top: 20px;
   padding-bottom: 25px;
 }
@@ -371,10 +406,20 @@ textarea {
 }
 
 .form-send__userfiles {
-  padding-left: 5%;
   text-align: center;
+  .form-send__files-item {
+    margin-bottom: 5px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .form-send__files-item:last-child  {
+    margin-bottom: 0;
+  }
   input[type="file"] {
+    padding: 8px 0 8px 8px;
+    height: 40px;
     margin-left: 10px;
+    border: 1px dashed rgba(#f9f,.5);
   }
 }
 
@@ -503,12 +548,16 @@ textarea {
     text-align: right;
   }
 
+  .form-send__userfiles {
+    padding-left: 5%;
+  }
+
   // tablet end
 }
 
 // tablet only start
 @media (min-width: 768px) and (max-width: 1199px) {
-  .form-send__contacts label {
+  .form-send__contacts label  {
     padding-left: 23px !important;
   }
 
@@ -541,7 +590,7 @@ textarea {
     }
   }
 
-  .form-send__contacts label {
+  .form-send__contacts label  {
     padding: 16px 0;
   }
 
@@ -555,11 +604,6 @@ textarea {
     &::after {
       top: 0;
     }
-  }
-
-  .form-send__contacts .form-send__item,
-  .form-send__visited .form-send__item {
-  //  margin-bottom: 0;
   }
 
   // desktop end

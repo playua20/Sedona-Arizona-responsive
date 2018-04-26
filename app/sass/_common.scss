@@ -9,7 +9,9 @@ html, body {
   height: 100%;
   background-color: #f2f2f2;
 }
-
+* {
+  box-sizing: border-box;
+}
 body {
   opacity: 1;
   overflow-x: hidden;

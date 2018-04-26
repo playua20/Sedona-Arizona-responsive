@@ -126,8 +126,31 @@ $(document).ready(function (e) {
 
 $(document).ready(function (e) {
 
+  var allowed_file_size   = "1048576"; //Разрешен размер файла 1 МБ
+  var allowed_file_types  = ['image/png', 'image/gif', 'image/jpeg', 'image/pjpeg', 'application/x-zip-compressed', 'application/pdf']; //Допустимые типы файлов
+
   $("#form-send").on('submit', (function (e) {
       e.preventDefault();
+      proceed = true;
+
+      //проверять размер и тип файла перед загрузкой, работает в современных браузерах
+      if(window.File && window.FileReader && window.FileList && window.Blob){
+        var total_files_size = 0;
+        $(this.elements['file_attach[]'].files).each(function(i, ifile){
+          if(ifile.value !== ""){ //продолжить, только если выбран файл(ы)
+            if(allowed_file_types.indexOf(ifile.type) === -1){ //проверить неподдерживаемый файл
+              alert( ifile.name + " is unsupported file type!");
+              proceed = false;
+            }
+            total_files_size = total_files_size + ifile.size; //добавить размер файла к общему размеру
+          }
+        });
+        if(total_files_size > allowed_file_size){
+          alert( "Убедитесь, что размер файла меньше 1 МБ!");
+          proceed = false;
+        }
+      }
+
       var formData = new FormData($(this)[0]);
 
       $("#form-send__status").hide();
