@@ -1,0 +1,141 @@
+#ui-datepicker-div {
+  margin: 0 auto;
+}
+
+.ui-datepicker-prev,
+.ui-datepicker-next {
+  top: 2px !important;
+}
+
+.ui-datepicker-prev {
+  content: '\f060' !important;
+  left: 2px !important;
+  font-size: 20px;
+  font-family: FontAwesome;
+  text-align: center;
+}
+
+.ui-datepicker-next {
+  content: '\f061' !important;
+  right: 2px !important;
+  font-size: 20px;
+  font-family: FontAwesome;
+  text-align: center;
+}
+
+span.ui-icon-circle-triangle-w {
+  position: absolute;
+  content: '\f060' !important;
+  //background: red url('/img/cat.jpg') center no-repeat !important;
+  font-size: 20px;
+  font-family: FontAwesome;
+  text-align: center;
+}
+
+span.ui-icon-circle-triangle-e {
+  position: absolute;
+  content: '\f062' !important;
+  //background: url('http://via.placeholder.com/350x150') !important;
+  &::after {
+    position: absolute;
+    content: '\f101';
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 100;
+    font-size: 20px;
+    font-family: FontAwesome;
+    text-align: center;
+  }
+}
+
+//.ui-datepicker-prev-hover,
+//.ui-datepicker-next-hover {
+//  top: 2px !important;
+//}
+//
+//.ui-datepicker-prev-hover {
+//  left: 2px !important;
+//}
+//
+//.ui-datepicker-next-hover {
+//  right: 2px !important;
+//}
+
+.form-send__item-date-from,
+.form-send__item-date-to {
+  display: inline-flex;
+  position: relative;
+  &::after {
+    position: absolute;
+    width: 58px;
+    height: 58px;
+    line-height: 58px;
+    right: 0;
+    bottom: 0;
+    background: #e6e6e6;
+    pointer-events: none;
+    font-size: 20px;
+    font-family: FontAwesome;
+    text-align: center;
+  }
+}
+
+.form-send__item-date-from:after {
+  content: '\f274';
+}
+
+.form-send__item-date-to:after {
+  content: '\f273';
+}
+
+.form-send__item-date {
+  text-align: center;
+  label {
+    line-height: 58px;
+    padding: 0;
+    text-align: center;
+  }
+}
+
+input[name="from"],
+input[name="to"] {
+  position: relative;
+  padding-right: 80px;
+}
+
+// mobile only start
+@media (max-width: 767px) {
+  .form-send__date {
+    text-align: center;
+  }
+
+  // mobile only end
+}
+
+// tablet start
+@media (min-width: 768px) {
+
+  .form-send__date {
+    padding-right: 5%;
+    position: relative;
+    &::after {
+      content: '';
+      position: absolute;
+      top: 20px;
+      bottom: 40px;
+      right: 0;
+      width: 1px;
+      background: #e5e5e5;
+      z-index: 1;
+    }
+  }
+
+  input[name="from"],
+  input[name="to"] {
+    vertical-align: top;
+  }
+
+  // tablet end
+}

@@ -1,4 +1,4 @@
-app/libs/
+src/libs/
 bower_components/
 node_modules/
 .DS_Store
@@ -9,4 +9,3 @@ Thumbs.db
 *.pdf
 *.psd
 *.sublime*
-sedona-video-url.txt
