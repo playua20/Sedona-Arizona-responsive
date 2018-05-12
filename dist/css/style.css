@@ -719,7 +719,7 @@ ol {
     color: #fff;
     margin-bottom: 50px; } }
 
-.top {
+.scroll-top {
   position: fixed;
   bottom: 25px;
   right: -100px;
@@ -738,14 +738,14 @@ ol {
   -o-transition: all .3s ease;
   transition: all .3s ease;
   opacity: .5; }
-  .top:hover {
+  .scroll-top:hover {
     color: #fff;
     background-color: #81b3d2;
     opacity: 1;
     -webkit-transform: rotate(-90deg);
         -ms-transform: rotate(-90deg);
             transform: rotate(-90deg); }
-  .top.active {
+  .scroll-top--active {
     right: 25px; }
 
 html, body {
@@ -1393,7 +1393,6 @@ textarea {
 .form-send__userfiles {
   text-align: center; }
   .form-send__userfiles .form-send__files-item {
-    margin-bottom: 5px;
     padding-left: 0;
     padding-right: 0; }
     .form-send__userfiles .form-send__files-item label {
@@ -1405,7 +1404,34 @@ textarea {
   .form-send__userfiles input[type="file"] {
     padding: 8px 0 8px 8px;
     height: 40px;
-    border: 1px dashed rgba(255, 153, 255, 0.5); }
+    line-height: 18px;
+    border: 1px dashed rgba(255, 153, 255, 0.5);
+    vertical-align: middle; }
+
+.form-send__add-files-inp {
+  display: none; }
+
+.form-send__add-files-btn {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  line-height: 38px;
+  text-align: center;
+  font-size: 1.5rem;
+  border: 1px solid #81b3d2;
+  color: #FFCBFF;
+  vertical-align: top;
+  margin-right: 10px; }
+
+.form-send__add-files label {
+  height: 40px;
+  line-height: 40px; }
+
+.form-send__add-files-inp:active ~ .form-send__add-files-btn {
+  color: greenyellow;
+  -webkit-transition: .3s;
+  -o-transition: .3s;
+  transition: .3s; }
 
 @media (max-width: 767px) {
   .form-send__captcha-wrapper {

@@ -451,7 +451,7 @@ textarea {
 .form-send__userfiles {
   text-align: center;
   .form-send__files-item {
-    margin-bottom: 5px;
+    //margin-bottom: 5px;
     padding-left: 0;
     padding-right: 0;
     label {
@@ -467,10 +467,40 @@ textarea {
   input[type="file"] {
     padding: 8px 0 8px 8px;
     height: 40px;
+    line-height: 18px;
+
     //margin-left: 10px;
     border: 1px dashed rgba(#f9f, .5);
+    vertical-align: middle;
   }
 }
+
+.form-send__add-files {
+  &-inp {
+    display: none;
+  }
+  &-btn {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 38px;
+    text-align: center;
+    font-size: 1.5rem;
+    border: 1px solid $accent;
+    color: #FFCBFF;
+    vertical-align: top;
+    margin-right: 10px;
+  }
+  label {
+    height: 40px;
+    line-height: 40px;
+  }
+}
+.form-send__add-files-inp:active ~ .form-send__add-files-btn {
+  color: greenyellow;
+  transition: .3s;
+}
+
 
 // mobile only start
 @media (max-width: 767px) {

@@ -1,4 +1,4 @@
-.top {
+.scroll-top {
   position: fixed;
   bottom: 25px;
   right: -100px;
@@ -20,7 +20,7 @@
     opacity: 1;
     transform: rotate(-90deg);
   }
-  &.active {
+  &--active {
     right: 25px;
   }
 }
