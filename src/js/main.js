@@ -159,7 +159,8 @@ jQuery(function ($) {
 jQuery(function ($) {
   $('.form-send__add-files label').click(function (e) {
     e.preventDefault();
-    var file = $('.form-send__files-item:first').clone();
+
+    var file = $('.form-send__files-item').eq(0).clone();
     var n = $('.form-send__files-item').length;
 
     file.find('label').attr('for', 'file' + (n + 1)).text('Фото ' + (n + 1));
@@ -167,9 +168,10 @@ jQuery(function ($) {
 
     $('.form-send__add-files').before(file);
 
-    if ($('.form-send__files-item').length >= 3) {
-      $('.form-send__add-files').detach();
+    if ($('.form-send__files-item').length > 2) {
+      $('.form-send__add-files').hide();
+    } else {
+      $('.form-send__add-files').show();
     };
   });
 });
-

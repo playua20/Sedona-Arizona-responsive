@@ -479,27 +479,59 @@ textarea {
   &-inp {
     display: none;
   }
-  &-btn {
-    display: inline-block;
-    width: 40px;
-    height: 40px;
-    line-height: 38px;
-    text-align: center;
-    font-size: 1.5rem;
-    border: 1px solid $accent;
-    color: #FFCBFF;
-    vertical-align: top;
-    margin-right: 10px;
-  }
   label {
     height: 40px;
     line-height: 40px;
   }
 }
-.form-send__add-files-inp:active ~ .form-send__add-files-btn {
-  color: greenyellow;
-  transition: .3s;
+.form-send__add-files-btn,
+.form-send__del-files-btn {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  line-height: 38px;
+  text-align: center;
+  font-size: 2rem;
+  //border: 1px solid $accent;
+  color: $accent;
+  vertical-align: top;
+  box-shadow: inset 0 0 10px #ccc;
+  //background: $inp;
+  border-radius: 50%;
+  //text-shadow: -1px -1px 0 #ccc;
 }
+
+.form-send__add-files label {
+  margin: 0 auto;
+}
+
+.form-send__add-files label,
+.del-files-wrapper {
+  cursor: default;
+  transition: .25s;
+  opacity: .7;
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.form-send__add-files-btn {
+  margin-right: 10px;
+}
+.del-files-wrapper {
+  padding: 0;
+}
+.form-send__del-files-btn {
+  font-size: 3rem;
+  line-height: 30px;
+  margin: 0 auto;
+  color: #ff5566;
+}
+
+//.form-send__add-files-inp:hover ~ .form-send__add-files-btn {
+//  color: greenyellow;
+//  transition: .3s;
+//}
 
 
 // mobile only start
