@@ -47,14 +47,35 @@
   font-weight: 400;
   line-height: 26px;
   text-align: center;
-  & span {
+
+  .copyright-wrap {
+    padding-right: 10px;
+    p {
+      flex-grow: 1;
+    }
+  }
+
+  .page-footer__copyright-design {
     display: inline-block;
     margin-right: 5px;
   }
-  & a {
+
+  .page-footer__copyright-developed {
+    display: inline-block;
+    margin-right: 5px;
+  }
+
+  .page-footer__copyright-design ~ a,
+  .page-footer__copyright-developed ~ a {
     display: inline-block;
     vertical-align: middle;
+    line-height: 0;
   }
+}
+
+#htmlacademy-logo {
+  width: 20px;
+  height: auto;
 }
 
 #htmlacademy-logo path {
@@ -81,6 +102,37 @@
 }
 
 #htmlacademy-logo:active polygon {
+  fill: lighten(#000, 70%);
+}
+
+#github-dev {
+  width: 25px;
+  height: auto;
+}
+
+#github-dev path {
+  stroke: #000;
+  transition: .2s;
+}
+
+#github-dev:hover path {
+  stroke: $accent;
+}
+
+#github-dev:active path {
+  stroke: lighten(#000, 70%);
+}
+
+#github-dev path {
+  fill: #000;
+  transition: .2s;
+}
+
+#github-dev:hover path {
+  fill: $accent;
+}
+
+#github-dev:active path {
   fill: lighten(#000, 70%);
 }
 // mobile only start
