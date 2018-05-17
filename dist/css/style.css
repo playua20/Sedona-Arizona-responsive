@@ -1723,3 +1723,6 @@ input[name="to"] {
   input[name="from"],
   input[name="to"] {
     vertical-align: top; } }
+
+a[target="_blank"] > br {
+  display: none; }

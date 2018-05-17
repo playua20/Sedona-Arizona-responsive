@@ -81,7 +81,7 @@ jQuery(function ($) {
         // $('#send-message').hide();
         $('#form-send__loader').show();
         $.ajax({
-          url: "php/form2.php",
+          url: "php/form.php",
           type: "POST",
           dataType: 'json',
           cache: false,
@@ -157,6 +157,12 @@ jQuery(function ($) {
 });
 
 jQuery(function ($) {
+  $('a[href="#hash-footer"]').click(function () {
+    $("#hash-footer").effect("highlight", 1000);
+  });
+});
+
+jQuery(function ($) {
   $('.form-send__add-files label').click(function (e) {
     e.preventDefault();
 
@@ -164,7 +170,7 @@ jQuery(function ($) {
     var n = $('.form-send__files-item').length;
 
     file.find('label').attr('for', 'file' + (n + 1)).text('Фото ' + (n + 1));
-    file.find('input').attr('id', 'file' + (n + 1));
+    file.find('input').attr('id', 'file' + (n + 1)).val('');
 
     $('.form-send__add-files').before(file);
 
@@ -172,6 +178,7 @@ jQuery(function ($) {
       $('.form-send__add-files').hide();
     } else {
       $('.form-send__add-files').show();
-    };
+    }
+    ;
   });
 });
