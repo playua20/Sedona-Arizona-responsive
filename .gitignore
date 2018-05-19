@@ -1,13 +1,5 @@
-src/
-# src/libs/
-bower_components/
-node_modules/
-.DS_Store
-Thumbs.db
-.idea
-*.ai
-*.log
-*.pdf
-*.psd
-*.sublime*
-robots.txt
+*
+!README.md
+!dist/*
+dist/php/*
+!dist/php/README.md
