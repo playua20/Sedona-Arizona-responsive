@@ -112,19 +112,19 @@ jQuery(function ($) {
   var dateFormat = "mm/dd/yy",
     from = $("#from")
       .datepicker({
-        defaultDate: "+1w",
         changeMonth: true,
         showOtherMonths: true,
-        selectOtherMonths: true
+        selectOtherMonths: true,
+        maxDate: 0
       })
       .on("change", function () {
         to.datepicker("option", "minDate", getDate(this));
       }),
     to = $("#to").datepicker({
-      defaultDate: "+1w",
       changeMonth: true,
       showOtherMonths: true,
-      selectOtherMonths: true
+      selectOtherMonths: true,
+      maxDate: 0
     })
       .on("change", function () {
         from.datepicker("option", "maxDate", getDate(this));
@@ -143,15 +143,17 @@ jQuery(function ($) {
 });
 
 jQuery(function ($) {
-  $("#form-send__self").on("change", function () {
-    if ($(this).val().length > 0) {
+  $("#form-send__self").keydown(function () {
+    if ($(this).val().length >= 2) {
+      $(this).attr("name", "visited_ch_group[]");
       $('.ch-indicator__self').addClass('ch-indicator--active');
-      $('#form-send__self').addClass('form-send__self--active');
-      $("#form-send__self").css("background", "transparent");
-    } else {
+      $(this).addClass('form-send__self--active');
+      $(this).css("background", "transparent");
+    } else if ($(this).val().length <= 1) {
+      $(this).removeAttr('name', 'visited_ch_group[]');
       $('.ch-indicator__self').removeClass('ch-indicator--active');
-      $('#form-send__self').removeClass('form-send__self--active');
-      $("#form-send__self").css("background", "#f2f2f2");
+      $(this).removeClass('form-send__self--active');
+      $(this).css("background", "#f2f2f2");
     }
   });
 });

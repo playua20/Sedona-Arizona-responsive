@@ -1665,48 +1665,27 @@ textarea {
   text-align: center;
   padding: 50px 0; }
 
-#ui-datepicker-div {
-  margin: 0 auto; }
-
 .ui-datepicker-prev,
 .ui-datepicker-next {
   top: 2px !important; }
 
-.ui-datepicker-prev {
-  content: '\f060' !important;
-  left: 2px !important;
-  font-size: 20px;
-  font-family: FontAwesome;
-  text-align: center; }
-
-.ui-datepicker-next {
-  content: '\f061' !important;
-  right: 2px !important;
-  font-size: 20px;
-  font-family: FontAwesome;
-  text-align: center; }
+.ui-datepicker-prev .ui-corner-all,
+.ui-datepicker-next .ui-corner-all {
+  position: relative; }
 
 span.ui-icon-circle-triangle-w {
   position: absolute;
-  content: '\f060' !important;
-  font-size: 20px;
-  font-family: FontAwesome;
-  text-align: center; }
+  background: #81b3d2 url("/img/arrow-left.svg") center no-repeat !important;
+  text-align: center;
+  -webkit-border-radius: 50%;
+          border-radius: 50%; }
 
 span.ui-icon-circle-triangle-e {
   position: absolute;
-  content: '\f062' !important; }
-  span.ui-icon-circle-triangle-e::after {
-    position: absolute;
-    content: '\f101';
-    left: 0;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    z-index: 100;
-    font-size: 20px;
-    font-family: FontAwesome;
-    text-align: center; }
+  background: #81b3d2 url("/img/arrow-right.svg") center no-repeat !important;
+  text-align: center;
+  -webkit-border-radius: 50%;
+          border-radius: 50%; }
 
 .form-send__item-date-from,
 .form-send__item-date-to {
