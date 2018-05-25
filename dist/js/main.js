@@ -108,27 +108,60 @@ jQuery(function ($) {
   });
 });
 
+// jQuery(function ($) {
+//   var dateFormat = "mm/dd/yy",
+//     from = $("#from")
+//       .datepicker({
+//         changeMonth: true,
+//         showOtherMonths: true,
+//         selectOtherMonths: true,
+//         maxDate: 0
+//       })
+//       .on("change", function () {
+//         to.datepicker("option", "minDate", getDate(this));
+//       }),
+//     to = $("#to").datepicker({
+//       changeMonth: true,
+//       showOtherMonths: true,
+//       selectOtherMonths: true,
+//       maxDate: 0
+//     })
+//       .on("change", function () {
+//         from.datepicker("option", "maxDate", getDate(this));
+//       });
+//
+//   function getDate(element) {
+//     var date;
+//     try {
+//       date = $.datepicker.parseDate(dateFormat, element.value);
+//     } catch (error) {
+//       date = null;
+//     }
+//
+//     return date;
+//   }
+// });
+
 jQuery(function ($) {
-  var dateFormat = "mm/dd/yy",
-    from = $("#from")
-      .datepicker({
-        changeMonth: true,
-        showOtherMonths: true,
-        selectOtherMonths: true,
-        maxDate: 0
-      })
-      .on("change", function () {
-        to.datepicker("option", "minDate", getDate(this));
-      }),
-    to = $("#to").datepicker({
-      changeMonth: true,
-      showOtherMonths: true,
-      selectOtherMonths: true,
-      maxDate: 0
-    })
-      .on("change", function () {
-        from.datepicker("option", "maxDate", getDate(this));
-      });
+  var dateFormat = "mm/dd/yy";
+  $("#from").datepicker({
+    changeMonth: true,
+    showOtherMonths: true,
+    selectOtherMonths: true,
+    maxDate: 0,
+    onSelect: function (selectedDate) {
+      $('#to').datepicker("option", "minDate", selectedDate);
+    }
+  });
+  $("#to").datepicker({
+    changeMonth: true,
+    showOtherMonths: true,
+    selectOtherMonths: true,
+    maxDate: 0,
+    onSelect: function (selectedDate) {
+      $('#from').datepicker("option", "maxDate", selectedDate);
+    }
+  });
 
   function getDate(element) {
     var date;
@@ -139,7 +172,7 @@ jQuery(function ($) {
     }
 
     return date;
-  }
+  };
 });
 
 jQuery(function ($) {
