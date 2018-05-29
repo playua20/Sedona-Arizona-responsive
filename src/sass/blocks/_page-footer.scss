@@ -83,6 +83,48 @@
 #htmlacademy-logo:active polygon {
   fill: lighten(#000, 70%);
 }
+
+#htmlacademy-logo {
+  width: 26px;
+  padding-left: 3px;
+  padding-right: 3px;
+  height: auto;
+}
+
+#github-dev {
+  width: 26px;
+  height: auto;
+}
+
+.page-footer__copyright .copyright-wrap p {
+  flex-grow: 1;
+}
+
+.page-footer__copyright-developed {
+  margin-right: 5px;
+}
+
+.page-footer__copyright .page-footer__copyright-design~a,
+.page-footer__copyright .page-footer__copyright-developed~a {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 0;
+}
+
+.page-footer__copyright .counter-hit {
+  font-size: 0;
+}
+.page-footer__copyright a[target=_blank] {
+  vertical-align: middle;
+  width: 30%;
+}
+.page-footer__copyright a[target=_blank] {
+  margin: auto;
+}
+.page-footer__copyright a[target=_blank] > br {
+  display: none;
+}
+
 // mobile only start
 @media (max-width: 767px) {
   .page-footer__inner {
@@ -93,6 +135,10 @@
   }
   .social-list {
     margin-bottom: 23px;
+  }
+
+  .page-footer__copyright a[target=_blank] {
+    width: 100%;
   }
 
 // mobile only end
@@ -118,6 +164,9 @@
   }
   .inner-page .page-footer {
     margin-top: 61px;
+  }
+  .page-footer__copyright .copyright-wrap {
+    padding-right: 10px;
   }
 
   // tablet end

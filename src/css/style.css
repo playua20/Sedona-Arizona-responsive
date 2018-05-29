@@ -324,13 +324,53 @@ ol {
 #htmlacademy-logo:active polygon {
   fill: #b3b3b3; }
 
+#htmlacademy-logo {
+  width: 26px;
+  padding-left: 3px;
+  padding-right: 3px;
+  height: auto; }
+
+#github-dev {
+  width: 26px;
+  height: auto; }
+
+.page-footer__copyright .copyright-wrap p {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1; }
+
+.page-footer__copyright-developed {
+  margin-right: 5px; }
+
+.page-footer__copyright .page-footer__copyright-design ~ a,
+.page-footer__copyright .page-footer__copyright-developed ~ a {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 0; }
+
+.page-footer__copyright .counter-hit {
+  font-size: 0; }
+
+.page-footer__copyright a[target=_blank] {
+  vertical-align: middle;
+  width: 30%; }
+
+.page-footer__copyright a[target=_blank] {
+  margin: auto; }
+
+.page-footer__copyright a[target=_blank] > br {
+  display: none; }
+
 @media (max-width: 767px) {
   .page-footer__inner {
     padding: 20px 0 0; }
   .page-footer__hashtag {
     padding-bottom: 23px; }
   .social-list {
-    margin-bottom: 23px; } }
+    margin-bottom: 23px; }
+  .page-footer__copyright a[target=_blank] {
+    width: 100%; } }
 
 @media (min-width: 768px) {
   .page-footer__inner {
@@ -349,7 +389,9 @@ ol {
   .page-footer__copyright {
     text-align: right; }
   .inner-page .page-footer {
-    margin-top: 61px; } }
+    margin-top: 61px; }
+  .page-footer__copyright .copyright-wrap {
+    padding-right: 10px; } }
 
 @media (min-width: 1200px) {
   .inner-page .page-footer {
@@ -1457,7 +1499,7 @@ textarea {
       bottom: 0;
       font-size: 1.5rem;
       line-height: 40px;
-      opacity: .75; }
+      opacity: .7; }
     .form-send__files-item .del-file:hover::after {
       opacity: 1;
       -webkit-transition: .2s;
@@ -1636,41 +1678,17 @@ textarea {
 .ui-datepicker-next {
   top: 2px !important; }
 
-.ui-datepicker-prev {
-  content: '\f060' !important;
-  left: 2px !important;
-  font-size: 20px;
-  font-family: FontAwesome;
-  text-align: center; }
-
-.ui-datepicker-next {
-  content: '\f061' !important;
-  right: 2px !important;
-  font-size: 20px;
-  font-family: FontAwesome;
-  text-align: center; }
+.ui-icon {
+  width: 16px;
+  height: 16px;
+  -webkit-border-radius: 50%;
+          border-radius: 50%; }
 
 span.ui-icon-circle-triangle-w {
-  position: absolute;
-  content: '\f060' !important;
-  font-size: 20px;
-  font-family: FontAwesome;
-  text-align: center; }
+  background: #81b3d2 url(/img/arrow-left.svg) center no-repeat !important; }
 
 span.ui-icon-circle-triangle-e {
-  position: absolute;
-  content: '\f062' !important; }
-  span.ui-icon-circle-triangle-e::after {
-    position: absolute;
-    content: '\f101';
-    left: 0;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    z-index: 100;
-    font-size: 20px;
-    font-family: FontAwesome;
-    text-align: center; }
+  background: #81b3d2 url(/img/arrow-right.svg) center no-repeat !important; }
 
 .form-send__item-date-from,
 .form-send__item-date-to {

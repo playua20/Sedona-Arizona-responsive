@@ -6,10 +6,6 @@
   margin: 0 auto !important;
 }
 
-//#form-send * {
-//  align-items: flex-start;
-//}
-
 .form-send__b-recaptcha {
   padding-bottom: 0 !important;
 }
@@ -523,7 +519,7 @@ textarea {
       bottom: 0;
       font-size: 1.5rem;
       line-height: 40px;
-      opacity: .75;
+      opacity: .7;
     }
     &:hover::after{
       //color: orangered;

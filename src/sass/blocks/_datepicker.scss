@@ -7,47 +7,18 @@
   top: 2px !important;
 }
 
-.ui-datepicker-prev {
-  content: '\f060' !important;
-  left: 2px !important;
-  font-size: 20px;
-  font-family: FontAwesome;
-  text-align: center;
-}
-
-.ui-datepicker-next {
-  content: '\f061' !important;
-  right: 2px !important;
-  font-size: 20px;
-  font-family: FontAwesome;
-  text-align: center;
+.ui-icon {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
 }
 
 span.ui-icon-circle-triangle-w {
-  position: absolute;
-  content: '\f060' !important;
-  //background: red url('/img/cat.jpg') center no-repeat !important;
-  font-size: 20px;
-  font-family: FontAwesome;
-  text-align: center;
+  background: #81b3d2 url(/img/arrow-left.svg) center no-repeat!important;
 }
 
 span.ui-icon-circle-triangle-e {
-  position: absolute;
-  content: '\f062' !important;
-  //background: url('http://via.placeholder.com/350x150') !important;
-  &::after {
-    position: absolute;
-    content: '\f101';
-    left: 0;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    z-index: 100;
-    font-size: 20px;
-    font-family: FontAwesome;
-    text-align: center;
-  }
+  background: #81b3d2 url(/img/arrow-right.svg) center no-repeat!important;
 }
 
 //.ui-datepicker-prev-hover,
