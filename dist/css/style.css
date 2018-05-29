@@ -1437,6 +1437,33 @@ textarea {
   -o-transition: .3s;
   transition: .3s; }
 
+.form-send__files-item {
+  position: relative; }
+  .form-send__files-item .del-file {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    right: 0;
+    top: 0;
+    padding: 10px;
+    color: #9f191f;
+    font-family: "FontAwesome"; }
+    .form-send__files-item .del-file::after {
+      content: '\f1f8';
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      font-size: 1.5rem;
+      line-height: 40px;
+      opacity: .75; }
+    .form-send__files-item .del-file:hover::after {
+      opacity: 1;
+      -webkit-transition: .2s;
+      -o-transition: .2s;
+      transition: .2s; }
+
 @media (max-width: 767px) {
   .form-send__captcha-wrapper {
     margin-bottom: 20px; }

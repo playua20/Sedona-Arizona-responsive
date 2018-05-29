@@ -503,6 +503,37 @@ textarea {
   transition: .3s;
 }
 
+.form-send__files-item {
+  position: relative;
+  .del-file {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    right: 0;
+    top: 0;
+    padding: 10px;
+    color: #9f191f;
+    font-family: "FontAwesome";
+    &::after {
+      content: '\f1f8';
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      font-size: 1.5rem;
+      line-height: 40px;
+      opacity: .75;
+    }
+    &:hover::after{
+      //color: orangered;
+      opacity: 1;
+      transition: .2s;
+    }
+  }
+
+}
+
 
 // mobile only start
 @media (max-width: 767px) {

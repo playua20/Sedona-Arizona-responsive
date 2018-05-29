@@ -208,14 +208,23 @@ jQuery(function ($) {
     file.find('input').attr('id', 'file' + (n + 1)).val('');
 
     $('.form-send__add-files').before(file);
-
-    function addBtn() {
-      if ($('.form-send__files-item').length > 2) {
-        $('.form-send__add-files').hide();
-      } else if ($('.form-send__files-item').length < 3) {
-        $('.form-send__add-files').show();
-      };
-    };
     addBtn();
   });
+
+  $(".form-send__userfiles").on( "click", ".del-file", function() {
+    if ($('.form-send__files-item').length >1) {
+      $(this).closest('.form-send__files-item').detach();
+    } else {
+      $('.del-file').prev('.form-send__files-item input').val('');
+    }
+    addBtn();
+  });
+
+  function addBtn() {
+    if ($('.form-send__files-item').length > 2) {
+      $('.form-send__add-files').hide();
+    } else if ($('.form-send__files-item').length < 3) {
+      $('.form-send__add-files').show();
+    };
+  };
 });
