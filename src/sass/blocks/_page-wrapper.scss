@@ -1,0 +1,13 @@
+html, body   {
+  height: 100%;
+}
+
+.page-wrapper {
+  //(); // margin: 0 auto; + max-width: 1200px;
+  box-shadow: 0 0 20px  rgba(0,0,0, .15);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100%;
+  background: #fff;
+}
