@@ -108,40 +108,6 @@ jQuery(function ($) {
   });
 });
 
-// jQuery(function ($) {
-//   var dateFormat = "mm/dd/yy",
-//     from = $("#from")
-//       .datepicker({
-//         changeMonth: true,
-//         showOtherMonths: true,
-//         selectOtherMonths: true,
-//         maxDate: 0
-//       })
-//       .on("change", function () {
-//         to.datepicker("option", "minDate", getDate(this));
-//       }),
-//     to = $("#to").datepicker({
-//       changeMonth: true,
-//       showOtherMonths: true,
-//       selectOtherMonths: true,
-//       maxDate: 0
-//     })
-//       .on("change", function () {
-//         from.datepicker("option", "maxDate", getDate(this));
-//       });
-//
-//   function getDate(element) {
-//     var date;
-//     try {
-//       date = $.datepicker.parseDate(dateFormat, element.value);
-//     } catch (error) {
-//       date = null;
-//     }
-//
-//     return date;
-//   }
-// });
-
 jQuery(function ($) {
   var dateFormat = "mm/dd/yy";
   $("#from").datepicker({
@@ -203,47 +169,6 @@ jQuery(function ($) {
   });
 });
 
-// jQuery(function ($) {
-//
-//   $('.form-send__add-files label').click(function (e) {
-//     e.preventDefault();
-//
-//     var file = $('.form-send__files-item').eq(0).clone();
-//     var n = $('.form-send__files-item').length;
-//
-//     file.find('label').attr('for', 'file' + (n + 1)).text('Фото ' + (n + 1));
-//     file.find('input').attr('id', 'file' + (n + 1)).val('');
-//
-//     $('.form-send__add-files').before(file);
-//     addBtn();
-//     numb();
-//   });
-//
-//   $(".form-send__userfiles").on("click", ".del-file", function () {
-//     if ($('.form-send__files-item').length > 1) {
-//       $(this).closest('.form-send__files-item').detach();
-//     } else {
-//       $('.del-file').prev('.form-send__files-item input').val('');
-//     }
-//     addBtn();
-//     numb();
-//   });
-//
-//   function addBtn() {
-//     if ($('.form-send__files-item').length > 2) {
-//       $('.form-send__add-files').hide();
-//     } else if ($('.form-send__files-item').length < 3) {
-//       $('.form-send__add-files').show();
-//     }
-//     ;
-//   };
-//
-//   function numb() {
-//     $('.form-send__files-item').eq(0).find('label').attr('for1', 'file1').text('Фото 1');
-//     $('.form-send__files-item').eq(1).find('label').attr('for2', 'file2').text('Фото 2');
-//   };
-// });
-
 jQuery(function ($) {
 
   $('.form-send__add-files label').click(function (e) {
@@ -252,40 +177,39 @@ jQuery(function ($) {
     var file = $('.form-send__files-item').eq(0).clone();
     var n = $('.form-send__files-item').length;
 
-    file.find('label').attr('for', 'file' + (n + 1)).text('Фото ' + (n + 1));
-    file.find('input').attr('id', 'file' + (n + 1)).val('');
+    file.find('input').val('');
 
     $('.form-send__add-files').before(file);
     addBtn();
-  });
 
-  function counter() {
-    var i = 1;
-    $('.form-send__files-item').each(function(){
-      $(this).find('label').text('Фото ' + i++);
-      // $(this).find('label').attr('for', 'file' + i++).text('Фото ' + i++);
-      // $(this).find('input').attr('id', 'file' + i++).val('');
-    });
-    addBtn();
-  }
+    function counter() {
+      var i = 1;
+      $('.form-send__files-item').each(function () {
+        $(this).find('label').attr('for', 'file' + i).text('Фото ' + i++);
+        $(this).find('input').attr('id', 'file' + (i -1));
+      });
+    }
+    counter();
 
-  function rm() {
-    $('.form-send__userfiles').on("click", ".del-file",function(){
-      if ($('.form-send__files-item').length > 1) {
-        $(this).closest('.form-send__files-item').remove();
-      } else if  ($('.form-send__files-item').length <= 1) {
-        $(this).prev('.form-send__files-item input').val('');
-      }
-      counter();
-    });
-  };
-  rm();
-
-  function addBtn() {
-    if ($('.form-send__files-item').length > 2) {
-      $('.form-send__add-files').hide();
-    } else if ($('.form-send__files-item').length < 3) {
-      $('.form-send__add-files').show();
+    function rm() {
+      $('.form-send__userfiles').on("click", ".del-file", function () {
+        if ($('.form-send__files-item').length > 1) {
+          $(this).closest('.form-send__files-item').remove();
+        } else if ($('.form-send__files-item').length <= 1) {
+          $(this).prev('.form-send__files-item input').val('');
+        }
+        counter();
+        addBtn();
+      });
     };
-  };
+    rm();
+
+    function addBtn() {
+      if ($('.form-send__files-item').length > 2) {
+        $('.form-send__add-files').hide();
+      } else if ($('.form-send__files-item').length < 3) {
+        $('.form-send__add-files').show();
+      };
+    };
+  });
 });
