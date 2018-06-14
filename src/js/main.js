@@ -171,7 +171,7 @@ jQuery(function ($) {
 
 jQuery(function ($) {
 
-  $('.form-send__add-files label').click(function (e) {
+  $('.form-send__add-files label').click('rm', function (e) {
     e.preventDefault();
 
     var file = $('.form-send__files-item').eq(0).clone();
@@ -181,35 +181,36 @@ jQuery(function ($) {
 
     $('.form-send__add-files').before(file);
     addBtn();
-
-    function counter() {
-      var i = 1;
-      $('.form-send__files-item').each(function () {
-        $(this).find('label').attr('for', 'file' + i).text('Фото ' + i++);
-        $(this).find('input').attr('id', 'file' + (i -1));
-      });
-    }
     counter();
-
-    function rm() {
-      $('.form-send__userfiles').on("click", ".del-file", function () {
-        if ($('.form-send__files-item').length > 1) {
-          $(this).closest('.form-send__files-item').remove();
-        } else if ($('.form-send__files-item').length <= 1) {
-          $(this).prev('.form-send__files-item input').val('');
-        }
-        counter();
-        addBtn();
-      });
-    };
-    rm();
-
-    function addBtn() {
-      if ($('.form-send__files-item').length > 2) {
-        $('.form-send__add-files').hide();
-      } else if ($('.form-send__files-item').length < 3) {
-        $('.form-send__add-files').show();
-      };
-    };
   });
+
+  function counter() {
+    var i = 1;
+    $('.form-send__files-item').each(function () {
+      $(this).find('label').attr('for', 'file' + i).text('Фото ' + i++);
+      $(this).find('input').attr('id', 'file' + (i -1));
+    });
+  }
+  counter();
+
+  function rm() {
+    $('.form-send__userfiles').on("click", ".del-file", function () {
+      if ($('.form-send__files-item').length > 1) {
+        $(this).closest('.form-send__files-item').remove();
+      } else if ($('.form-send__files-item').length <= 1) {
+        $(this).prev('.form-send__files-item input').val('');
+      }
+      counter();
+      addBtn();
+    });
+  };
+  rm();
+
+  function addBtn() {
+    if ($('.form-send__files-item').length > 2) {
+      $('.form-send__add-files').hide();
+    } else if ($('.form-send__files-item').length < 3) {
+      $('.form-send__add-files').show();
+    };
+  };
 });
