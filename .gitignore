@@ -1,4 +1,6 @@
-src/libs/
-node_modules/
-bower_components/
-.idea/
+/*
+!README.md
+!/dist/
+/dist/php/*
+!/dist/php/README.md
+
