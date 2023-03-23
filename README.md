@@ -4,10 +4,10 @@
  * https://playua20.github.io/Sedona-Arizona-responsive/dist/media.html - Медиа
  * https://playua20.github.io/Sedona-Arizona-responsive/dist/send-form.html - feedback форма
  
- > устаревший домен:
- > http://sedona.kl.com.ua/ - Главная
- > http://sedona.kl.com.ua/media.html - Медиа
- > http://sedona.kl.com.ua/send-form.html - рабочая feedback форма
+ > устаревший free домен (2017): 
+ >* http://sedona.kl.com.ua/ 
+ >* http://sedona.kl.com.ua/media.html 
+ >* http://sedona.kl.com.ua/send-form.html 
 
 ## Особенности:
  * Responsive (mobile, tablet, desktop)
@@ -20,6 +20,6 @@
  * Gulp
  * Scss
 
-> *Дизайн шаблона принадлежит [Htmlacademy](htmlacademy.ru)* 
+> *Дизайн шаблона принадлежит [Htmlacademy]* 
 
 @ 2017-2023
